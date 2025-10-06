@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1,
+        "adminOnly": false,
+        "title": "What are the most common antibiotic resistance genes in all samples ?",
+        "name": "competency question 1",
+        "link": "/query/1",
+        "description": "This competency question allows to explore the whole database in order to find relevant data for further exploration. The query is a template that can be easily reused to build new SPARQL queries that will rely on different data sources using Uniprot or Wikidata. It serves as the test request when deploying the application, so this query should always work perfectly !",
+        "ontologies": [
+            {
+                "type": "omics",
+                "shortName": "GO",
+                "name": "Gene Ontology",
+                "description": "Provides structured controlled vocabularies for the annotation of gene products with..",
+                "bioportalUrl": "https://bioportal.bioontology.org/ontologies/GO"
+            }
+        ],
+        "sparqlQuery": "q1-get-all-res-genes-for-specific-sample.sparql",
+        "apiLink": "node/count"
+    },
+    {
+        "id": 2,
+        "adminOnly": false,
+        "title": "Get the best antibiotic resistance genes for a given metric for all samples",
+        "name": "competency question 2",
+        "link": "/query/2",
+        "description": "This competency question allows to explore the whole database in order to find relevant data for further exploration. The query is a template that can be easily reused to build new SPARQL queries that will rely on different data sources using Uniprot or Wikidata. It serves as the test request when deploying the application, so this query should always work perfectly !",
+        "ontologies": [
+            {
+                "type": "environment",
+                "shortName": "ENVO",
+                "name": "Environment Ontology",
+                "description": "controlled description of environmental entities such as ecosystems, environmental processes, and environmental qualities. It closely interoperates with a broad collection of other OBO ontologies and is used in a diverse range of projects",
+                "bioportalUrl": "https://bioportal.bioontology.org/ontologies/ENVO"
+            }
+        ],
+        "sparqlQuery": "q2-get-ktop-res-genes-for-given-metric-all-samples.sparql",
+        "apiLink": ""
+    }
+]

@@ -1,0 +1,10 @@
+{ "head": { "link": [], "vars": ["specie", "organs", "organLabels"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "specie": { "type": "uri", "value": "http://purl.obolibrary.org/obo/NCBITaxon_9606" }	, "organs": { "type": "uri", "value": "http://purl.obolibrary.org/obo/UBERON_0000038" }	, "organLabels": { "type": "literal", "value": "follicular fluid" }},
+    { "specie": { "type": "uri", "value": "http://purl.obolibrary.org/obo/NCBITaxon_9606" }	, "organs": { "type": "uri", "value": "http://purl.obolibrary.org/obo/UBERON_0000170" }	, "organLabels": { "type": "literal", "value": "pair of lungs" }},
+    { "specie": { "type": "uri", "value": "http://purl.obolibrary.org/obo/NCBITaxon_9606" }	, "organs": { "type": "uri", "value": "http://purl.obolibrary.org/obo/UBERON_0001814" }	, "organLabels": { "type": "literal", "value": "brachial nerve plexus" }},
+    { "specie": { "type": "uri", "value": "http://purl.obolibrary.org/obo/NCBITaxon_9606" }	, "organs": { "type": "uri", "value": "http://purl.obolibrary.org/obo/UBERON_0003254" }	, "organLabels": { "type": "literal", "value": "amniotic ectoderm" }},
+    { "specie": { "type": "uri", "value": "http://purl.obolibrary.org/obo/NCBITaxon_9606" }	, "organs": { "type": "uri", "value": "http://purl.obolibrary.org/obo/UBERON_0003262" }	, "organLabels": { "type": "literal", "value": "amniotic mesoderm" }},
+    { "specie": { "type": "uri", "value": "http://purl.obolibrary.org/obo/NCBITaxon_9606" }	, "organs": { "type": "uri", "value": "http://purl.obolibrary.org/obo/UBERON_0003725" }	, "organLabels": { "type": "literal", "value": "cervical nerve plexus" }},
+    { "specie": { "type": "uri", "value": "http://purl.obolibrary.org/obo/NCBITaxon_9606" }	, "organs": { "type": "uri", "value": "http://purl.obolibrary.org/obo/UBERON_0004100" }	, "organLabels": { "type": "literal", "value": "renal collecting system" }},
+    { "specie": { "type": "uri", "value": "http://purl.obolibrary.org/obo/NCBITaxon_9606" }	, "organs": { "type": "uri", "value": "http://purl.obolibrary.org/obo/UBERON_0034713" }	, "organLabels": { "type": "literal", "value": "cranial neuron projection bundle" }} ] } }
