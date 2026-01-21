@@ -1,7 +1,6 @@
 <script setup>
 
     import SmallCard from '../components/SmallCard.vue'
-    import queries from '../static/queries.json'
 
     const isUserLoggedIn = useState("isUserLoggedIn")
 
@@ -14,15 +13,6 @@
             </div>
             <div class="w-full relative">
                 <h3 class="mx-1 my-4 text-slate-600 text-lg">Queries</h3>
-                <SmallCard 
-                    v-for="(query, index) in queries"
-                    :title="query.name"
-                    :description="query.title"
-                    :link="query.link"
-                />
-                <div class="flex justify-center">
-                    <ActionButton content="More queries"></ActionButton>
-                </div>
             </div>
             <div v-show="isUserLoggedIn" class="w-full relative">
                 <h3 class="mx-1 my-4 text-slate-600 text-lg">Admin actions</h3>
