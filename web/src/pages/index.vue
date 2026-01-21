@@ -2,8 +2,6 @@
 
     import datasets from "../static/datasets.json"
 
-    console.log(datasets.data.items[0].name)
-
 </script>
 
 <template>
