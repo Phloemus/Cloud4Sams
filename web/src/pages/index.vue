@@ -2,6 +2,12 @@
 
     import datasets from "../static/datasets.json"
 
+    const filteredDatasetList = datasets.data.items.filter(
+        item => item.description && item.description.trim() !== "" && item.global_id && item.global_id.trim() !== ""
+    )
+
+    console.log(filteredDatasetList)
+
 </script>
 
 <template>
@@ -9,8 +15,9 @@
         <section>
             <h2 class="my-6 font-semibold text-slate-900 text-xl">Available metagenomics data</h2>
             <div class="grid grid-cols-3 gap-4">
-                <div
-                    v-for="(dataset, index) in datasets.data.items"
+                <NuxtLink
+                    :to="`/dataset/${index + 1}`"
+                    v-for="(dataset, index) in filteredDatasetList"
                     class="p-4 relative bg-slate-100 rounded-md border-2 border-slate-100 hover:border-sky-500 hover:cursor-pointer"
                 >
                     <h3 class="font-semibold text-md text-slate-800 truncate">{{ dataset.name }}</h3>
@@ -31,7 +38,7 @@
                         <button class="px-4 py-2 bg-white hover:bg-slate-50 text-slate-900 text-sm border-2 border-slate-900 rounded-md">More info</button>
                         <button class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md">Use the data</button>
                     </div>
-                </div>
+                </NuxtLink>
             </div>
         </section>
         <section class="mt-14">
