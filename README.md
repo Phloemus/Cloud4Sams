@@ -1,75 +1,39 @@
-# Nuxt Minimal Starter
+# Cloud4Sams Webportal
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+The Cloud4Sams project aims at creating a repository of metagenomics tools and data.
 
-## Setup
+## Objectives
 
-Make sure to install dependencies:
+The Cloud4Sams project has 3 main objectives:
 
-```bash
-# npm
-npm install
+- Proposing a catalog of tools and data
+- Allowing users to find the tool and data they need effectively
+- Launching a tool in secure bubble
 
-# pnpm
-pnpm install
+## The Cloud4Sams Webportal
 
-# yarn
-yarn install
+The webportal of Cloud4Sams should allow users to access a wide catalog of metagenomics tools and data and browse in 
+them effectilevy as well as provide a small tool that allows users to select the launch of a tool even though the 
+webportal should be connected to a backend to unlock the full feature.
 
-# bun
-bun install
-```
+## Data harvesting
 
-## Development Server
+Data harvesting is key to provide a large ecosystem of tools and data that the user may want to use. Focused on 
+metagenomics data, the catalog of Cloud4Sams is composed on tools and data already made public in the following 
+repositories 
 
-Start the development server on `http://localhost:3000`:
+### Metagenomics data
 
-```bash
-# npm
-npm run dev
+- Fairsharing.org
+- bio.tools
+- research data gouv
 
-# pnpm
-pnpm dev
+### Metagenomics workflows and tools
 
-# yarn
-yarn dev
+- Workflow hub
+- Rainbio
+- Galaxy
 
-# bun
-bun run dev
-```
+## Contributors
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Brieuc Quemeneur [brieuc.quemeneur@univ-nantes.fr](mailto:brieuc.quemeneur@univ-nantes.fr)
