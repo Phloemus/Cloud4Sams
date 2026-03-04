@@ -21,7 +21,7 @@
             <h2 class="my-6 font-semibold text-slate-900 text-xl">Analysis tools</h2>
             <div class="grid grid-cols-3 gap-4">
                 <NuxtLink
-                    :to="`/tools/${index + 1}`"
+                    :to="`/tool/${index + 1}`"
                     v-for="(tool, index) in filteredToolList"
                     class="p-4 relative bg-slate-100 rounded-md border-2 border-slate-100 hover:border-sky-500 hover:cursor-pointer"
                 >
