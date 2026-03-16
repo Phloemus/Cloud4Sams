@@ -1,0 +1,78 @@
+[
+    {
+        "name": "MAGNETO",
+        "description": "MAGNETO is an automated Snakemake workflow dedicated to reconstructing MAGs (Metagenome-Assembled Genomes) from metagenomic data. It includes a fully automated co-assembly step, based on optimal clustering of metagenomic distances, and implements complementary binning strategies to improve the recovery of MAGs",
+        "homepage": "https://biosphere.france-bioinformatique.fr/catalogue/appliance/236/",
+        "version": "1.4",
+        "tools": [
+            {
+                "name": "bioconda",
+                "version": "",
+                "description": "A channel for the conda package manager specializing in bioinformatics software.",
+                "homepage": "https://bioconda.github.io/"
+            }, 
+            {
+                "name": "snakemake",
+                "version": "",
+                "description": "Snakemake is an MIT-licensed workflow management system that aims to reduce the complexity of creating workflows by providing a fast and comfortable execution environment, together with a clean and modern specification language in python style. Snakemake workflows are essentially Python scripts extended by declarative code to define rules. Rules describe how to create output files from input files.",
+                "homepage": "https://snakemake.readthedocs.io/en/stable/"
+            }, 
+            {
+                "name": "Cloud4SAMS [Project]",
+                "version": "2024",
+                "description": "Espaces numériques sécurisés pour l’accès et l’analyse des données du programme « Systèmes Alimentaires, Microbiomes et Santé ». Ref : PEPR SAMS ANR-24-PESA-0003 Keywords : Données de microbiome et de santé; Environnement de calcul sécurisé; Cloud HDS; Données et outils FAIR",
+                "homepage": "https://pepr-sams.fr/2024/03/12/cloud4sams/"
+            }
+        ],
+        "topics": [
+            {
+                "name": "Bioinformatics",
+                "description": "The archival, curation, processing and analysis of complex biological data.",
+                "url": "http://edamontology.org/topic_0091"
+            },
+            {
+                "name": "Workflows",
+                "description": "Biological or biomedical analytical workflows or pipelines.",
+                "url": "http://edamontology.org/topic_0769"
+            },
+            {
+                "name": "Metagenomics",
+                "description": "The study of genetic material recovered from environmental samples, and associated environmental data.",
+                "url": "http://edamontology.org/topic_3176"
+            }
+
+        ],
+        "contacts": [
+            {
+                "name": "Hugo Lefeuvre",
+                "email": "hugo.lefeuvre@univ-nantes.fr",
+                "affiliations": [
+                    {
+                        "name": "LS2N",
+                        "url": "https://ls2n.fr/"
+                    },
+                    {
+                        "name": "CNRS",
+                        "url": "https://cnrs.fr/"
+                    }
+                ]
+            }
+        ],
+        "developpers": [
+            {
+                "name": "Hugo Lefeuvre",
+                "email": "hugo.lefeuvre@univ-nantes.fr",
+                "affiliations": [
+                    {
+                        "name": "LS2N",
+                        "url": "https://ls2n.fr/"
+                    },
+                    {
+                        "name": "CNRS",
+                        "url": "https://cnrs.fr/"
+                    }
+                ]
+            }
+        ]
+    }
+]

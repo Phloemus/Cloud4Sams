@@ -2,6 +2,7 @@
 
     import datasets from "../static/datasets.json"
     import biotools from "../static/biotools.json"
+    import biosphereTools from "../static/biosphere-tools.json"
 
     const filteredDatasetList = datasets.data.items.filter(
         item => item.description && item.description.trim() !== "" && item.global_id && item.global_id.trim() !== ""
@@ -11,11 +12,50 @@
         item => item.name && item.description.trim() !== ""
     )
 
-    console.log(filteredDatasetList)
+    const filteredBiosphereTools = biosphereTools.flat().filter(
+        item => item.name && item.description.trim() !== ""
+    )
 
 </script>
 
 <template>
+    <div>
+        <section class="mb-16">
+            <h2 class="my-6 font-semibold text-slate-900 text-xl">Biosphere tools</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <div
+                    v-for="(biosphereTool, index) in filteredBiosphereTools"
+                    class="p-4 relative bg-slate-100 rounded-md border-2 border-slate-100"
+                >
+                    <h3 class="font-semibold text-md text-slate-800 truncate">{{ biosphereTool.name }}</h3>
+                    <div class="mt-3 flex gap-2">
+                        <div class="px-2 py-1 bg-sky-200 text-sky-500 text-sm rounded-sm">Tool</div>
+                    </div>
+                    <div class="mt-2 flex gap-2">
+                        <NuxtLink
+                            class="px-2 py-1 bg-purple-200 text-purple-500 text-sm rounded-sm hover:underline hover:cursor-pointer"
+                            v-for="topic in biosphereTool.topics"
+                            :to="topic.url"
+                        >
+                            {{ topic.name }}
+                        </NuxtLink>
+                    </div>
+                    <p class="mt-6 mb-16 text-slate-600 text-md line-clamp-4">
+                        {{ biosphereTool.description }}
+                    </p>
+                    <div class="absolute bottom-4 flex gap-2">
+                        <NuxtLink
+                            :to="`/biospheretool/${index + 1}`"
+                            class="px-4 py-2 bg-white hover:bg-slate-50 text-slate-900 text-sm border-2 border-slate-900 rounded-md"
+                        >
+                            More info
+                        </NuxtLink>
+                        <button class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md">Use this tool</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <div>
         <section>
             <h2 class="my-6 font-semibold text-slate-900 text-xl">Analysis tools</h2>
