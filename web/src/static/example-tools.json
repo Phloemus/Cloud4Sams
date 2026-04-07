@@ -42,6 +42,23 @@
             }
 
         ],
+        "tools": [
+            {
+                "name": "Bioconda",
+                "url": "https://biosphere.france-bioinformatique.fr/catalogue/tool/209/",
+                "description": "Bioconda is a community-driven channel for the Conda package manager focused on bioinformatics software. It provides thousands of ready-to-install tools for fields like genomics, proteomics, and computational biology. Bioconda simplifies installing complex scientific software with reproducible environments across systems."
+            },
+            {
+                "name": "Cloud4SAMS [Project]",
+                "url": "https://pepr-sams.fr/en/2024/03/26/cloud4sams-en/",
+                "description": "aim of the cloud4SAMS project is to deploy a distributed digital infrastructure enabling scientists to use microbiome and health data in a secure computing environment"
+            },
+            {
+                "name": "Snakemake",
+                "url": "https://biosphere.france-bioinformatique.fr/catalogue/tool/200/",
+                "description": "Snakemake is a workflow management system for creating reproducible and scalable data analysis pipelines. It lets you define rules that describe how to generate output files from input files, automating complex workflows."
+            }
+        ],
         "contacts": [
             {
                 "name": "Hugo Lefeuvre",
@@ -74,7 +91,7 @@
                 ]
             }
         ],
-        "data": [
+        "datasets": [
             {
                 "name": "Magneto Database"
             },

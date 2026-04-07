@@ -85,14 +85,24 @@
                     <h3 class="font-semibold text-md text-slate-800 truncate">{{ toolName }}</h3>
                     <div class="mt-3 flex gap-2">
                         <div class="px-2 py-1 bg-sky-200 text-sky-500 text-sm rounded-sm">Tool</div>
+                        <div class="px-2 py-1 bg-sky-200 text-sky-500 text-sm rounded-sm">{{ biosphereTool.metadata.category }}</div>
                     </div>
-                    <div class="mt-2 flex gap-2">
+                    <div class="mt-2 flex gap-2 flex flex-wrap overflow-x-hidden">
                         <NuxtLink
                             class="px-2 py-1 bg-purple-200 text-purple-500 text-sm rounded-sm hover:underline hover:cursor-pointer"
-                            v-for="topic in biosphereTool.topics"
+                            v-for="topic in biosphereTool.metadata.topics"
                             :to="topic.url"
                         >
-                            {{ topic.name }}
+                            {{ topic }}
+                        </NuxtLink>
+                    </div>
+                    <div class="mt-2 flex gap-2 flex flex-wrap overflow-x-hidden">
+                        <NuxtLink
+                            class="px-2 py-1 bg-gray-200 text-gray-500 text-sm rounded-sm hover:underline hover:cursor-pointer"
+                            v-for="tool in biosphereTool.metadata.tools"
+                            :to="tool.url"
+                        >
+                            {{ tool.name }}
                         </NuxtLink>
                     </div>
                     <p class="mt-6 mb-16 text-slate-600 text-md line-clamp-4">

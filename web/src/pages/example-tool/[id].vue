@@ -32,6 +32,9 @@
             <div class="my-2 flex gap-2">
                 <NuxtLink v-for="topic in exampleTool.topics" :to="topic.url" class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm">{{ topic.name }}</NuxtLink>
             </div>
+            <div class="my-2 flex gap-2">
+                <NuxtLink v-for="tool in exampleTool.tools" :to="tool.url" class="px-4 py-1 bg-gray-200 text-gray-500 hover:underline rounded-sm">{{ tool.name }}</NuxtLink>
+            </div>
         </div>
     </div>
     <div>
@@ -43,7 +46,7 @@
             <TagCard
                 v-for="tool in exampleTool.tools"
                 :name="tool.name"
-                :url="tool.homepage"
+                :url="tool.url"
                 :description="tool.description"
             />
         </div>
