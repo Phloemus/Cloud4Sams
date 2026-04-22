@@ -8,5 +8,5 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "nuxt-shiki"],
   shiki: {
     bundleThemes: ["ayu-dark"]
-  }
+  },
 })

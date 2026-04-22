@@ -12,7 +12,7 @@
         <Sidebar class="hidden" />
         <div class="w-full">
             <Navbar />
-            <div class="px-10 my-10">
+            <div class="px-10 py-10">
                 <main class="mx-auto p-8 bg-white max-w-screen-xl border border-slate-200 rounded-md">
                     <slot />
                 </main>

@@ -58,6 +58,15 @@
                             {{ topic.name }}
                         </NuxtLink>
                     </div>
+                    <div class="mt-2 flex gap-2 flex flex-wrap overflow-x-hidden">
+                        <NuxtLink
+                            class="px-2 py-1 bg-gray-200 text-gray-500 text-sm rounded-sm hover:underline hover:cursor-pointer"
+                            v-for="tool in tool.tools"
+                            :to="tool.url"
+                        >
+                            {{ tool.name }}
+                        </NuxtLink>
+                    </div>
                     <p class="mt-6 mb-16 text-slate-600 text-md line-clamp-4">
                         {{ tool.description }}
                     </p>

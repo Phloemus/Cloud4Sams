@@ -93,11 +93,18 @@
         ],
         "datasets": [
             {
-                "name": "Magneto Database"
-            },
-            {
                 "name": "Magneto test data",
-                "url": "https://zenodo.org/records/17143360"
+                "topics": [
+                    {
+                        "name": "Metagenomics",
+                        "url": "http://edamontology.org/topic_3174",
+                        "description": "The study of genetic material recovered from environmental samples, and associated environmental data."
+                    }
+                ],
+                "availability": "public",
+                "source": "zenodo",
+                "url": "https://zenodo.org/records/17143360",
+                "description": "Human Microbiome Project dataset to run the Magneto workflow. A samples.yaml file is also provided. This file should be placed in the config directory of your Magneto working directory. It is used to specify the name of the sample, the run, and its location with its absolute path (that you need to change with the location of your data). This file is currently commented out, so it is up to you to uncomment it according to the files you want to test, one or more of course."
             }
         ]
     }
