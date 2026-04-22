@@ -93,6 +93,7 @@
         ],
         "datasets": [
             {
+                "id": "1",
                 "name": "Magneto test data",
                 "topics": [
                     {

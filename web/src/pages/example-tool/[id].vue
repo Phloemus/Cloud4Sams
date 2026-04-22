@@ -7,7 +7,13 @@
         layout: 'example-tool'
     })
 
-    //! Here
+    /****** Constants ***************************************************************************************************** /
+     * 
+     * All the constants used in the page that will not be changed by any user action on the page. 
+     * Values attributed at page first render
+     *  
+    */
+
     const filteredExampleTools = exampleTools.flat().filter(
         item => item.name && item.description.trim() !== ""
     )
@@ -15,6 +21,36 @@
     const route = useRoute()
     const toolId = route.params.id - 1
     const exampleTool = filteredExampleTools[toolId]
+    
+
+    /****** Global state ************************************************************************************************** /
+     * 
+     * States that are defined globally and accessible from any component
+     *  
+    */
+
+    const quickLauncherDatasetsList = useState("quickLauncherDatasetsList", () => [])
+  
+
+    /****** State modifier functions ************************************************************************************** /
+     * 
+     * Allows to modify the states used the page or the states of the included components
+     * 
+     * changeQuickLauncherDatasets (function): @param dataset: Allows to add or remove a tool id in the quickLauncherDatasetsList
+     * 
+     *  
+    */
+
+    function changeQuickLauncherDatasetsList(dataset) {
+        const index = quickLauncherDatasetsList.value.findIndex(item => item.id === dataset.id);
+        if (index !== -1) {
+            quickLauncherDatasetsList.value.splice(index, 1);
+        } else {
+            quickLauncherDatasetsList.value.push(dataset)
+        }
+        console.log(quickLauncherDatasetsList.value)
+    }
+
 
 </script>
 
@@ -89,7 +125,12 @@
                     >
                          More info
                     </NuxtLink>
-                    <button class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md">Use this dataset</button>
+                    <button 
+                        @click="changeQuickLauncherDatasetsList(dataset)"
+                        class="px-4 py-2 text-white bg-slate-900 hover:bg-slate-800 text-sm rounded-md"
+                    >
+                        {{ quickLauncherDatasetsList.some(item => item.id === dataset.id) ? 'Remove dataset' : "Use dataset"}}
+                    </button> 
                 </div>
             </div>
         </div>
