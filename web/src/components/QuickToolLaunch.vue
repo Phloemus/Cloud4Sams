@@ -1,5 +1,6 @@
 <script setup>
 
+    const isToolLaunchPanelOpened = useState("isToolLaunchPanelOpened")
     const quickLauncherDatasetsList = useState("quickLauncherDatasetsList", () => [])
 
     /****** State modifier functions ************************************************************************************** /
@@ -10,6 +11,12 @@
      * 
      *  
     */
+
+    function displayToolLaunchPanel(event) {
+        if(event.currentTarget === event.target) {
+            isToolLaunchPanelOpened.value = true
+        }
+    }
 
     function changeQuickLauncherDatasetsList(dataset) {
         const index = quickLauncherDatasetsList.value.findIndex(item => item.id === dataset.id);
@@ -27,7 +34,7 @@
     <div class="w-full">
         <h2 class="text-xl text-slate-900 font-bold">Quick launch</h2>
         <p class="my-4 text-slate-600 text-md line-clamp-4">
-            You can launch an instance of this tool with the selected dataset you choosed
+            You can launch an instance of this tool with the selected datasets you choosed
         </p>
         <div 
             v-for="dataset in quickLauncherDatasetsList"
@@ -38,6 +45,11 @@
                 <input @click="changeQuickLauncherDatasetsList(dataset)" type="checkbox" class="accent-blue-500" checked />
             </div>
         </div>
-        <button class="px-4 py-2 w-full bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md">Launch the tool</button>
+        <button 
+            @click="displayToolLaunchPanel"
+            class="px-4 py-2 w-full bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md"
+        >
+            Launch the tool
+        </button>
     </div>
 </template>

@@ -119,18 +119,18 @@
                     {{ dataset.description }}
                 </p>
                 <div class="absolute bottom-4 flex gap-2">
-                    <NuxtLink
-                        :to="dataset.url"
-                        class="px-4 py-2 bg-white hover:bg-slate-50 text-slate-900 text-sm border-2 border-slate-900 rounded-md"
-                    >
-                         More info
-                    </NuxtLink>
                     <button 
                         @click="changeQuickLauncherDatasetsList(dataset)"
                         class="px-4 py-2 text-white bg-slate-900 hover:bg-slate-800 text-sm rounded-md"
                     >
                         {{ quickLauncherDatasetsList.some(item => item.id === dataset.id) ? 'Remove dataset' : "Use dataset"}}
                     </button> 
+                    <NuxtLink
+                        :to="dataset.url"
+                        class="px-4 py-2 bg-white hover:bg-slate-50 text-slate-900 text-sm border-2 border-slate-900 rounded-md"
+                    >
+                         More info
+                    </NuxtLink>
                 </div>
             </div>
         </div>
