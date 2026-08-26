@@ -1,6 +1,7 @@
 <script setup>
     import { useRoute } from 'vue-router'
 
+    import SearchInput from '~/components/SearchInput.vue'
     import exampleTools from "../../static/example-tools.json"
 
     definePageMeta({
@@ -92,7 +93,7 @@
         </div>
     </div>
     <div class="mt-16">
-        <h2 class="text-xl text-slate-900 font-bold">Relevant data for {{ exampleTool.name }}</h2>
+        <h2 class="text-xl text-slate-900 font-bold">Test data for {{ exampleTool.name }}</h2>
         <div class="my-6 flex gap-4">
             <div
                 v-for="dataset in exampleTool.datasets"
@@ -135,8 +136,16 @@
             </div>
         </div>
     </div>
-    <div class="mt-10">
-        <h2 class="text-xl text-slate-900 font-bold">Relevant data for {{ exampleTool.name }}</h2>
+    <div class="mt-20">
+        <div class="flex justify-between">
+            <h2 class="text-xl text-slate-900 font-bold">Relevant data for {{ exampleTool.name }}</h2>
+            <SearchInput 
+                :searchTerm="searchTerm"
+                @input="filterOntologyList"
+                placeholder="Search for a dataset.."
+                :results="ontologyClasses"
+            />
+        </div>
         <div class="mt-6 grid grid-cols-3 gap-4">
             <div
                 v-for="(tool, index) in exampleTools"
