@@ -3,3 +3,4 @@ node_modules
 
 .venv
 .ipynb_checkpoints
+should package lock json be 
