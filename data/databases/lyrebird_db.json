@@ -1,0 +1,21 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Lyrebird database",
+  "@id": "lyrebird_db",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "Lyrebird (submodule of singleM) profiles dsDNA phages belonging to the Caudoviricetes. Lyrebird uses an expanded set of >500 marker genes",
+  "doi": null,
+  "homepage": "https://wwood.github.io/singlem/Lyrebird",
+  "license": null,
+  "taxonomic_scope": {
+    "@id": "obo:NCBITaxon_10239",
+    "label": "Viruses"
+  },
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

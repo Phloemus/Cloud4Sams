@@ -1,0 +1,26 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "NGDC genomic warehouse direct submissions",
+  "@id": "ngdc",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "latest_release": "232",
+  "to_update": true,
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": null,
+  "origin": null,
+  "doi": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC/",
+  "description": "Direct submission entries to the CNCB-NGDC genomic warehouse (GWH)."
+}

@@ -1,0 +1,41 @@
+{
+"name": "Felis catus Gut Metagenome",
+"@id": "fc_1_3_gut",
+"taxonomic_scope": [
+{ "@id": "http://purl.obolibrary.org/obo/NCBITaxon_2", "label": "Bacteria" },
+{ "@id": "http://purl.obolibrary.org/obo/NCBITaxon_2157", "label": "Archaea" },
+{ "@id": "http://purl.obolibrary.org/obo/NCBITaxon_2759", "label": "Eukaryota" }
+],
+"category": {
+"@id": "http://purl.obolibrary.org/obo/NCBITaxon_9685",
+"label": "cat"
+},
+"host": [
+{
+"@id": "http://purl.obolibrary.org/obo/NCBITaxon_9685",
+"label": "Felis catus"
+}
+],
+"context": {
+"@id": "http://purl.obolibrary.org/obo/ENVO_00002003",
+"label": "fecal material"
+},
+"doi": "10.5281/zenodo.10656834",
+"compatible_tools": [
+{
+"@id": "meteor",
+"DB": [
+{
+"name": "default",
+"access_method": "cli",
+"download": "meteor download -i -c fc_1_3_gut -o <refdir>",
+"size_gb": 2.0
+},
+{
+"name": "fast",
+"access_method": "cli",
+"download": "meteor download -i -c fc_1_3_gut --fast -o <refdir>",
+"size_gb": 0.2
+}
+]
+}

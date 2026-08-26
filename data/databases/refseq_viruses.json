@@ -1,0 +1,18 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "RefSeq Viruses",
+  "@id": "refseq_viruses",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "RefSeq viral sequences (placeholder; underscore variant).",
+  "doi": null,
+  "homepage": null,
+  "license": null,
+  "taxonomic_scope": null,
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

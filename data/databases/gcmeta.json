@@ -1,0 +1,26 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "gcMeta 2025: a global repository of metagenome-assembled genomes enabling cross-ecosystem microbial discovery and function research",
+  "@id": "gcmeta",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "latest_release": "232",
+  "to_update": true,
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": null,
+  "origin": null,
+  "doi": "https://doi.org/10.1093/nar/gkaf1115",
+  "description": "A global repository of metagenome-assembled genomes facilitating cross-ecosystem microbial discovery and functional research."
+}

@@ -1,0 +1,36 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "Centrifuge",
+  "@id": "centrifuge",
+  "type": "Taxonomic Profiler",
+  "description": "Lightweight FM-index based classifier (mourisl Centrifuger entry)",
+  "latest_release": "v1.1.0",
+  "curated_release": "v1.1.0",
+  "citations_count": 1300,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "Burrows-Wheeler transform (BWT) and the Ferragina-Manzini (FM) index",
+  "to_update": true,
+  "supports_longreads": false,
+  "supports_shortreads": true,
+  "additional_functionality": "Lightweight FM-index based classifier (mourisl Centrifuger entry)",
+  "repo": "https://github.com/mourisl/centrifuger",
+  "doi": "https://doi.org/10.1186/s13059-024-03244-4",
+  "uses_databases": [
+    {
+      "name": "GTDB",
+      "@id": "gtdb",
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "Refseq",
+      "@id": "refseq",
+      "taxonomy_system": "ncbi"
+    }
+  ],
+  "github_last_fetched": "2026-03-19T13:48:54Z"
+}

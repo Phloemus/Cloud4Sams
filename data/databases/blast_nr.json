@@ -1,0 +1,11 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "BLAST NR",
+  "@id": "blast_nr",
+  "type": "Database",
+  "latest_release": null,
+  "to_update": false,
+  "homepage": null,
+  "description": "Non-redundant protein database used for BLAST searches.",
+  "isPartOf": null
+}

@@ -1,0 +1,48 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "A genome and gene catalog of glacier microbiomes",
+  "@id": "tg2g",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "latest_release": "232",
+  "to_update": true,
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": [
+    {
+      "@id": "obo:ENVO_01000406",
+      "label": "snow"
+    },
+    {
+      "@id": "obo:ENVO_01001125",
+      "label": "ice"
+    },
+    {
+      "@id": "obo:ENVO_00002007",
+      "label": "cryoconite"
+    }
+  ],
+  "origin": [
+    {
+      "@id": "obo:ENVO_01001529",
+      "label": "glacier snout"
+    },
+    {
+      "@id": "obo:GAZ_00011732",
+      "label": "Tibetan Plateau"
+    }
+  ],
+  "doi": "https://doi.org/10.1038/s41587-022-01367-2",
+  "description": "A genome and gene catalog of glacier microbiomes."
+}

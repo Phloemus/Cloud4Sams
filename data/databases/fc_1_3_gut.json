@@ -1,0 +1,53 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Felis catus Gut Catalogue",
+  "@id": "fc_1_3_gut",
+  "release": null,
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    },
+    {
+      "@id": "obo:NCBITaxon_2759",
+      "label": "Eukaryota"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_00002003",
+    "label": "fecal material"
+  },
+  "origin": {
+    "@id": "obo:NCBITaxon_9685",
+    "label": "cat"
+  },
+  "doi": "https://doi.org/10.5281/zenodo.10656834",
+  "homepage": "https://doi.org/10.5281/zenodo.10656834",
+  "compatible_tools":
+  [
+    {
+      "@id": "meteor",
+      "DB": [
+        {
+          "name": "default",
+          "access_method": "cli",
+          "download": "meteor download -i -c fc_1_3_gut -o <refdir>",
+          "size": 2.0,
+          "ifb_server": null
+        },
+        {
+          "name": "fast",
+          "access_method": "cli",
+          "download": "meteor download -i -c fc_1_3_gut --fast -o <refdir>",
+          "size": 0.2,
+          "ifb_server": null
+        }
+      ]
+    }
+  ]
+
+}

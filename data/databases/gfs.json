@@ -1,0 +1,39 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "glacier-fed streams",
+  "@id": "gfs",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    },
+    {
+      "@id": "obo:NCBITaxon_2759",
+      "label": "Fungi"
+    },
+    {
+      "@id": "obo:NCBITaxon_10239",
+      "label": "Viruses"
+    }
+
+  ],
+  "release": "unknown",
+  "isPartOf": [
+    { "@id": "globdb" }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_00002007",
+    "label": "sediment"
+  },
+  "origin":
+  {
+    "@id": "obo:ENVO_01001529",
+    "label": "glacier snout"
+  },
+  "doi": "https://doi.org/10.1038/s41564-024-01874-9",
+  "homepage": "https://doi.org/10.1038/s41564-024-01874-9"
+}

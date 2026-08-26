@@ -1,0 +1,51 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "singleM",
+  "@id": "singlem",
+  "type": "Taxonomic Profiler",
+  "latest_release": "0.20.3",
+  "curated_release": "",
+  "citations_count": 60,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "ram": 2,
+  "description": "Universal Markers, mais aligne les AA traduits, avec DIAMOND BlastX ==> permets de classifier même quand l'ADN a bcp divergé, car la protéine est + conservée",
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "Universal Markers, mais aligne les AA traduits, avec DIAMOND BlastX ==> permets de classifier même quand l'ADN a bcp divergé, car la protéine est + conservée",
+  "supports_longreads": true,
+  "supports_shortreads": true,
+  "to_update": true,
+  "repo": "https://github.com/wwood/singlem",
+  "doc": "http://wwood.github.io/singlem/",
+  "doi": "https://zenodo.org/records/15232972",
+  "bio_tools": "https://bio.tools/singlem",
+  "sub_module": {
+    "name": "Lyrebird",
+    "@id": "lyrebird"
+  },
+  "uses_databases": [
+    {
+      "name": "GTDB",
+      "@id": "gtdb",
+      "release": [
+        "232",
+        "226",
+        "220",
+        "214"
+      ],
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "GlobDB",
+      "@id": "globdb",
+      "release": [
+        "232",
+        "226"
+      ],
+      "taxonomy_system": "gtdb"
+    }
+  ]
+}

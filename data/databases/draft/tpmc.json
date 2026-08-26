@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "schema": "[http://schema.org/](http://schema.org/)",
+    "bio": "[http://bioschemas.org/](http://bioschemas.org/)",
+    "obo": "[http://purl.obolibrary.org/obo/](http://purl.obolibrary.org/obo/)",
+    "name": "schema:name",
+    "taxonomic_scope": "bio:taxonomicRange",
+    "release": "schema:version",
+    "isPartOf": {
+      "@id": "schema:isPartOf",
+      "@type": "@id"
+    },
+    "sample_type": "bio:associatedMedia",
+    "origin": {
+      "@id": "obo:PATO_0002261",
+      "label": "located in"
+    },
+    "doi": "schema:identifier",
+    "label": "schema:name"
+  },
+  "@type": "bio:Dataset",
+  "@id": "[https://votre-labo.org/data/tpmc](https://votre-labo.org/data/tpmc)",
+  "name": "TPMC",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "release": "unknown",
+  "isPartOf": {
+    "@id": "globdb",
+    "label": "GlobDB"
+  },
+  "sample_type": {
+    "@id": "obo:ENVO_00002030",
+    "label": "aquatic biome"
+  },
+  "origin": {
+    "@id": "obo:GAZ_00011732",
+    "label": "Tibetan Plateau"
+  },
+  "doi": "[https://doi.org/10.1038/s41467-024-45895-8](https://doi.org/10.1038/s41467-024-45895-8)"
+}

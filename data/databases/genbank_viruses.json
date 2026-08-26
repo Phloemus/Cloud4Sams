@@ -1,0 +1,21 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "GenBank Viruses",
+  "@id": "genbank_viruses",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "NCBI GenBank viral sequences.",
+  "doi": null,
+  "homepage": null,
+  "license": null,
+  "taxonomic_scope": {
+    "@id": "obo:NCBITaxon_10239",
+    "label": "Viruses"
+  },
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

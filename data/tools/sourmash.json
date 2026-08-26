@@ -1,0 +1,43 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "sourmash",
+  "@id": "sourmash",
+  "type": "Taxonomic Profiler",
+  "description": "MinHash sketching for fast similarity searches and containment estimation",
+  "latest_release": "v4.9.4",
+  "curated_release": "",
+  "citations_count": 52,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "finding the minimum set of reference genomes that accounts for all known k-mers in a metagenome",
+  "repo": "https://github.com/sourmash-bio/sourmash",
+  "to_update": true,
+  "supports_longreads": true,
+  "supports_shortreads": true,
+  "additional_functionality": "MinHash sketching for fast similarity searches and containment estimation",
+  "uses_databases": [
+    {
+      "name": "GTDB",
+      "@id": "gtdb",
+      "release": "226",
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "GenBank Viruses",
+      "@id": "genbank_viruses",
+      "release": "Jan 2025",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "RefSeq Eukaryotes",
+      "@id": "refseq_euk",
+      "release": "Jan 2025",
+      "taxonomy_system": "ncbi"
+    }
+  ],
+  "github_last_fetched": "2026-03-19T13:48:56Z"
+}

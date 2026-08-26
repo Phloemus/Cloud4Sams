@@ -1,0 +1,24 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "SPIRE",
+  "@id": "spire",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "release": "unknown",
+  "environment": "specific",
+  "isPartOf": [
+    { "@id": "globdb" }
+  ],
+  "sample": null,
+  "origin": null,
+  "doi": "https://doi.org/10.1093/nar/gkad943",
+  "homepage": "https://doi.org/10.1093/nar/gkad943"
+}

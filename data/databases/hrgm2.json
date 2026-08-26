@@ -1,0 +1,31 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Human Reference Gut Microbiome",
+  "@id": "hrgm2",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "release": "unknown",
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_00002003",
+    "label": "fecal material"
+  },
+  "origin": {
+    "@id": "http://purl.bioontology.org/ontology/NCBITAXON/9606",
+    "label": "Human"
+  },
+  "doi": "https://doi.org/10.1038/s41564-025-02206-1",
+  "homepage": "https://www.decodebiome.org/HRGM2/"
+}

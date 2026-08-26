@@ -1,0 +1,51 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Mouse Gut catalogue",
+  "@id": "mm_5_0_gut",
+  "release": null,
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    },
+    {
+      "@id": "obo:NCBITaxon_2759",
+      "label": "Eukaryota"
+    }
+  ],
+  "sample_type": {
+    "@id": "obo:ENVO_00002003",
+    "label": "fecal material"
+  },
+  "origin": {
+    "@id": "obo:NCBITaxon_10090",
+    "label": "Mouse"
+  },
+  "doi": "https://doi.org/10.5281/zenodo.10658547",
+  "homepage": "https://doi.org/10.5281/zenodo.10658547",
+  "compatible_tools": [
+    {
+      "@id": "meteor",
+      "DB": [
+        {
+          "name": "default",
+          "access_method": "cli",
+          "download": "meteor download -i -c mm_5_0_gut -o <refdir>",
+          "size": 10.3,
+          "ifb_server": null
+        },
+        {
+          "name": "fast",
+          "access_method": "cli",
+          "download": "meteor download -i -c mm_5_0_gut --fast -o <refdir>",
+          "size": 0.6,
+          "ifb_server": null
+        }
+      ]
+    }
+  ]
+}

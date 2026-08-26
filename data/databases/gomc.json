@@ -1,0 +1,31 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Global Ocean Microbiome Catalog",
+  "@id": "gomc",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "release": "unknown",
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_00002006",
+    "label": "liquid water"
+  },
+  "origin": {
+    "@id": "obo:MESH_D009792",
+    "label": "Oceans and Seas"
+  },
+  "doi": "https://doi.org/10.1038/s41586-024-07891-2",
+  "homepage": "https://doi.org/10.1038/s41586-024-07891-2"
+}

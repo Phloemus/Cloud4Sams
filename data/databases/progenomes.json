@@ -1,0 +1,27 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "ProGenomes",
+  "@id": "progenomes",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "ProGenomes reference database (placeholder).",
+  "doi": null,
+  "homepage": null,
+  "license": null,
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

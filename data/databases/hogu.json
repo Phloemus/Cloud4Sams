@@ -1,0 +1,38 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Expanded catalogue of metagenome-assembled genomes reveals resistome characteristics and athletic performance-associated microbes in horse",
+  "@id": "hogu",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "latest_release": "232",
+  "to_update": true,
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": [
+    {
+      "@id": "obo:GENEPIO_0100899",
+      "label": "caecal content"
+    },
+    {
+      "@id": "obo:ENVO_00002003",
+      "label": "fecal material"
+    }
+  ],
+  "origin": {
+    "@id": "obo:NCBITaxon_9796",
+    "label": "Horse"
+  },
+  "doi": "https://doi.org/10.1186/s40168-022-01448-z",
+  "description": "Horse-associated metagenome-assembled genomes with resistome and athletic-performance microbiome insights."
+}

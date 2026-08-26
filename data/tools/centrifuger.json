@@ -1,0 +1,53 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "Centrifuger",
+  "@id": "centrifuger",
+  "type": "Taxonomic Profiler",
+  "description": "lightweight classification using FM-index; suitable for large reference collections",
+  "latest_release": "v1.1.0",
+  "curated_release": "",
+  "citations_count": 15,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": 43,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "run-block compressed BWT (RBBWT)",
+  "to_update": true,
+  "supports_longreads": false,
+  "supports_shortreads": true,
+  "additional_functionality": "lightweight classification using FM-index; suitable for large reference collections",
+  "repo": "https://github.com/mourisl/centrifuger",
+  "doi": "https://doi.org/10.1186/s13059-024-03244-4",
+  "uses_databases": [
+    {
+      "@id": "gtdb",
+      "release": [
+        "226",
+        "232"
+      ],
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "@id": "centrifuger_gtdb_refseq_contaminant",
+      "taxonomy_system": [
+        "gtdb",
+        "ncbi"
+      ],
+      "release": [
+        "226",
+        "232"
+      ]
+    },
+    {
+      "@id": "centrifuger_refseq_bact_arch_human_virus_sarscov",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "@id": "ncbi_core_nt",
+      "taxonomy_system": "ncbi"
+    }
+  ],
+  "github_last_fetched": "2026-03-19T13:48:54Z"
+}

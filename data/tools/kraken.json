@@ -1,0 +1,47 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "Kraken",
+  "@id": "kraken2",
+  "type": "Taxonomic profiler",
+  "description": "k-mer based exact alignment classifier; very fast classification",
+  "latest_release": "v2.17.1",
+  "curated_release": "",
+  "citations_count": 6994,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "k-mer (LCA)",
+  "to_update": true,
+  "supports_longreads": false,
+  "supports_shortreads": true,
+  "repo": "https://github.com/DerrickWood/kraken2",
+  "doi": "https://doi.org/10.1186/s13059-019-1891-0",
+  "additional_functionality": "k-mer based exact alignment classifier; very fast classification",
+  "sub_module": {
+    "name": "Bracken",
+    "@id": "bracken"
+  },
+  "uses_databases": [
+    {
+      "name": "GTDB",
+      "@id": "gtdb",
+      "release": "226",
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "refseq viral",
+      "@id": "refseq_viral",
+      "release": "02/2026",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "kraken_standard",
+      "@id": "kraken_standard",
+      "taxonomy_system": "ncbi"
+    }
+  ],
+  "github_last_fetched": "2026-03-19T13:48:55Z"
+}

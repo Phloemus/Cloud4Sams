@@ -1,0 +1,76 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "Ganon",
+  "@id": "ganon",
+  "type": "Taxonomic Profiler",
+  "description": "compact k-mer indices with incremental updates; fast database building and classification (HIBF index)",
+  "latest_release": "v2.3.0",
+  "curated_release": "",
+  "citations_count": 8,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "HIBF index",
+  "to_update": true,
+  "supports_longreads": false,
+  "supports_shortreads": true,
+  "repo": "https://github.com/pirovc/ganon",
+  "doi": "https://doi.org/10.1093/nargab/lqaf094",
+  "additional_functionality": "compact k-mer indices with incremental updates; fast database building and classification (HIBF index)",
+  "uses_databases": [
+    {
+      "name": "GTDB",
+      "@id": "gtdb",
+      "release": [
+        "226",
+        "232"
+      ],
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "RefSeq",
+      "@id": "refseq",
+      "taxonomy_system": [
+        "ncbi",
+        "gtdb"
+      ]
+    },
+    {
+      "name": "GenBank",
+      "@id": "genbank",
+      "taxonomy_system": [
+        "ncbi",
+        "gtdb"
+      ]
+    },
+    {
+      "name": "MGnify genome catalogues",
+      "@id": "mgnify",
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "Centrifuger RefSeq Bacteria, Archaea, Human, Virus, SARS-CoV-2",
+      "@id": "centrifuger_refseq_bact_arch_human_virus_sarscov",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "NCBI Core NT",
+      "@id": "ncbi_core_nt",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "Centrifuger RefSeq Bacteria, Archaea, Human, Virus, SARS-CoV-2",
+      "@id": "centrifuger_refseq_bact_arch_human_virus_sarscov",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "NCBI Core NT",
+      "@id": "ncbi_core_nt",
+      "taxonomy_system": "ncbi"
+    }
+  ],
+  "github_last_fetched": "2026-03-19T13:48:54Z"
+}

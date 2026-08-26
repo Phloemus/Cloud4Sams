@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "A deep metagenomic atlas of Qinghai-Xizang Plateau lakes reveals their microbial diversity and salinity adaptation mechanisms",
+  "@id": "qxlsg",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "latest_release": "232",
+  "to_update": true,
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_00002007",
+    "label": "sediment"
+  },
+  "origin": {
+    "@id": "obo:ENVO_00000020",
+    "label": "Lake"
+  },
+  "doi": "https://doi.org/10.1016/j.celrep.2025.116483",
+  "description": "Metagenomic atlas of Qinghai-Xizang Plateau lakes capturing microbial diversity and salinity adaptation."
+}

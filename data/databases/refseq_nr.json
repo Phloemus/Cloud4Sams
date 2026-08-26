@@ -1,0 +1,18 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "RefSeq NR",
+  "@id": "refseq_nr",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "RefSeq non-redundant (NR) collection (placeholder).",
+  "doi": null,
+  "homepage": null,
+  "license": null,
+  "taxonomic_scope": null,
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

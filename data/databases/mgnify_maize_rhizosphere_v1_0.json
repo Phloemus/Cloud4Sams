@@ -1,0 +1,38 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "MGnify maize rhizosphere v1.0",
+  "@id": "mgnify_maize_rhizosphere_v1_0",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "release": "v1.0",
+  "isPartOf": [
+    {
+      "@id": "mgnify"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_00001998",
+    "label": "soil"
+  },
+  "origin": [
+    {
+      "@id": "obo:NCBITaxon_381124",
+      "label": "maize"
+    },
+    {
+      "@id": "obo:MESH_D058441",
+      "label": "Rhizosphere"
+    }
+  ],
+  "compatible_tools": [],
+  "doi": "https://doi.org/10.1093/nar/gkac1080",
+  "homepage": "https://www.ebi.ac.uk/metagenomics/genome-catalogues/maize-rhizosphere-v1-0"
+}

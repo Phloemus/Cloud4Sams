@@ -1,0 +1,52 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Human Oral catalogue",
+  "@id": "hs_8_4_oral",
+  "release": null,
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    },
+    {
+      "@id": "obo:NCBITaxon_2759",
+      "label": "Eukaryota"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_08000002",
+    "label": "mouth environment"
+  },
+  "origin": {
+    "@id": "obo:NCBITaxon_9606",
+    "label": "Human"
+  },
+  "doi": "https://doi.org/10.5281/zenodo.10685509",
+  "homepage": "https://doi.org/10.5281/zenodo.10685509",
+  "compatible_tools":
+  [
+    {
+      "@id": "meteor",
+      "DB": [
+        {
+          "name": "default",
+          "access_method": "cli",
+          "download": "meteor download -i -c hs_8_4_oral -o <refdir>",
+          "size": 13.7,
+          "ifb_server": null
+        },
+        {
+          "name": "fast",
+          "access_method": "cli",
+          "download": "meteor download -i -c hs_8_4_oral --fast -o <refdir>",
+          "size": 0.5,
+          "ifb_server": null
+        }
+      ]
+    }
+  ]
+}

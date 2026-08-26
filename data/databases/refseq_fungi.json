@@ -1,0 +1,21 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "RefSeq Fungi",
+  "@id": "refseq_fungi",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "RefSeq fungal sequences (placeholder; underscore variant for tool references).",
+  "doi": null,
+  "homepage": null,
+  "license": null,
+  "taxonomic_scope": {
+    "@id": "obo:NCBITaxon_4751",
+    "label": "Fungi"
+  },
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

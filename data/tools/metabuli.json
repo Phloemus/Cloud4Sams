@@ -1,0 +1,27 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "Metabuli",
+  "@id": "metabuli",
+  "type": "Taxonomic Profiler",
+  "description": "novel k-mer structure (metamer) allowing combined DNA+AA analysis for sensitive detection and strain discrimination",
+  "latest_release": "v1.1.1",
+  "curated_release": "",
+  "citations_count": 35,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "novel k-mer structure, called metamer, to analyze both amino acid (AA) and DNA sequences. It leverages AA conservation for sensitive homology detection and DNA mutations for specific differentiation between closely related taxa",
+  "to_update": true,
+  "supports_longreads": true,
+  "supports_shortreads": true,
+  "repo": "https://github.com/steineggerlab/Metabuli",
+  "doc": "https://metabuli.steineggerlab.workers.dev/",
+  "doi": "https://doi.org/10.1038/s41592-024-02273-y",
+  "additional_functionality": "novel k-mer structure (metamer) allowing combined DNA+AA analysis for sensitive detection and strain discrimination",
+  "uses_databases": [
+    { "name": "GTDB", "@id": "gtdb", "release": "226", "taxonomy_system": "gtdb" }
+  ]
+}

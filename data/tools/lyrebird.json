@@ -1,0 +1,10 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "Lyrebird",
+  "@id": "lyrebird",
+  "type": "Sub-tool",
+  "latest_release": "unknown",
+  "curated_release": "",
+  "description": "Sub-module of singleM;specialized towards the profiling of viruses in metagenomic data. Currently, Lyrebird profiles dsDNA phages belonging to the Caudoviricetes. ",
+  "to_update": false
+}

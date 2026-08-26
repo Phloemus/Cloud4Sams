@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Crop root bacterial and viral genomes reveal unexplored species and microbiome patterns",
+  "@id": "crbc",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "latest_release": null,
+  "to_update": true,
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": {
+    "@id": "obo:MESH_D018517",
+    "label": "Plant Roots"
+  },
+  "origin": {
+    "@id": "obo:MESH_D018556",
+    "label": "Crops, Agricultural"
+  },
+  "doi": "https://doi.org/10.1016/j.cell.2025.02.013",
+  "description": "Metagenome-assembled bacterial and viral genomes from crop roots, highlighting unexplored species and microbiome patterns."
+}

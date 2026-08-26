@@ -1,0 +1,38 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "RefSeq Eukaryotes",
+  "@id": "refseq_eukaryotes",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "Centrifuger index : Refseq human, bacteria, archea, virus + SARS-CoV2-variants from GenBank",
+  "doi": null,
+  "homepage": null,
+  "license": null,
+  "taxonomic_scope": [ {
+      "@id": "obo:NCBITAXON_9606",
+      "label": "Homo sapiens"
+    },
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    },
+    {
+      "@id": "obo:NCBITaxon_10239",
+      "label": "Viruses"
+    },
+    {
+      "@id": "obo:NCBITaxon_2697049",
+      "label": "Severe acute respiratory syndrome coronavirus 2"
+    }
+  ],
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

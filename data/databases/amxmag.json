@@ -1,0 +1,25 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "@id": "amxmag",
+  "name": "anammox genomes and MAGs catalogue",
+  "description": "Catalogue of genomes and MAGs associated with anaerobic ammonium oxidation (anammox) metabolism.",
+  "release": null,
+  "doi": "https://doi.org/10.1016/j.watres.2024.122356",
+  "homepage": "https://doi.org/10.1016/j.watres.2024.122356",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    }
+  ],
+  "is_about": {
+    "@id": "obo:GO_0019331",
+    "label": "anaerobic ammonia oxidation"
+  },
+  "isPartOf": [
+    {
+      "@id": "globdb",
+      "label": "GlobDB"
+    }
+  ]
+}

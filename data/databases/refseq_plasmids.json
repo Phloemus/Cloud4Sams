@@ -1,0 +1,22 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "RefSeq Plasmids",
+  "@id": "refseq_plasmids",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "RefSeq plasmid sequences (placeholder).",
+  "doi": null,
+  "homepage": null,
+  "license": null,
+  "taxonomic_scope": null,
+  "sequence_scope": {
+    "@id": "obo:SO_0000352",
+    "label": "plasmid"
+  },
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

@@ -1,0 +1,93 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "meteor",
+  "@id": "meteor",
+  "type": "Taxonomic Profiler",
+  "description": "",
+  "latest_release": "2.0.22",
+  "curated_release": "",
+  "citations_count": 6,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": true,
+  "strain_level": true,
+  "approach_detail": "gene catalogues",
+  "to_update": true,
+  "supports_longreads": true,
+  "supports_shortreads": true,
+  "additional_functionality": "",
+  "taxonomy": "GTDB",
+
+  "repo": "https://github.com/metagenopolis/meteor",
+  "doc": "https://github.com/metagenopolis/meteor/wiki",
+  "doi": "https://doi.org/10.21203/rs.3.rs-6122276/v1",
+
+
+  "uses_databases": [
+
+    {
+      "name": "Canis lupus familiaris",
+      "@id": "clf_1_0_gut",
+      "release": null,
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "Felis catus",
+      "@id": "fc_1_3_gut",
+      "release": null,
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "Gallus gallus domesticus",
+      "@id": "gg_13_6_caecal",
+      "release": null,
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "Homo sapiens gut",
+      "@id": "hs_10_4_gut",
+      "release": null,
+      "taxonomy_system": "gtdb"
+
+    },
+    {
+      "name": "Homo sapiens oral",
+      "@id": "hs_8_4_oral",
+      "release": null,
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "Homo sapiens skin",
+      "@id": "hs_2_9_skin",
+      "release": null,
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "Mus musculus",
+      "@id": "mm_5_0_gut",
+      "release": null,
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "Oryctolagus cuniculus",
+      "@id": "oc_5_7_gut",
+      "release": null,
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "Rattus norvegicus",
+      "@id": "rn_5_9_gut",
+      "release": null,
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "Sus domesticus",
+      "@id": "ssc_9_3_gut",
+      "release": null,
+      "taxonomy_system": "gtdb"
+    }
+
+  ]
+}

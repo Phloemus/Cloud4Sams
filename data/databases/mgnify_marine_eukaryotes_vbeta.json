@@ -1,0 +1,25 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "MGnify marine eukaryotes vbeta",
+  "@id": "mgnify_marine_eukaryotes_vbeta",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2759",
+      "label": "Eukaryota"
+    }
+  ],
+  "release": "vbeta",
+  "isPartOf": [
+    {
+      "@id": "mgnify"
+    }
+  ],
+  "sample": null,
+  "origin": {
+    "@id": "obo:MESH_D009792",
+    "label": "Oceans and Seas"
+  },
+  "compatible_tools": [],
+  "doi": "https://doi.org/10.1093/nar/gkac1080",
+  "homepage": "https://www.ebi.ac.uk/metagenomics/genome-catalogues/marine-eukaryotes-vbeta"
+}

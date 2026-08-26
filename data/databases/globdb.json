@@ -1,0 +1,203 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "GlobDB",
+  "@id": "globdb",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "latest_release": "232",
+  "to_update": true,
+  "sample": null,
+  "origin": null,
+  "homepage": "https://globdb.org/",
+  "doi": "https://doi.org/10.1093/bioadv/vbaf280",
+  "hasPart": [
+    {
+      "@id": "gtdb",
+      "name": "GTDB",
+      "release": [
+        "226",
+        "232"
+      ],
+      "available_since": "226"
+    },
+    {
+      "@id": "motus-db",
+      "name": "mOTUs-db",
+      "release": "0.0.1",
+      "available_since": "226"
+    },
+    {
+      "@id": "spire",
+      "name": "SPIRE",
+      "available_since": "226"
+    },
+    {
+      "@id": "rbg",
+      "name": "RBG",
+      "available_since": "226"
+    },
+    {
+      "@id": "gem",
+      "name": "GEM",
+      "available_since": "226"
+    },
+    {
+      "@id": "mgnify",
+      "name": "MGnify",
+      "available_since": "226"
+    },
+    {
+      "@id": "gomc",
+      "name": "GOMC",
+      "available_since": "226"
+    },
+    {
+      "@id": "smag",
+      "name": "SMAG",
+      "available_since": "226"
+    },
+    {
+      "@id": "tpmc",
+      "name": "TPMC",
+      "available_since": "226"
+    },
+    {
+      "@id": "hrgm2",
+      "name": "HRGM2",
+      "available_since": "226"
+    },
+    {
+      "@id": "mrgm",
+      "name": "MRGM",
+      "available_since": "226"
+    },
+    {
+      "@id": "cfmd",
+      "name": "cFMD",
+      "available_since": "226"
+    },
+    {
+      "@id": "shgo",
+      "name": "SHGO",
+      "available_since": "226"
+    },
+    {
+      "@id": "amxmag",
+      "name": "AMXMAG",
+      "available_since": "226"
+    },
+    {
+      "@id": "gfs",
+      "name": "GFS",
+      "available_since": "226"
+    },
+    {
+      "@id": "crbc",
+      "name": "CRBC",
+      "available_since": "232"
+    },
+    {
+      "@id": "crlg",
+      "name": "CRLG",
+      "available_since": "232"
+    },
+    {
+      "@id": "daww",
+      "name": "DAWW",
+      "available_since": "232"
+    },
+    {
+      "@id": "gcmeta",
+      "name": "GCMETA",
+      "available_since": "232"
+    },
+    {
+      "@id": "hogu",
+      "name": "HOGU",
+      "available_since": "232"
+    },
+    {
+      "@id": "ngdc",
+      "name": "NGDC",
+      "available_since": "232"
+    },
+    {
+      "@id": "prec",
+      "name": "PREC",
+      "available_since": "232"
+    },
+    {
+      "@id": "qxlsg",
+      "name": "QXLSG",
+      "available_since": "232"
+    },
+    {
+      "@id": "scssf",
+      "name": "SCSSF",
+      "available_since": "232"
+    },
+    {
+      "@id": "tg2g",
+      "name": "TG2G",
+      "available_since": "232"
+    },
+    {
+      "@id": "tplm",
+      "name": "TPLM",
+      "available_since": "232"
+    },
+    {
+      "@id": "tpmcs",
+      "name": "TPMCS",
+      "available_since": "232"
+    }
+  ],
+  "compatible_tools": [
+    {
+      "@id": "sylph",
+      "DB": [
+        {
+          "name": "lighter",
+          "download": "https://fileshare.lisc.univie.ac.at/globdb/globdb_r226/taxonomic_profiling/globdb_r226_sylph_c1000.syldb",
+          "size": 6.5,
+          "ifb_server": {
+            "name": "core-cluster",
+            "path": "/data/sylph/databases/sylph/globdb/globdb_r226_sylph_c1000.syldb"
+          }
+        },
+        {
+          "name": "default",
+          "download": "https://fileshare.lisc.univie.ac.at/globdb/globdb_r226/taxonomic_profiling/globdb_r226_sylph_c200.syldb",
+          "size": 32,
+          "ifb_server": {
+            "name": "core-cluster",
+            "path": "/data/sylph/databases/sylph/globdb/globdb_r226_sylph_c200.syldb"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "singlem",
+      "release": 1.0,
+      "DB": [
+        {
+          "name": "default",
+          "download": "https://fileshare.lisc.univie.ac.at/globdb/globdb_r226/taxonomic_profiling/globdb_r226_SingleM_metapackage.tar.gz",
+          "size": 2.3,
+          "ifb_server": {
+            "name": "core-cluster",
+            "path": "/shared/bank/singlem/glob_db/GlobDB_r226.metapackage_v1.smpkg"
+          }
+        }
+      ]
+    }
+  ]
+}

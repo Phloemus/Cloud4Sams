@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "curated Food Metagenomic Data",
+  "short": "CFMD",
+  "@id": "cfmd",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    },
+    {
+      "@id": "obo:NCBITaxon_2759",
+      "label": "Eukaryota"
+    }
+  ],
+  "release": "unknown",
+  "sample": {
+    "@id": "obo:FOODON_00002403",
+    "label": "food material"
+  },
+  "origin": null,
+  "isPartOf": [
+    { "@id": "globdb" },
+    { "@id": "chocophlan" }
+  ],
+  "doi": "https://doi.org/10.1016/j.cell.2024.07.039",
+  "homepage": "https://doi.org/10.1016/j.cell.2024.07.039"
+}

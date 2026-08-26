@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "MGnify human skin v1.0",
+  "@id": "mgnify_human_skin_v1_0",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "release": "v1.0",
+  "isPartOf": [
+    {
+      "@id": "mgnify"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_2100003",
+    "label": "skin environment"
+  },
+  "origin": {
+    "@id": "obo:NCBITaxon_9606",
+    "label": "Human"
+  },
+  "compatible_tools": [],
+  "doi": "https://doi.org/10.1093/nar/gkac1080",
+  "homepage": "https://www.ebi.ac.uk/metagenomics/genome-catalogues/human-skin-v1-0"
+}

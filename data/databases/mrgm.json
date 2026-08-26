@@ -1,0 +1,27 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "MRGM",
+  "@id": "mrgm",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    }
+  ],
+  "release": "unknown",
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_00002003",
+    "label": "fecal material"
+  },
+  "origin": {
+    "@id": "obo:NCBITaxon_10090",
+    "label": "Mouse"
+  },
+  "doi": "https://doi.org/10.1080/19490976.2024.2393791",
+  "homepage": "https://doi.org/10.1080/19490976.2024.2393791"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "TIPP3 Reference Package",
+  "@id": "tipp3_refpkg",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "Reference package used by TIPP3 (placeholder).",
+  "doi": null,
+  "license": null,
+  "taxonomic_scope": null,
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

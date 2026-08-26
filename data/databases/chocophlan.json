@@ -1,0 +1,35 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "ChocoPhlAn",
+  "@id": "chocophlan",
+  "type": "Database",
+  "release": null,
+  "latest_release": "jan2026",
+  "to_update": false,
+  "description": "Marker database used by MetaPhlAn",
+  "doi": null,
+  "homepage": "https://cmprod1.cibio.unitn.it/biobakery4/metaphlan_databases/bowtie2_indexes/?C=M;O=D",
+  "license": null,
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    },
+    {
+      "@id": "obo:NCBITaxon_2759",
+      "label": "Eukaryota"
+    },
+    {
+      "@id": "obo:NCBITaxon_10239",
+      "label": "Viruses"
+    }
+  ],
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

@@ -1,0 +1,44 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Tara Oceans eukaryotes",
+  "@id": "tara_oceans_euk",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "Tara Oceans eukaryotic MAGs/SAGs",
+  "doi": null,
+  "license": null,
+  "taxonomic_scope": {
+    "@id": "obo:NCBITaxon_2759",
+    "label": "Eukaryota"
+  },
+  "sample": {
+    "@id": "obo:ENVO_00002006",
+    "label": "liquid water"
+  },
+  "origin": [
+    {
+      "@id": "obo:MESH_D0101409",
+      "label": "Pacific Ocean"
+    },
+    {
+      "@id": "obo:MESH_D001267",
+      "label": "Atlantic Ocean"
+    },
+    {
+      "@id": "obo:MESH_D019156",
+      "label": "Indian Ocean"
+    },
+    {
+      "@id": "obo:MESH_D001110",
+      "label": "Arctic Regions"
+    },
+    {
+      "@id": "obo:MESH_D008522",
+      "label": "Mediterranean Sea"
+    }
+  ],
+  "is_about": null,
+  "isPartOf": null
+}

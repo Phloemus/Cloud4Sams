@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "MGnify human gut v2.0.2",
+  "@id": "mgnify_human_gut_v2_0_2",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "release": "v2.0.2",
+  "isPartOf": [
+    {
+      "@id": "mgnify"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_00002003",
+    "label": "fecal material"
+  },
+  "origin": {
+    "@id": "obo:NCBITaxon_9606",
+    "label": "Human"
+  },
+  "compatible_tools": [],
+  "doi": "https://doi.org/10.1093/nar/gkac1080",
+  "homepage": "https://www.ebi.ac.uk/metagenomics/genome-catalogues/human-gut-v2-0-2"
+}

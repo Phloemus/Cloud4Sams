@@ -1,0 +1,30 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "TIPP3",
+  "@id": "tipp3",
+  "type": "Taxonomic Profiler",
+  "description": "Phylogenetic placement-based taxonomic profiling; marker-gene driven",
+  "latest_release": "v0.3",
+  "curated_release": "",
+  "citations_count": 4,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "38 Marker genes, Maximum Likelyhood",
+  "repo": "https://github.com/c5shen/TIPP3",
+  "to_update": true,
+  "supports_longreads": false,
+  "supports_shortreads": true,
+  "additional_functionality": "Phylogenetic placement-based taxonomic profiling; marker-gene driven",
+  "uses_databases": [
+    {
+      "name": "TIPP3 reference package",
+      "@id": "tipp3_refpkg",
+      "taxonomy_system": "ncbi"
+    }
+  ],
+  "github_last_fetched": "2026-03-19T13:48:57Z"
+}

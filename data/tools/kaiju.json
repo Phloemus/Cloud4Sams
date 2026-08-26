@@ -1,0 +1,75 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "Kaiju",
+  "@id": "kaiju",
+  "type": "Taxonomic Profiler",
+  "description": "Protein-level classification using translated search; good for divergent sequences",
+  "latest_release": "v1.10.1",
+  "curated_release": "",
+  "citations_count": 1989,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "reference database of protein sequences",
+  "repo": "https://github.com/bioinformatics-centre/kaiju",
+  "to_update": true,
+  "supports_longreads": false,
+  "supports_shortreads": true,
+  "additional_functionality": "Protein-level classification using translated search; good for divergent sequences",
+  "uses_databases": [
+    {
+      "name": "RefSeq",
+      "@id": "refseq",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "RefSeq nr",
+      "@id": "refseq_nr",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "RefSeq proteins",
+      "@id": "refseq_prot",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "progenomes",
+      "@id": "progenomes",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "RefSeq Viruses",
+      "@id": "refseq_viruses",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "RefSeq Plasmids",
+      "@id": "refseq_plasmids",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "RefSeq Fungi",
+      "@id": "refseq_fungi",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "Blast-nr",
+      "@id": "blast_nr",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "Blast-nr eukaryotes",
+      "@id": "blast_nr_eukaryotes",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "RVDB-prot",
+      "@id": "rvdb",
+      "taxonomy_system": "ncbi"
+    }
+  ],
+  "github_last_fetched": "2026-03-19T13:48:54Z"
+}

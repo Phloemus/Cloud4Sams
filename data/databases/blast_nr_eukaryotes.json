@@ -1,0 +1,21 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "BLAST NR (eukaryotes)",
+  "@id": "blast_nr_eukaryotes",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "homepage": null,
+  "description": "BLAST non-redundant protein database subset for eukaryotes (placeholder).",
+  "doi": null,
+  "license": null,
+  "taxonomic_scope": {
+    "@id": "obo:NCBITaxon_2759",
+    "label": "Eukaryota"
+  },
+  "sample": null,
+  "origin": null,
+  "is_about": null,
+  "isPartOf": null
+}

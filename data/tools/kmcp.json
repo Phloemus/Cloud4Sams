@@ -1,0 +1,28 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "KMCP",
+  "@id": "kmcp",
+  "type": "Taxonomic Profiler",
+  "description": "k-mer based pseudoalignment for fast and memory-efficient classification (modified COBS index + genome coverage filtering)",
+  "latest_release": "v0.9.4",
+  "curated_release": "",
+  "citations_count": 60,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "k-mers in a modified and optimized COBS index, + genome coverage information to reduce the false positive rate",
+  "to_update": true,
+  "supports_longreads": false,
+  "supports_shortreads": true,
+  "additional_functionality": "k-mer based pseudoalignment for fast and memory-efficient classification (modified COBS index + genome coverage filtering)",
+  "repo": "https://github.com/shenwei356/kmcp",
+  "doi": "https://doi.org/10.1093/bioinformatics/btac845",
+  "uses_databases": [
+    { "name": "GTDB", "@id": "gtdb", "release": "214", "taxonomy_system": "gtdb" },
+    { "name": "RefSeq", "@id": "refseq_fungi", "release": "217", "taxonomy_system": "ncbi" },
+    { "name": "GenBank Viruses", "@id": "genbank_viruses", "release": "255", "taxonomy_system": "ncbi" }
+  ]
+}

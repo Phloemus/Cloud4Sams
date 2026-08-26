@@ -1,0 +1,42 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "UHGV",
+  "@id": "uhgv",
+  "type": "Database",
+  "release": null,
+  "latest_release": null,
+  "to_update": false,
+  "description": "Unified Human Gut Viral genomes (UHGV) placeholder.",
+  "doi": null,
+  "homepage": "https://uhgv.jgi.doe.gov/",
+  "license": null,
+  "taxonomic_scope": {
+    "@id": "obo:NCBITaxon_10239",
+    "label": "Viruses"
+  },
+  "sample": {
+    "@id": "obo:ENVO_00002003",
+    "label": "fecal material"
+  },
+  "origin": {
+    "@id": "obo:NCBITaxon_9606",
+    "label": "Human"
+  },
+  "compatible_tools": {
+    "@id": "sylph",
+    "DB": [
+      {
+        "name": "c -100",
+        "download": "http://faust.compbio.cs.cmu.edu/sylph-stuff/uhgv_c100_dbv1.syldb",
+        "size": 0.4
+      },
+      {
+        "name": "-c 200",
+        "download": "http://faust.compbio.cs.cmu.edu/sylph-stuff/uhgv_c200_dbv1.syldb",
+        "size": 0.2
+      }
+    ]
+  },
+  "is_about": null,
+  "isPartOf": null
+}

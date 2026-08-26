@@ -1,0 +1,68 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "sylph",
+  "@id": "sylph",
+  "type": "Taxonomic Profiler",
+  "description": "",
+  "latest_release": "latest",
+  "curated_release": "",
+  "citations_count": 82,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "genomes k-mer sketching",
+  "to_update": true,
+  "supports_longreads": true,
+  "supports_shortreads": true,
+  "repo": "https://github.com/bluenote-1577/sylph",
+  "doc": "http://faust.compbio.cs.cmu.edu/sylph-stuff",
+  "doi": "https://doi.org/10.1038/s41587-024-02412-y",
+  "uses_databases": [
+    {
+      "name": "GTDB",
+      "@id": "gtdb",
+      "release": [
+        "232",
+        "226",
+        "220",
+        "214"
+      ],
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "GlobDB",
+      "@id": "globdb",
+      "release": [
+        "232",
+        "226"
+      ],
+      "taxonomy_system": "gtdb"
+    },
+    {
+      "name": "IMG/VR",
+      "@id": "imgvr",
+      "release": "4.1",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "UHGV",
+      "@id": "uhgv",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "RefSeq Fungi",
+      "@id": "refseq_fungi",
+      "release": "2025-10-11",
+      "taxonomy_system": "ncbi"
+    },
+    {
+      "name": "TARA Oceans eukaryotic MAGs/SAGs",
+      "@id": "tara_oceans_euk",
+      "taxonomy_system": "ncbi"
+    }
+  ],
+  "github_last_fetched": "2026-03-19T13:48:56Z"
+}

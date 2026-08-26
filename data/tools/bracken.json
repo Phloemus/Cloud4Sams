@@ -1,0 +1,27 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "Bracken",
+  "@id": "bracken",
+  "type": "Abundance Estimator",
+  "description": "Post-processing abundance estimator that refines Kraken/Kraken2 classifications",
+  "latest_release": "v3.1",
+  "curated_release": "v3.1",
+  "citations_count": 1977,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": null,
+  "quality_control": null,
+  "functional_profiling": false,
+  "strain_level": false,
+  "approach_detail": "Bayesian redistribution",
+  "to_update": true,
+  "supports_longreads": false,
+  "supports_shortreads": true,
+  "repo": "https://github.com/jenniferlu717/Bracken",
+  "bio_tools": "https://bio.tools/bracken",
+  "additional_functionality": "Post-processing abundance estimator that refines Kraken/Kraken2 classifications",
+  "uses_databases": [
+    { "name": "GTDB", "@id": "gtdb", "release": "226", "taxonomy_system": "gtdb" },
+    { "name": "RefSeq", "@id": "refseq", "taxonomy_system": "ncbi" }
+  ]
+}

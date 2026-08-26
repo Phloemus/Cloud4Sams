@@ -1,0 +1,37 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Sheep and Goat Gut catalogue",
+  "@id": "shgo",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "release": "unknown",
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_00002003",
+    "label": "fecal material"
+  },
+  "origin": [
+    {
+      "@id": "obo:NCBITaxon_9925",
+      "label": "Goat"
+    },
+    {
+      "@id": "obo:NCBITaxon_9940",
+      "label": "Sheep"
+    }
+  ],
+  "doi": "https://doi.org/10.1186/s40168-024-01806-z",
+  "homepage": "https://doi.org/10.1186/s40168-024-01806-z"
+}

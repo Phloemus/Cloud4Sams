@@ -1,0 +1,28 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
+  "name": "MetaPhlAn",
+  "@id": "metaphlan",
+  "type": "Taxonomic Profiler",
+  "description": "marker-gene-based profiling; species and strain-level resolution",
+  "latest_release": "v4.2.4",
+  "curated_release": "",
+  "citations_count": 1270,
+  "issues_count": null,
+  "host_reads_removal": null,
+  "memory": ">30GB",
+  "quality_control": null,
+  "functional_profiling": true,
+  "strain_level": true,
+  "approach_detail": "Specific markers",
+  "to_update": true,
+  "supports_longreads": true,
+  "supports_shortreads": true,
+  "additional_functionality": "marker-gene-based profiling; species and strain-level resolution",
+  "repo": "https://github.com/biobakery/MetaPhlAn",
+  "doc": "http://segatalab.cibio.unitn.it/tools/metaphlan/index.html",
+  "doi": "https://doi.org/10.1038/s41587-023-01688-w",
+  "bio_tools": "https://bio.tools/metaphlan",
+  "uses_databases": [
+    { "name": "ChocoPhlan", "@id": "chocophlan", "taxonomy_system": [ "ncbi", "gtdb" ] }
+  ]
+}

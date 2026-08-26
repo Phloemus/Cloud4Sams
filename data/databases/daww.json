@@ -1,0 +1,32 @@
+{
+  "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/database_schema.json",
+  "name": "Metagenome-assembled genomes from microbial communities in lab-scale anaerobic bioreactors treating simulated dairy wastewater",
+  "@id": "daww",
+  "taxonomic_scope": [
+    {
+      "@id": "obo:NCBITaxon_2",
+      "label": "Bacteria"
+    },
+    {
+      "@id": "obo:NCBITaxon_2157",
+      "label": "Archaea"
+    }
+  ],
+  "latest_release": "232",
+  "to_update": true,
+  "isPartOf": [
+    {
+      "@id": "globdb"
+    }
+  ],
+  "sample": {
+    "@id": "obo:ENVO_00002124",
+    "label": "anaerobic bioreactor"
+  },
+  "origin": {
+    "@id": "obo:ENVO_01000964",
+    "label": "industrial wastewater"
+  },
+  "doi": "https://doi.org/10.1128/mra.00487-25",
+  "description": "Metagenome-assembled genomes from microbial communities inhabiting lab-scale anaerobic bioreactors fed with dairy wastewater."
+}
