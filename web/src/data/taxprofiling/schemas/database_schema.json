@@ -1,0 +1,60 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "bio": "https://bioschemas.org/",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "name": {
+      "@id": "schema:name",
+      "comment": "Short name or acronym of the catalogue (e.g. TPMC, GTDB, mOTUs-db)."
+    },
+    "description": {
+      "@id": "schema:description",
+      "comment": "Free-text description of the database scope and content."
+    },
+    "release": {
+      "@id": "schema:version",
+      "comment": "Version or release identifier (e.g. r220, v3.1). Omit if unknown."
+    },
+    "doi": {
+      "@id": "schema:identifier",
+      "comment": "DOI or persistent URL of the associated publication or dataset, e.g. https://doi.org/10.1038/s41467-024-45895-8. Omit if unknown."
+    },
+    "homepage": {
+      "@id": "schema:url",
+      "comment": "Homepage or landing page URL for the database (prefer persistent landing pages). Omit if unknown."
+    },
+    "license": {
+      "@id": "schema:license",
+      "comment": "License URL (e.g. https://creativecommons.org/licenses/by/4.0/)."
+    },
+    "taxonomic_scope": {
+      "@id": "bio:taxonomicRange",
+      "@type": "@id",
+      "comment": "Taxonomic group(s) (Bacteria, Archae, Fungi...) covered by the database. Use NCBITaxon terms."
+    },
+    "sample": {
+      "@id": "obo:ENVO_00010483",
+      "label": "Environmental Material",
+      "@type": "@id",
+      "@container": "@set",
+      "comment": "Environmental material sampled. Use ENVO subclasses: eg. liquid water, sediment, soil, fecal material... Can be a single object or a list of sample objects."
+    },
+    "origin": {
+      "@id": "obo:RO_0001025",
+      "label": "located in",
+      "@type": "@id",
+      "@container": "@set",
+      "comment": "Location where samples are from. Can be geographical (GAZ ontology), or describe hosts (NCBITaxon): for example human (NCBITaxon:9606) for human skin or stool samples). Can be a single object or a list."
+    },
+    "is_about": {
+      "@id": "http://purl.obolibrary.org/obo/IAO_0000136",
+      "label": "is about",
+      "comment": "to describe databases not describable by sample and origin (e.g. databases of genomes specific to a metabolic pathway)."
+    },
+    "isPartOf": {
+      "@id": "schema:isPartOf",
+      "@type": "@id",
+      "comment": "Parent database or consortium (e.g. GlobDB extends GTDB, mOTUs-db ...)."
+    }
+  }
+}

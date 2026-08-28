@@ -1,0 +1,123 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "bio": "https://bioschemas.org/",
+    "obo": "http://purl.obolibrary.org/obo/",
+
+    "name": {
+      "@id": "schema:name",
+      "comment": "Short name or acronym of the tool."
+    },
+    "description": {
+      "@id": "schema:description",
+      "comment": "Free-text description of what the tool does."
+    },
+    "type": {
+      "@id": "schema:softwareApplication",
+      "comment": "Tool category or role (e.g. Taxonomic Profiler)."
+    },
+    "latest_release": {
+      "@id": "schema:version",
+      "comment": "Latest release of the tool/database as of today."
+    },
+    "release": {
+      "@id": "schema:version",
+      "comment": "Release or version identifier (used in uses_databases entries)."
+    },
+    "curated_release": {
+      "@id": "schema:version",
+      "comment": "Release version recorded at the time of last curation of this entry."
+    },
+    "citations_count": {
+      "@id": "http://example.org/vocab#citations_count",
+      "comment": "Number of citations for the tool (extracted as integer where available)."
+    },
+    "issues_count": {
+      "@id": "http://example.org/vocab#issues_count",
+      "comment": "Number of issues on GitHub repository (if applicable)."
+    },
+    "repo": {
+      "@id": "schema:codeRepository",
+      "comment": "URL of the code repository (GitHub, GitLab, etc)."
+    },
+    "doc": {
+      "@id": "schema:documentation",
+      "comment": "Documentation or manual URL for the tool."
+    },
+    "doi": {
+      "@id": "schema:identifier",
+      "comment": "DOI or persistent identifier for the tool entry."
+    },
+    "bio_tools": {
+      "@id": "http://example.org/vocab#bio_tools",
+      "comment": "Link to the bio.tools registry entry if present."
+    },
+    "to_update": {
+      "@id": "http://example.org/vocab#to_update",
+      "comment": "Boolean flag indicating whether the entry should be updated."
+    },
+    "host_reads_removal": {
+      "@id": "http://example.org/vocab#host_reads_removal",
+      "comment": "Indicates whether the tool can remove host reads (e.g. human) as part of its workflow."
+    },
+    "memory": {
+      "@id": "http://example.org/vocab#memory_requirement",
+      "comment": "Memory requirement for running the tool (in GB)."
+    },
+    "ram": {
+      "@id": "http://example.org/vocab#ram_requirement",
+      "comment": "RAM requirement for running the tool (in GB). Distinct from total DB size or archive size."
+    },
+    "quality_control": {
+      "@id": "http://example.org/vocab#quality_control",
+      "comment": "Indicates whether the tool performs quality control on input reads."
+    },
+    "functional_profiling": {
+      "@id": "http://example.org/vocab#functional_profiling",
+      "comment": "Indicates whether the tool can perform functional profiling in addition to taxonomic profiling."
+    },
+    "strain_level": {
+      "@id": "http://example.org/vocab#strain_level_resolution",
+      "comment": "Indicates the level of strain resolution the tool can achieve."
+    },
+    "approach_detail": {
+      "@id": "schema:algorithm",
+      "comment": "Free-text description of the underlying approach or algorithm used by the tool."
+    },
+    "sub_module": {
+      "@id": "http://example.org/vocab#sub_module",
+      "@type": "@id",
+      "comment": "Reference to sub-modules or plugins. Value should be an object with name and @id, or an array of such objects."
+    },
+    "supports_longreads": {
+      "@id": "http://example.org/vocab#supports_longreads",
+      "comment": "Indicates support for long-read sequencing data."
+    },
+    "supports_shortreads": {
+      "@id": "http://example.org/vocab#supports_shortreads",
+      "comment": "Indicates support for short-read sequencing data."
+    },
+    "additional_functionality": {
+      "@id": "schema:additionalType",
+      "comment": "Free text describing extra features."
+    },
+    "taxonomy": {
+      "@id": "x",
+      "@type": "@id",
+      "comment": "Taxonomy used by the tool (NCBI or GTDB)"
+    },
+    "taxonomy_system": {
+      "@id": "http://example.org/vocab#taxonomy_system",
+      "comment": "Taxonomic system used by the referenced database (e.g., NCBI, GTDB). Leave empty if unknown."
+    },
+    "uses_databases": {
+      "@id": "obo:RO_0002233",
+      "label": "has input",
+      "@type": "@id",
+      "comment": "List of database identifiers that the tool can use. Each item: object with name, @id and optional release."
+    },
+    "@id": {
+      "@id": "@id"
+    }
+  }
+}
