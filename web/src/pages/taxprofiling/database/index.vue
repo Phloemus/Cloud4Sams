@@ -3,7 +3,6 @@
     <h1 class="text-2xl text-blue-500 font-bold mb-4">🚧 Page en travaux</h1>
     <p class="text-gray-700 mb-2">Le contenu de cette page est en cours de création.</p>
     <p class="text-sm text-gray-500 mb-6">
-<!--       (Message d'attente affiché pour éviter un crash Nuxt pendant le développement) -->
     </p>
 
     <!-- Petit bouton pour revenir à l'accueil en attendant -->
