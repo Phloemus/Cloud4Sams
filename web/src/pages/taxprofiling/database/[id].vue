@@ -59,6 +59,8 @@ onMounted(async () => {
             :latest_release="database.latest_release"
             :taxonomic_scope="database.taxonomic_scope"
             :compatible_tools="database.compatible_tools"
+            :sample="database.sample"
+            :origin="database.origin"
           />
         </div>
 
@@ -152,6 +154,36 @@ onMounted(async () => {
                   Strain Level
                 </span>
               </div>
+            </NuxtLink>
+          </div>
+        </div>
+
+        <!-- Part Of (Parent Databases) -->
+        <div v-if="database.isPartOf && database.isPartOf.length > 0" class="bg-white rounded-lg border-2 border-slate-100 p-6 mt-8">
+          <h2 class="text-xl font-bold text-slate-900 mb-4">Part Of</h2>
+          <div class="flex gap-2 flex-wrap">
+            <NuxtLink
+              v-for="parent in database.isPartOf"
+              :key="parent['@id']"
+              :to="`/taxprofiling/database/${parent['@id']}`"
+              class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 hover:cursor-pointer transition font-semibold"
+            >
+              📦 {{ parent['@id'] }}
+            </NuxtLink>
+          </div>
+        </div>
+
+        <!-- Has Part (Child Databases) -->
+        <div v-if="database.hasPart && database.hasPart.length > 0" class="bg-white rounded-lg border-2 border-slate-100 p-6 mt-8">
+          <h2 class="text-xl font-bold text-slate-900 mb-4">Has Part</h2>
+          <div class="flex gap-2 flex-wrap">
+            <NuxtLink
+              v-for="child in database.hasPart"
+              :key="child['@id']"
+              :to="`/taxprofiling/database/${child['@id']}`"
+              class="px-4 py-2 bg-pink-100 text-pink-700 rounded-lg hover:bg-pink-200 hover:cursor-pointer transition font-semibold"
+            >
+              📂 {{ child['@id'] }}
             </NuxtLink>
           </div>
         </div>

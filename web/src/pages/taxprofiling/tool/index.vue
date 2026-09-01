@@ -58,11 +58,11 @@ const filteredTools = computed(() => {
         </div>
         
         <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <NuxtLink
+          <div
             v-for="tool in filteredTools"
             :key="tool['@id']"
-            :to="`/taxprofiling/tool/${tool['@id']}`"
-            class="p-4 bg-white rounded-lg border-2 border-slate-100 hover:border-sky-500 hover:shadow-md transition-all group"
+            @click="navigateTo(`/taxprofiling/tool/${tool['@id']}`)"
+            class="p-4 bg-white rounded-lg border-2 border-slate-100 hover:border-sky-500 hover:shadow-md transition-all group hover:cursor-pointer"
           >
             <div class="flex justify-between items-start mb-2">
               <h3 class="font-semibold text-lg text-slate-900 group-hover:text-sky-600 transition">
@@ -96,7 +96,7 @@ const filteredTools = computed(() => {
               <span v-if="tool.latest_release" class="mr-3">v{{ tool.latest_release }}</span>
               <span v-if="tool.citations_count">📚 {{ tool.citations_count }} citations</span>
             </div>
-          </NuxtLink>
+          </div>
         </div>
       </div>
     </section>

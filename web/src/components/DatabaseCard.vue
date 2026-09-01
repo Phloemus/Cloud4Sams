@@ -9,6 +9,8 @@
         latest_release: String,
         taxonomic_scope: Array,
         compatible_tools: Array,
+        sample: Object,
+        origin: Object,
     })
 
 </script>
@@ -31,6 +33,22 @@
     </div>
     <div>
         <p class="my-8 text-lg text-slate-700 line-clamp-6">{{ description }}</p>
+    </div>
+    <div v-if="sample || origin" class="my-6 flex gap-4 flex-wrap">
+        <div v-if="sample" class="flex items-center gap-2">
+            <span class="text-lg">🧫</span>
+            <div>
+                <span class="text-xs text-slate-600">Sample</span>
+                <p class="text-sm font-semibold text-slate-900">{{ sample.label }}</p>
+            </div>
+        </div>
+        <div v-if="origin" class="flex items-center gap-2">
+            <span class="text-lg">🌍</span>
+            <div>
+                <span class="text-xs text-slate-600">Origin</span>
+                <p class="text-sm font-semibold text-slate-900">{{ origin.label }}</p>
+            </div>
+        </div>
     </div>
     <div v-if="taxonomic_scope && taxonomic_scope.length > 0" class="my-6">
         <h3 class="text-md text-slate-800 font-semibold mb-3">Taxonomic Scope</h3>

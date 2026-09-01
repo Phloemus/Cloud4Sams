@@ -12,10 +12,13 @@ const databases = computed(() => getAllDatabases())
 const filteredDatabases = computed(() => {
   if (!searchQuery.value) return databases.value
   const query = searchQuery.value.toLowerCase()
-  return databases.value.filter(db => 
-    db.name.toLowerCase().includes(query) ||
-    db.description.toLowerCase().includes(query)
-  )
+  return databases.value.filter(db => {
+    const matchName = db.name.toLowerCase().includes(query)
+    const matchDesc = db.description.toLowerCase().includes(query)
+    const matchSample = db.sample?.label?.toLowerCase().includes(query)
+    const matchOrigin = db.origin?.label?.toLowerCase().includes(query)
+    return matchName || matchDesc || matchSample || matchOrigin
+  })
 })
 </script>
 
@@ -58,11 +61,11 @@ const filteredDatabases = computed(() => {
         </div>
         
         <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <NuxtLink
+          <div
             v-for="database in filteredDatabases"
             :key="database['@id']"
-            :to="`/taxprofiling/database/${database['@id']}`"
-            class="p-4 bg-white rounded-lg border-2 border-slate-100 hover:border-emerald-500 hover:shadow-md transition-all group"
+            @click="navigateTo(`/taxprofiling/database/${database['@id']}`)"
+            class="p-4 bg-white rounded-lg border-2 border-slate-100 hover:border-emerald-500 hover:shadow-md transition-all group hover:cursor-pointer"
           >
             <div class="flex justify-between items-start mb-2">
               <h3 class="font-semibold text-lg text-slate-900 group-hover:text-emerald-600 transition">
@@ -76,6 +79,17 @@ const filteredDatabases = computed(() => {
             <p class="text-slate-600 text-sm line-clamp-3 mb-3">
               {{ database.description }}
             </p>
+
+            <div v-if="database.sample || database.origin" class="flex gap-3 mb-3 text-xs">
+              <div v-if="database.sample" class="flex items-center gap-1">
+                <span>🧫</span>
+                <span class="font-semibold text-slate-700">{{ database.sample.label }}</span>
+              </div>
+              <div v-if="database.origin" class="flex items-center gap-1">
+                <span>🌍</span>
+                <span class="font-semibold text-slate-700">{{ database.origin.label }}</span>
+              </div>
+            </div>
 
             <div class="flex gap-2 flex-wrap mb-3">
               <span 
@@ -93,7 +107,7 @@ const filteredDatabases = computed(() => {
                 🔗 {{ database.compatible_tools.length }} tools
               </span>
             </div>
-          </NuxtLink>
+          </div>
         </div>
       </div>
     </section>
