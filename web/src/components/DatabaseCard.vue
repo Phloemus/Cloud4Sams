@@ -9,8 +9,8 @@
         latest_release: String,
         taxonomic_scope: Array,
         compatible_tools: Array,
-        sample: Object,
-        origin: Object,
+        sample: Array | null,
+        origin: Array | null,
     })
 
 </script>
@@ -39,14 +39,14 @@
             <span class="text-lg">🧫</span>
             <div>
                 <span class="text-xs text-slate-600">Sample</span>
-                <p class="text-sm font-semibold text-slate-900">{{ sample.label }}</p>
+                <p v-for="s in sample" :key="s.label" class="text-sm font-semibold text-slate-900">{{ s.label }}</p>
             </div>
         </div>
         <div v-if="origin" class="flex items-center gap-2">
             <span class="text-lg">🌍</span>
             <div>
                 <span class="text-xs text-slate-600">Origin</span>
-                <p class="text-sm font-semibold text-slate-900">{{ origin.label }}</p>
+                <p v-for="o in origin" :key="o.label" class="text-sm font-semibold text-slate-900">{{ o.label }}</p>
             </div>
         </div>
     </div>
