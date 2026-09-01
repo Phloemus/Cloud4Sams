@@ -1,19 +1,30 @@
 <script setup>
 
     defineProps({
-        title: String,
+        id: String,
+        name: String,
         description: String,
         link: String,
         repo: String,
         publication: String,
-
+        documentation: String,
+        biotools_id: String,
+        type: String,
+        latest_release: String,
+        curated_release: String,
+        citations_count: Number,
+        strain_level: Boolean,
+        functional_profiling: Boolean,
+        supports_long_reads: Boolean,
+        supports_short_reads: Boolean,
+        uses_databases: List,
     })
 
 </script>
 <template>
     <div class="flex justify-between items-start">
         <div>
-            <h1 class="mb-1 text-2xl text-slate-900 font-bold">{{ title }}</h1>
+            <h1 class="mb-1 text-2xl text-slate-900 font-bold">{{ name }}</h1>
 <!--             <div class="flex gap-2">
                 <span 
                     class="text-md text-slate-600"
@@ -24,15 +35,15 @@
             </div> -->
             <div class="mt-4 flex gap-2">
                 <span class="px-4 py-1 bg-teal-200 text-teal-500 hover:underline rounded-sm">public</span>
-                <span class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm">{{ tool.type }}</span>
+                <span class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm">{{ type }}</span>
             </div>
         </div>
         <NuxtLink 
             class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm"
-            v-if="global_id" 
+            v-if="repo"
             :to="repo"
         >
-            {{ tool.global_id }}
+            {{ name }}
         </NuxtLink>
     </div>
     <div>
