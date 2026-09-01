@@ -17,7 +17,7 @@
         functional_profiling: Boolean,
         supports_long_reads: Boolean,
         supports_short_reads: Boolean,
-        uses_databases: List,
+        uses_databases: Array,
     })
 
 </script>

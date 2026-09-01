@@ -1,6 +1,7 @@
 <script setup>
 import { useTaxProfiling } from '~/composables/useTaxProfiling'
 
+const router = useRouter()
 const { load, loading, getAllDatabases } = useTaxProfiling()
 const searchQuery = ref('')
 
@@ -64,7 +65,7 @@ const filteredDatabases = computed(() => {
           <div
             v-for="database in filteredDatabases"
             :key="database['@id']"
-            @click="navigateTo(`/taxprofiling/database/${database['@id']}`)"
+            @click="router.push(`/taxprofiling/database/${database['@id']}`)"
             class="p-4 bg-white rounded-lg border-2 border-slate-100 hover:border-emerald-500 hover:shadow-md transition-all group hover:cursor-pointer"
           >
             <div class="flex justify-between items-start mb-2">

@@ -1,6 +1,7 @@
 <script setup>
 import { useTaxProfiling } from '~/composables/useTaxProfiling'
 
+const router = useRouter()
 const { load, loading, getAllTools } = useTaxProfiling()
 const searchQuery = ref('')
 
@@ -61,7 +62,7 @@ const filteredTools = computed(() => {
           <div
             v-for="tool in filteredTools"
             :key="tool['@id']"
-            @click="navigateTo(`/taxprofiling/tool/${tool['@id']}`)"
+            @click="router.push(`/taxprofiling/tool/${tool['@id']}`)"
             class="p-4 bg-white rounded-lg border-2 border-slate-100 hover:border-sky-500 hover:shadow-md transition-all group hover:cursor-pointer"
           >
             <div class="flex justify-between items-start mb-2">
