@@ -34,7 +34,6 @@
                 </span>
             </div> -->
             <div class="mt-4 flex gap-2">
-                <span class="px-4 py-1 bg-teal-200 text-teal-500 hover:underline rounded-sm">public</span>
                 <span class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm">{{ type }}</span>
             </div>
         </div>
