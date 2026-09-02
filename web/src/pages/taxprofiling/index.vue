@@ -1,12 +1,9 @@
 <script setup>
 import { useTaxProfiling } from '~/composables/useTaxProfiling'
 
-const { load, loading, getAllTools, getAllDatabases } = useTaxProfiling()
+const { getAllTools, getAllDatabases } = useTaxProfiling()
 
-onMounted(async () => {
-  await load()
-})
-
+// Data is immediately available (no loading wait!)
 const tools = computed(() => getAllTools())
 const databases = computed(() => getAllDatabases())
 </script>

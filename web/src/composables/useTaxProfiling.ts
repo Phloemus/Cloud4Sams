@@ -6,6 +6,33 @@ import type { Ref } from 'vue'
 const toolModules = import.meta.glob('../data/taxprofiling/tools/*.json', { eager: true })
 const databaseModules = import.meta.glob('../data/taxprofiling/databases/*.json', { eager: true })
 
+// Pre-instantiate all tools and databases (do this ONCE at module load, not on every render)
+const cachedTools = new Map<string, Tool>()
+const cachedDatabases = new Map<string, Database>()
+
+// Initialize caches immediately
+for (const path in toolModules) {
+  try {
+    const module = toolModules[path] as any
+    const toolData = module.default || module
+    const tool = new Tool(toolData)
+    cachedTools.set(tool["@id"], tool)
+  } catch (err) {
+    console.warn(`Failed to initialize tool from ${path}`, err)
+  }
+}
+
+for (const path in databaseModules) {
+  try {
+    const module = databaseModules[path] as any
+    const dbData = module.default || module
+    const db = new Database(dbData)
+    cachedDatabases.set(db["@id"], db)
+  } catch (err) {
+    console.warn(`Failed to initialize database from ${path}`, err)
+  }
+}
+
 export interface DatabaseRef {
   name: string
   "@id": string
@@ -163,47 +190,43 @@ interface TaxProfilingData {
 }
 
 export const useTaxProfiling = () => {
-  const data: Ref<TaxProfilingData | null> = ref(null)
+  // Initialize data IMMEDIATELY from cached instances (no need to wait for async load)
+  const initializeData = () => {
+    const tools = Array.from(cachedTools.values())
+    const databases = Array.from(cachedDatabases.values())
+    const toolsMap = new Map(tools.map((tool) => [tool["@id"], tool]))
+    const databasesMap = new Map(databases.map((db) => [db["@id"], db]))
+    
+    return {
+      tools,
+      databases,
+      toolsMap,
+      databasesMap
+    }
+  }
+
+  const data: Ref<TaxProfilingData> = ref(initializeData())
   const loading: Ref<boolean> = ref(false)
   const error: Ref<string | null> = ref(null)
 
   const loadAllTools = async (): Promise<Tool[]> => {
-    const tools: Tool[] = []
-    try {
-      for (const path in toolModules) {
-        try {
-          const module = toolModules[path] as any
-          const toolData = module.default || module
-          tools.push(new Tool(toolData))
-        } catch (err) {
-          console.warn(`Failed to parse tool from ${path}`, err)
-        }
-      }
-    } catch (err) {
-      console.error('Failed to load tools', err)
-    }
-    return tools
+    // Return cached tools (already instantiated at module load)
+    return Array.from(cachedTools.values())
   }
 
   const loadAllDatabases = async (): Promise<Database[]> => {
-    const databases: Database[] = []
-    try {
-      for (const path in databaseModules) {
-        try {
-          const module = databaseModules[path] as any
-          const dbData = module.default || module
-          databases.push(new Database(dbData))
-        } catch (err) {
-          console.warn(`Failed to parse database from ${path}`, err)
-        }
-      }
-    } catch (err) {
-      console.error('Failed to load databases', err)
-    }
-    return databases
+    // Return cached databases (already instantiated at module load)
+    return Array.from(cachedDatabases.values())
   }
 
+  // load() is now essentially a no-op since data is already initialized
+  // but we keep it for backward compatibility
   const load = async () => {
+    // Data is already initialized, just return
+    if (data.value && data.value.tools.length > 0) {
+      return
+    }
+    
     loading.value = true
     error.value = null
 
@@ -231,35 +254,33 @@ export const useTaxProfiling = () => {
   }
 
   const getToolById = (id: string): Tool | undefined => {
-    return data.value?.toolsMap.get(id)
+    return data.value.toolsMap.get(id)
   }
 
   const getDatabaseById = (id: string): Database | undefined => {
-    return data.value?.databasesMap.get(id)
+    return data.value.databasesMap.get(id)
   }
 
   const getToolsByDatabase = (databaseId: string): Tool[] => {
-    if (!data.value) return []
     return data.value.tools.filter((tool: Tool) =>
       tool.uses_databases.some((db: DatabaseRef) => db["@id"] === databaseId)
     )
   }
 
   const getDatabasesByTool = (toolId: string): Database[] => {
-    if (!data.value) return []
     const tool = data.value.toolsMap.get(toolId)
     if (!tool) return []
     return tool.uses_databases
-      .map((dbRef: DatabaseRef) => data.value!.databasesMap.get(dbRef["@id"]))
+      .map((dbRef: DatabaseRef) => data.value.databasesMap.get(dbRef["@id"]))
       .filter((db: Database | undefined) => db !== undefined) as Database[]
   }
 
   const getAllTools = (): Tool[] => {
-    return data.value?.tools || []
+    return data.value.tools
   }
 
   const getAllDatabases = (): Database[] => {
-    return data.value?.databases || []
+    return data.value.databases
   }
 
   return {
