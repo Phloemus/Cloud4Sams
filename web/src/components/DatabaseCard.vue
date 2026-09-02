@@ -56,7 +56,7 @@ defineProps({
             class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm"
         >
             {{ name }}
-        </a>
+        </NuxtLink>
     </div>
 
     <!-- Description -->
