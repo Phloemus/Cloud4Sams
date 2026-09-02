@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useTaxProfiling } from '~/composables/useTaxProfiling'
 import ToolCard from '~/components/ToolCard.vue'
 
