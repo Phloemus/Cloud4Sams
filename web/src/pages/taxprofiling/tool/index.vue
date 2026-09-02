@@ -19,7 +19,6 @@ const filteredTools = computed(() => {
 // No need for loading state - data is cached
 const loading = ref(false)
 </script>
-</script>
 
 <template>
   <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">

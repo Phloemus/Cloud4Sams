@@ -13,7 +13,6 @@
     const tool = filteredToolList[toolId]
 
 </script>
-
 <template>
     <div class="flex justify-between items-start">
         <div>
@@ -52,4 +51,3 @@
         </div>
     </div>
 </template>
-
