@@ -137,6 +137,19 @@ export class Tool {
     this.uses_databases = data.uses_databases || []
     this.github_last_fetched = data.github_last_fetched || ""
   }
+    getDatabaseIds(): string[] {
+    return this.uses_databases.map((db: DatabaseRef) => db["@id"])
+  }
+
+  getMainFeatures(): string[] {
+    const features = []
+    if (this.functional_profiling) features.push("Functional Profiling")
+    if (this.strain_level) features.push("Strain Level")
+    if (this.supports_longreads) features.push("Long Reads")
+    if (this.supports_shortreads) features.push("Short Reads")
+    return features
+  }
+}
 // Import all tools and databases at build time using Vite's glob
 const toolModules = import.meta.glob('../data/taxprofiling/tools/*.json', { eager: true })
 const databaseModules = import.meta.glob('../data/taxprofiling/databases/*.json', { eager: true })
@@ -167,19 +180,7 @@ for (const path in databaseModules) {
     console.warn(`Failed to initialize database from ${path}`, err)
   }
 }
-  getDatabaseIds(): string[] {
-    return this.uses_databases.map((db: DatabaseRef) => db["@id"])
-  }
 
-  getMainFeatures(): string[] {
-    const features = []
-    if (this.functional_profiling) features.push("Functional Profiling")
-    if (this.strain_level) features.push("Strain Level")
-    if (this.supports_longreads) features.push("Long Reads")
-    if (this.supports_shortreads) features.push("Short Reads")
-    return features
-  }
-}
 
 interface TaxProfilingData {
   tools: Tool[]
