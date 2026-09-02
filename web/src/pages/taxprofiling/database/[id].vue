@@ -3,21 +3,18 @@ import { useTaxProfiling } from '~/composables/useTaxProfiling'
 import DatabaseCard from '~/components/DatabaseCard.vue'
 
 const route = useRoute()
-const { load, getDatabaseById, getToolsByDatabase } = useTaxProfiling()
+const { getDatabaseById, getToolsByDatabase } = useTaxProfiling()
 
-const database = ref(null)
-const compatibleToolList = ref([])
-const loading = ref(true)
+// Get database synchronously (data is already cached)
+const databaseId = route.params.id as string
+const database = computed(() => getDatabaseById(databaseId))
+const compatibleToolList = computed(() =>
+  database.value ? getToolsByDatabase(databaseId) : []
+)
 
-onMounted(async () => {
-  await load()
-  const databaseId = route.params.id
-  database.value = getDatabaseById(databaseId)
-  if (database.value) {
-    compatibleToolList.value = getToolsByDatabase(databaseId)
-  }
-  loading.value = false
-})
+// Loading is immediate since data is cached
+const loading = ref(false)
+</script>
 </script>
 
 <template>

@@ -2,13 +2,10 @@
 import { useTaxProfiling } from '~/composables/useTaxProfiling'
 
 const router = useRouter()
-const { load, loading, getAllDatabases } = useTaxProfiling()
+const { getAllDatabases } = useTaxProfiling()
 const searchQuery = ref('')
 
-onMounted(async () => {
-  await load()
-})
-
+// Data is immediately available (no loading wait!)
 const databases = computed(() => getAllDatabases())
 const filteredDatabases = computed(() => {
   if (!searchQuery.value) return databases.value
@@ -21,6 +18,10 @@ const filteredDatabases = computed(() => {
     return matchName || matchDesc || matchSample || matchOrigin
   })
 })
+
+// No need for loading state - data is cached
+const loading = ref(false)
+</script>
 </script>
 
 <template>

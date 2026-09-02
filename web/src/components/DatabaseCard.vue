@@ -1,5 +1,5 @@
 ```vue
-<script setup>
+<script setup lang="ts">
 defineProps({
     id: String,
     name: String,
@@ -10,6 +10,10 @@ defineProps({
     taxonomic_scope: Array,
     compatible_tools: Array,
 
+    // sample et origin peuvent être soit :
+    // - null
+    // - un objet
+    // - un tableau d'objets
     sample: {
         type: [Object, Array],
         default: null,
@@ -45,11 +49,10 @@ defineProps({
             </div>
         </div>
 
-        <a
+        <NuxtLink
             v-if="homepage"
-            :href="homepage"
+            :to="homepage"
             target="_blank"
-            rel="noopener noreferrer"
             class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm"
         >
             {{ name }}
@@ -80,7 +83,7 @@ defineProps({
                     Sample
                 </span>
 
-                <!-- Si sample est un objet -->
+                <!-- sample est un objet -->
                 <p
                     v-if="!Array.isArray(sample)"
                     class="text-sm font-semibold text-slate-900"
@@ -88,7 +91,7 @@ defineProps({
                     {{ sample.label }}
                 </p>
 
-                <!-- Si sample est une liste -->
+                <!-- sample est un tableau -->
                 <template v-else>
                     <p
                         v-for="s in sample"
@@ -113,7 +116,7 @@ defineProps({
                     Origin
                 </span>
 
-                <!-- Si origin est un objet -->
+                <!-- origin est un objet -->
                 <p
                     v-if="!Array.isArray(origin)"
                     class="text-sm font-semibold text-slate-900"
@@ -121,7 +124,7 @@ defineProps({
                     {{ origin.label }}
                 </p>
 
-                <!-- Si origin est une liste -->
+                <!-- origin est un tableau -->
                 <template v-else>
                     <p
                         v-for="o in origin"
@@ -135,7 +138,7 @@ defineProps({
         </div>
     </div>
 
-    <!-- Taxonomic Scope -->
+    <!-- Taxonomic scope -->
     <div
         v-if="taxonomic_scope && taxonomic_scope.length > 0"
         class="my-6"
@@ -155,7 +158,7 @@ defineProps({
         </div>
     </div>
 
-    <!-- Compatible Tools -->
+    <!-- Compatible tools -->
     <div
         v-if="compatible_tools && compatible_tools.length > 0"
         class="my-6"
