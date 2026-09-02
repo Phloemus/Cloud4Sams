@@ -2,41 +2,11 @@
 import { ref, computed } from 'vue'
 import type { Ref } from 'vue'
 
-// Import all tools and databases at build time using Vite's glob
-const toolModules = import.meta.glob('../data/taxprofiling/tools/*.json', { eager: true })
-const databaseModules = import.meta.glob('../data/taxprofiling/databases/*.json', { eager: true })
-
-// Pre-instantiate all tools and databases (do this ONCE at module load, not on every render)
-const cachedTools = new Map<string, Tool>()
-const cachedDatabases = new Map<string, Database>()
-
-// Initialize caches immediately
-for (const path in toolModules) {
-  try {
-    const module = toolModules[path] as any
-    const toolData = module.default || module
-    const tool = new Tool(toolData)
-    cachedTools.set(tool["@id"], tool)
-  } catch (err) {
-    console.warn(`Failed to initialize tool from ${path}`, err)
-  }
-}
-
-for (const path in databaseModules) {
-  try {
-    const module = databaseModules[path] as any
-    const dbData = module.default || module
-    const db = new Database(dbData)
-    cachedDatabases.set(db["@id"], db)
-  } catch (err) {
-    console.warn(`Failed to initialize database from ${path}`, err)
-  }
-}
 
 export interface DatabaseRef {
   name: string
   "@id": string
-  release?: string
+  release?: string | string[]
   taxonomy_system?: string
 }
 
@@ -77,8 +47,8 @@ export class Database {
   homepage: string | null
   license: string | null
   taxonomic_scope: TaxonomicScope[]
-  sample: SampleOrOrigin | null
-  origin: SampleOrOrigin | null
+  sample: SampleOrOrigin | SampleOrOrigin[] | null
+  origin: SampleOrOrigin | SampleOrOrigin[] | null
   is_about: string | null
   isPartOf: HasPartEntry[] | null
   hasPart: HasPartEntry[] | null
@@ -149,7 +119,7 @@ export class Tool {
     this.description = data.description || ""
     this.latest_release = data.latest_release || ""
     this.curated_release = data.curated_release || ""
-    this.citations_count = data.citations_count || null
+    this.citations_count = data.citations_count ?? null
     this.issues_count = data.issues_count || null
     this.host_reads_removal = data.host_reads_removal || null
     this.memory = data.memory || null
@@ -167,7 +137,36 @@ export class Tool {
     this.uses_databases = data.uses_databases || []
     this.github_last_fetched = data.github_last_fetched || ""
   }
+// Import all tools and databases at build time using Vite's glob
+const toolModules = import.meta.glob('../data/taxprofiling/tools/*.json', { eager: true })
+const databaseModules = import.meta.glob('../data/taxprofiling/databases/*.json', { eager: true })
 
+// Pre-instantiate all tools and databases (do this ONCE at module load, not on every render)
+const cachedTools = new Map<string, Tool>()
+const cachedDatabases = new Map<string, Database>()
+
+// Initialize caches immediately
+for (const path in toolModules) {
+  try {
+    const module = toolModules[path] as any
+    const toolData = module.default || module
+    const tool = new Tool(toolData)
+    cachedTools.set(tool["@id"], tool)
+  } catch (err) {
+    console.warn(`Failed to initialize tool from ${path}`, err)
+  }
+}
+
+for (const path in databaseModules) {
+  try {
+    const module = databaseModules[path] as any
+    const dbData = module.default || module
+    const db = new Database(dbData)
+    cachedDatabases.set(db["@id"], db)
+  } catch (err) {
+    console.warn(`Failed to initialize database from ${path}`, err)
+  }
+}
   getDatabaseIds(): string[] {
     return this.uses_databases.map((db: DatabaseRef) => db["@id"])
   }
