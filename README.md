@@ -34,6 +34,14 @@ repositories
 - Rainbio
 - Galaxy
 
+## Installation
+
+### Manually
+
+Install nvm, use npm 22
+
+### With Docker
+
 ## Contributors
 
 - Brieuc Quemeneur [brieuc.quemeneur@univ-nantes.fr](mailto:brieuc.quemeneur@univ-nantes.fr)
