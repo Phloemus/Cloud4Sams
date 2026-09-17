@@ -23,37 +23,43 @@
 </script>
 <template>
     <div class="flex justify-between items-start">
-    <div>
-        <h1 class="mb-1 text-2xl text-slate-900 font-bold">{{ name }}</h1>
+        <div>
+            <h1 class="mb-1 text-2xl text-slate-900 font-bold">{{ name }}</h1>
 
-        <div class="mt-4 flex gap-2">
-            <span class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm">
-                {{ type }}
-            </span>
+            <div class="mt-4 flex gap-2">
+                <span class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm">
+                    {{ type }}
+                </span>
+            </div>
+        </div>
+
+        <div class="flex gap-2">
+            <NuxtLink 
+                class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
+                v-if="repo"
+                :to="repo"
+            >
+                Github
+            </NuxtLink>
+
+            <NuxtLink 
+                class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
+                v-if="id"
+                :to="`https://bio.tools/${id}`"
+            >
+                bio.tools
+            </NuxtLink>
         </div>
     </div>
 
-    <div class="flex gap-2">
-        <NuxtLink 
-            class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
-            v-if="repo"
-            :to="repo"
-        >
-            Github
-        </NuxtLink>
+    <div>
+        <p class="my-8 text-lg text-slate-700 line-clamp-6">
+            {{ description }}
+        </p>
+    </div>
 
-        <NuxtLink 
-            class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
-            v-if="id"
-            :to="`https://bio.tools/${id}`"
-        >
-            bio.tools
-        </NuxtLink>
-    </div>
-</div>
-        <p class="my-8 text-lg text-slate-700 line-clamp-6">{{ description }}</p>
-    </div>
-<!--     <div class="my-10">
+    <!--
+    <div class="my-10">
         <h2 class="text-xl text-slate-900 font-bold">Ontology annotations</h2>
         <div class="my-6 flex gap-4">
             <TagCard
@@ -61,6 +67,7 @@
                 :name="keyword"
             />
         </div>
-    </div> -->
+    </div>
+    -->
 </template>
 
