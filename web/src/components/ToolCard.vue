@@ -49,13 +49,14 @@
             >
                 bio.tools
             </NuxtLink>
-            <Nuxtlink
+            
+            <NuxtLink
                 class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
                 v-if="doi"
                 :to="doi"
             >
                 Publication
-            </Nuxtlink>
+            </NuxtLink>
         </div>
     </div>
 
