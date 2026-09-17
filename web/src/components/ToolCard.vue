@@ -6,7 +6,7 @@
         description: String,
         link: String,
         repo: String,
-        publication: String,
+        doi: String,
         documentation: String,
         biotools_id: String,
         type: String,
@@ -51,8 +51,8 @@
             </NuxtLink>
             <Nuxtlink
                 class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
-                v-if="publication"
-                :to="publication"
+                v-if="doi"
+                :to="doi"
             >
                 Publication
             </Nuxtlink>
