@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div class="flex gap-2">
+        <div class="flex gap-3">
             <NuxtLink 
                 class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
                 v-if="repo"
@@ -49,6 +49,13 @@
             >
                 bio.tools
             </NuxtLink>
+            <Nuxtlink
+                class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
+                v-if="publication"
+                :to="publication"
+            >
+                Publication
+            </Nuxtlink>
         </div>
     </div>
 
@@ -57,17 +64,5 @@
             {{ description }}
         </p>
     </div>
-
-    <!--
-    <div class="my-10">
-        <h2 class="text-xl text-slate-900 font-bold">Ontology annotations</h2>
-        <div class="my-6 flex gap-4">
-            <TagCard
-                v-for="keyword in tool.keywords"
-                :name="keyword"
-            />
-        </div>
-    </div>
-    -->
 </template>
 
