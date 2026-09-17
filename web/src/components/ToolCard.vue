@@ -49,7 +49,7 @@
             v-if="id"
             :to="`https://bio.tools/${id}`"
         >
-            {{ Bio.tools }}
+            {{ Biotools }}
         </NuxtLink>
     </div>
     <div>
