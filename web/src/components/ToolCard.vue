@@ -42,14 +42,14 @@
             v-if="repo"
             :to="repo"
         >
-            {{ name }}
+            {{ Github }}
         </NuxtLink>
         <NuxtLink 
             class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm"
             v-if="id"
             :to="`https://bio.tools/${id}`"
         >
-            {{ name }}
+            {{ Bio.tools }}
         </NuxtLink>
     </div>
     <div>
