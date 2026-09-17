@@ -44,6 +44,13 @@
         >
             {{ name }}
         </NuxtLink>
+        <NuxtLink 
+            class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm"
+            v-if="id"
+            :to="`https://bio.tools/${id}`"
+        >
+            {{ name }}
+        </NuxtLink>
     </div>
     <div>
         <p class="my-8 text-lg text-slate-700 line-clamp-6">{{ description }}</p>
