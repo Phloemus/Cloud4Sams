@@ -32,32 +32,6 @@
                 </span>
             </div>
         </div>
-
-        <div class="flex gap-3">
-            <NuxtLink 
-                class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
-                v-if="repo"
-                :to="repo"
-            >
-                Github
-            </NuxtLink>
-
-            <NuxtLink 
-                class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
-                v-if="id"
-                :to="`https://bio.tools/${id}`"
-            >
-                bio.tools
-            </NuxtLink>
-            
-            <NuxtLink
-                class="px-4 py-1 bg-purple-200 text-purple-500 hover:underline rounded-sm"
-                v-if="doi"
-                :to="doi"
-            >
-                Publication
-            </NuxtLink>
-        </div>
     </div>
 
     <div>
