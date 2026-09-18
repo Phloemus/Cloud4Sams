@@ -3,6 +3,7 @@
   "name": "mOTUs",
   "@id": "motus",
   "type": "Taxonomic Profiler",
+  "description": "The mOTUs profiler is a computational tool that estimates taxonomic abundance of microbial community members from known and currently unknown (uncultured) species using metagenomic shotgun sequencing data.",
   "latest_release": "4.1.0",
   "curated_release": "",
   "citations_count": 31,

@@ -3,7 +3,7 @@
   "name": "Centrifuger",
   "@id": "centrifuger",
   "type": "Taxonomic Profiler",
-  "description": "lightweight classification using FM-index; suitable for large reference collections",
+  "description": "Taxonomic classifier for sequencing reads (bulk and single-cell data, short and long read) using FM-index with run-block compressed BWT.",
   "latest_release": "v1.1.0",
   "curated_release": "",
   "citations_count": 15,

@@ -3,7 +3,7 @@
   "name": "sourmash",
   "@id": "sourmash",
   "type": "Taxonomic Profiler",
-  "description": "MinHash sketching for fast similarity searches and containment estimation",
+  "description": "sourmash is a command-line tool and Python/Rust library for metagenome analysis and genome comparison using k-mers. It supports the compositional analysis of metagenomes, rapid search of large sequence databases, and flexible taxonomic profiling with both NCBI and GTDB taxonomies. sourmash works well with sequences 30kb or larger, including bacterial and viral genomes.",
   "latest_release": "v4.9.4",
   "curated_release": "",
   "citations_count": 52,

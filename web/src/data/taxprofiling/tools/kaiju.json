@@ -3,7 +3,7 @@
   "name": "Kaiju",
   "@id": "kaiju",
   "type": "Taxonomic Profiler",
-  "description": "Protein-level classification using translated search; good for divergent sequences",
+  "description": "Kaiju is a program for the taxonomic classification of high-throughput sequencing reads, e.g., Illumina or Roche/454, from whole-genome sequencing of metagenomic DNA. Reads are directly assigned to taxa using the NCBI taxonomy and a reference database of protein sequences from microbial and viral genomes.",
   "latest_release": "v1.10.1",
   "curated_release": "",
   "citations_count": 1989,

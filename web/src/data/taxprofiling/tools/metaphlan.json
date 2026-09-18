@@ -3,7 +3,7 @@
   "name": "MetaPhlAn",
   "@id": "metaphlan",
   "type": "Taxonomic Profiler",
-  "description": "marker-gene-based profiling; species and strain-level resolution",
+  "description": "MetaPhlAn is a computational tool for profiling the composition of microbial communities from metagenomic shotgun sequencing data. It uses marker-gene-based profiling; species and strain-level resolution",
   "latest_release": "v4.2.4",
   "curated_release": "",
   "citations_count": 1270,

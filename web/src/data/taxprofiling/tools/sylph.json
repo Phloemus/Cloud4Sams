@@ -3,7 +3,7 @@
   "name": "sylph",
   "@id": "sylph",
   "type": "Taxonomic Profiler",
-  "description": "",
+  "description": "ultrafast taxonomic profiling and genome querying for metagenomic samples by abundance-corrected minhash.",
   "latest_release": "latest",
   "curated_release": "",
   "citations_count": 82,

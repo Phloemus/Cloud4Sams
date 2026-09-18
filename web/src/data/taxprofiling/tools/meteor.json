@@ -3,7 +3,7 @@
   "name": "meteor",
   "@id": "meteor",
   "type": "Taxonomic Profiler",
-  "description": "",
+  "description": "Meteor is a plateform for quantitative metagenomics profiling of complex ecosystems. Meteor relies on genes catalogue to perform species-level taxonomic profiling (Bacteria, Archaea and Eukaryotes), functional analysis and strain-level population structure inference.",
   "latest_release": "2.0.22",
   "curated_release": "",
   "citations_count": 6,

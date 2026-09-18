@@ -3,7 +3,7 @@
   "name": "KMCP",
   "@id": "kmcp",
   "type": "Taxonomic Profiler",
-  "description": "k-mer based pseudoalignment for fast and memory-efficient classification (modified COBS index + genome coverage filtering)",
+  "description": "KMCP utilizes genome coverage information by splitting the reference genomes into chunks and stores k-mers in a modified and optimized COBS index for fast alignment-free sequence searching. KMCP combines k-mer similarity and genome coverage information to reduce the false positive rate of k-mer-based taxonomic classification and profiling methods.",
   "latest_release": "v0.9.4",
   "curated_release": "",
   "citations_count": 60,

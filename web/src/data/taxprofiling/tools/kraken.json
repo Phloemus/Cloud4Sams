@@ -3,7 +3,7 @@
   "name": "Kraken",
   "@id": "kraken2",
   "type": "Taxonomic profiler",
-  "description": "k-mer based exact alignment classifier; very fast classification",
+  "description": "The second version of the Kraken taxonomic sequence classification system",
   "latest_release": "v2.17.1",
   "curated_release": "",
   "citations_count": 6994,

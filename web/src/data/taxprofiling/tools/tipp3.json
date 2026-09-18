@@ -3,7 +3,7 @@
   "name": "TIPP3",
   "@id": "tipp3",
   "type": "Taxonomic Profiler",
-  "description": "Phylogenetic placement-based taxonomic profiling; marker-gene driven",
+  "description": "TIPP3 and TIPP3-fast: new phylogeny-based metagenomic profiling and taxonomic identification tool.",
   "latest_release": "v0.3",
   "curated_release": "",
   "citations_count": 4,

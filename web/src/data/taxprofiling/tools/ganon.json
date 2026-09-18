@@ -3,7 +3,7 @@
   "name": "Ganon",
   "@id": "ganon",
   "type": "Taxonomic Profiler",
-  "description": "compact k-mer indices with incremental updates; fast database building and classification (HIBF index)",
+  "description": "ganon2 classifies genomic sequences against large sets of references efficiently, with integrated download and update of databases (refseq/genbank), taxonomic profiling (ncbi/gtdb), binning and hierarchical classification, customized reporting and more.",
   "latest_release": "v2.3.0",
   "curated_release": "",
   "citations_count": 8,
