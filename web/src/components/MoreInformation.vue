@@ -27,7 +27,7 @@
       <li><NuxtLink :to="repo" v-if="repo" target="_blank" class="text-black-600 hover:underline">GitHub Repository</NuxtLink></li>
       <li><NuxtLink :to="doi" v-if="doi" target="_blank" class="text-black-600 hover:underline">Publication</NuxtLink></li>
       <li><NuxtLink :to="documentation" v-if="documentation" target="_blank" class="text-black-600 hover:underline">Documentation</NuxtLink></li>
-      <li><NuxtLink :to="`https://www.biotools.fr/tool/${id}`" v-if="id" target="_blank" class="text-black-600 hover:underline">BioTools</NuxtLink></li>
+      <li><NuxtLink :to="`https://bio.tools/${id}`" v-if="id" target="_blank" class="text-black-600 hover:underline">BioTools</NuxtLink></li>
     </ul>
   </div>
 </template>
