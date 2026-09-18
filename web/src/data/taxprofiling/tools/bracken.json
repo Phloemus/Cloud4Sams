@@ -3,7 +3,7 @@
   "name": "Bracken",
   "@id": "bracken",
   "type": "Abundance Estimator",
-  "description": "Bracken is a companion program to Kraken 1, KrakenUniq, or Kraken 2 While Kraken classifies reads to multiple levels in the taxonomic tree, Bracken allows estimation of abundance at a single level using those classifications (e.g. Bracken can estimate abundance of species within a sample).",
+  "description": "Bracken is a companion program to Kraken 1, KrakenUniq, or Kraken 2. While Kraken classifies reads to multiple levels in the taxonomic tree, Bracken allows estimation of abundance at a single level using those classifications (e.g. Bracken can estimate abundance of species within a sample).",
   "latest_release": "v3.1",
   "curated_release": "v3.1",
   "citations_count": 1977,
