@@ -1,0 +1,33 @@
+<script setup>
+
+    defineProps({
+        id: String,
+        name: String,
+        description: String,
+        link: String,
+        repo: String,
+        doi: String,
+        documentation: String,
+        biotools_id: String,
+        type: String,
+        latest_release: String,
+        curated_release: String,
+        citations_count: Number,
+        strain_level: Boolean,
+        functional_profiling: Boolean,
+        supports_long_reads: Boolean,
+        supports_short_reads: Boolean,
+        uses_databases: Array,
+    })
+
+</script>
+<template>
+  <div class="p-5">
+    <h2 class="text-xl font-bold mb-3">More Information</h2>
+    <ul class="space-y-2">
+      <li><NuxtLink :to="repo" target="_blank" class="text-black-600 hover:underline">GitHub Repository</NuxtLink></li>
+      <li><NuxtLink :to="doi" target="_blank" class="text-black-600 hover:underline">Publication</NuxtLink></li>
+      <li><NuxtLink :to="documentation" target="_blank" class="text-black-600 hover:underline">Documentation</NuxtLink></li>
+    </ul>
+  </div>
+</template>
