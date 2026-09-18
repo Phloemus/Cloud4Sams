@@ -61,7 +61,7 @@
 
 <template>
     <div class="w-full">
-        <h2 class="text-xl text-slate-900 font-bold">Tool Satistics</h2>
+        <h2 class="text-xl text-slate-900 font-bold">Tool Statistics</h2>
         <div class="my-6 h-20">
             <Line :data="data" :options="options"/>
         </div>
