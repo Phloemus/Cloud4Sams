@@ -106,6 +106,7 @@ export class Tool {
   supports_shortreads: boolean
   repo: string
   doi: string
+  documentation: string
   additional_functionality: string
   sub_module: SubModule | null
   uses_databases: DatabaseRef[]
@@ -132,6 +133,7 @@ export class Tool {
     this.supports_shortreads = data.supports_shortreads || false
     this.repo = data.repo || ""
     this.doi = data.doi || ""
+    this.documentation = data.documentation || ""
     this.additional_functionality = data.additional_functionality || ""
     this.sub_module = data.sub_module || null
     this.uses_databases = data.uses_databases || []
