@@ -97,6 +97,7 @@ const loading = ref(false)
                 :repo="tool.repo"
                 :doi="tool.doi"
                 :documentation="tool.documentation"
+                :id="tool.id"
               />
             </div>
 
