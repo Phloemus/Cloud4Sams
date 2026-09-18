@@ -18,7 +18,7 @@
   "supports_longreads": true,
   "supports_shortreads": true,
   "repo": "https://github.com/bluenote-1577/sylph",
-  "doc": "http://faust.compbio.cs.cmu.edu/sylph-stuff",
+  "documentation": "https://sylph-docs.github.io/",
   "doi": "https://doi.org/10.1038/s41587-024-02412-y",
   "uses_databases": [
     {

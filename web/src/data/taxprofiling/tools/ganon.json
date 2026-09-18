@@ -19,6 +19,7 @@
   "supports_shortreads": true,
   "repo": "https://github.com/pirovc/ganon",
   "doi": "https://doi.org/10.1093/nargab/lqaf094",
+  "documentation": "https://pirovc.github.io/ganon/",
   "additional_functionality": "compact k-mer indices with incremental updates; fast database building and classification (HIBF index)",
   "uses_databases": [
     {

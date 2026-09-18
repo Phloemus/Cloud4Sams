@@ -18,7 +18,7 @@
   "supports_longreads": true,
   "supports_shortreads": true,
   "repo": "https://github.com/steineggerlab/Metabuli",
-  "doc": "https://metabuli.steineggerlab.workers.dev/",
+  "documentation": "https://jaebeom-kim.github.io/metabuli-doc/",
   "doi": "https://doi.org/10.1038/s41592-024-02273-y",
   "additional_functionality": "novel k-mer structure (metamer) allowing combined DNA+AA analysis for sensitive detection and strain discrimination",
   "uses_databases": [

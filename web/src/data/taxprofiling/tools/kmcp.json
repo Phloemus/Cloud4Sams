@@ -20,6 +20,7 @@
   "additional_functionality": "k-mer based pseudoalignment for fast and memory-efficient classification (modified COBS index + genome coverage filtering)",
   "repo": "https://github.com/shenwei356/kmcp",
   "doi": "https://doi.org/10.1093/bioinformatics/btac845",
+  "documentation": "https://bioinf.shenwei.me/kmcp/",
   "uses_databases": [
     { "name": "GTDB", "@id": "gtdb", "release": "214", "taxonomy_system": "gtdb" },
     { "name": "RefSeq", "@id": "refseq_fungi", "release": "217", "taxonomy_system": "ncbi" },

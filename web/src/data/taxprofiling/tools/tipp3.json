@@ -15,6 +15,7 @@
   "strain_level": false,
   "approach_detail": "38 Marker genes, Maximum Likelyhood",
   "repo": "https://github.com/c5shen/TIPP3",
+  "doi": "https://doi.org/10.1371/journal.pcbi.1012593",
   "to_update": true,
   "supports_longreads": false,
   "supports_shortreads": true,

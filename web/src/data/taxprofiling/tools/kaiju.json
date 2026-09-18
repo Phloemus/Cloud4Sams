@@ -15,6 +15,8 @@
   "strain_level": false,
   "approach_detail": "reference database of protein sequences",
   "repo": "https://github.com/bioinformatics-centre/kaiju",
+  "documentation": "https://bioinformatics-centre.github.io/kaiju/",
+  "doi": "https://doi.org/10.1038/ncomms11257",
   "to_update": true,
   "supports_longreads": false,
   "supports_shortreads": true,

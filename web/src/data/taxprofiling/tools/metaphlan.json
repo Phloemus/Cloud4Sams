@@ -19,7 +19,7 @@
   "supports_shortreads": true,
   "additional_functionality": "marker-gene-based profiling; species and strain-level resolution",
   "repo": "https://github.com/biobakery/MetaPhlAn",
-  "doc": "http://segatalab.cibio.unitn.it/tools/metaphlan/index.html",
+  "documentation": "http://segatalab.cibio.unitn.it/tools/metaphlan/index.html",
   "doi": "https://doi.org/10.1038/s41587-023-01688-w",
   "bio_tools": "https://bio.tools/metaphlan",
   "uses_databases": [

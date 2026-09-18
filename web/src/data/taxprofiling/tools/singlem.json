@@ -19,13 +19,8 @@
   "supports_shortreads": true,
   "to_update": true,
   "repo": "https://github.com/wwood/singlem",
-  "doc": "http://wwood.github.io/singlem/",
-  "doi": "https://zenodo.org/records/15232972",
-  "bio_tools": "https://bio.tools/singlem",
-  "sub_module": {
-    "name": "Lyrebird",
-    "@id": "lyrebird"
-  },
+  "documentation": "http://wwood.github.io/singlem/",
+  "doi": " https://doi.org/10.1038/s41587-025-02738-1",
   "uses_databases": [
     {
       "name": "GTDB",

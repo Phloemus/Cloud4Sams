@@ -19,12 +19,9 @@
   "supports_shortreads": true,
   "additional_functionality": "",
   "taxonomy": "GTDB",
-
   "repo": "https://github.com/metagenopolis/meteor",
-  "doc": "https://github.com/metagenopolis/meteor/wiki",
+  "documentation": "https://github.com/metagenopolis/meteor/wiki",
   "doi": "https://doi.org/10.21203/rs.3.rs-6122276/v1",
-
-
   "uses_databases": [
 
     {

@@ -14,6 +14,8 @@
   "strain_level": false,
   "approach_detail": "Universal Markers",
   "repo": "https://github.com/motu-tool/mOTUs",
+  "doi": "https://doi.org/10.1093/nar/gkae1004",
+  "documentation": "https://www.motus-tool.org/profiler/index.html",
   "to_update": true,
   "supports_longreads": false,
   "supports_shortreads": true,
