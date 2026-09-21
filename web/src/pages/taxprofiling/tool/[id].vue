@@ -6,6 +6,10 @@
   import { useRoute } from 'vue-router'
   import SearchInput from '~/components/SearchInput.vue'
 
+      definePageMeta({
+        layout: 'example-tool'
+    })
+
   const route = useRoute()
 
   const { getToolById, getDatabasesByTool } = useTaxProfiling()
