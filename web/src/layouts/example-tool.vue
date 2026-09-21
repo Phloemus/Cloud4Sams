@@ -48,6 +48,7 @@
                         </div>
                         <div class="mt-6 p-8 bg-white border border-slate-200 rounded-md">
                             <MoreInformation
+                                v-if="tool"
                                 :repo="tool.repo"
                                 :doi="tool.doi"
                                 :documentation="tool.documentation"
