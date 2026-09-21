@@ -37,7 +37,6 @@
                                 :documentation="tool.documentation"
                                 :id="tool['@id']"
                             />
-                            </p>
                         </div>
 
                     </div>
