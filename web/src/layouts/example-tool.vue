@@ -47,7 +47,6 @@
                             <QuickToolLaunch />
                         </div>
                         <div class="mt-6 p-8 bg-white border border-slate-200 rounded-md">
-                            <h2 class="text-lg font-semibold text-slate-900 mb-4">More Information</h2>
                             <MoreInformation
                                 :repo="tool.repo"
                                 :doi="tool.doi"
