@@ -4,6 +4,7 @@
     import Navbar from "../components/Navbar.vue"
     import ToolStats from "../components/ToolStats.vue"
     import QuickToolLaunch from "../components/QuickToolLaunch.vue"
+    import MoreInformation from "../components/MoreInformation.vue"
 
 </script>
 
@@ -28,6 +29,17 @@
                         <div class="mt-6 p-8 bg-white border border-slate-200 rounded-md">
                             <QuickToolLaunch />
                         </div>
+                        <div class="mt-6 p-8 bg-white border border-slate-200 rounded-md">
+                            <h2 class="text-lg font-semibold text-slate-900 mb-4">More Information</h2>
+                            <MoreInformation
+                                :repo="tool.repo"
+                                :doi="tool.doi"
+                                :documentation="tool.documentation"
+                                :id="tool['@id']"
+                            />
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             </div>

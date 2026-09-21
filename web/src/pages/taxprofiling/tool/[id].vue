@@ -6,10 +6,6 @@
   import { useRoute } from 'vue-router'
   import SearchInput from '~/components/SearchInput.vue'
 
-  definePageMeta({
-      layout: 'example-tool'
-  })
-
   const route = useRoute()
 
   const { getToolById, getDatabasesByTool } = useTaxProfiling()
@@ -92,18 +88,6 @@
                 :supports_long_reads="tool.supports_longreads"
                 :supports_short_reads="tool.supports_shortreads"
                 :uses_databases="tool.uses_databases"
-              />
-            </div>
-
-            <!-- Stats + More Information -->
-            <div class="lg:col-span-1">
-              <ToolStats :tool-id="toolId" />
-
-              <MoreInformation
-                :repo="tool.repo"
-                :doi="tool.doi"
-                :documentation="tool.documentation"
-                :id="tool['@id']"
               />
             </div>
 
