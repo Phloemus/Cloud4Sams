@@ -59,56 +59,36 @@ const loading = ref(false)
     </div>
 
     <!-- Tool Details -->
-    <section v-else class="py-8 px-4 md:px-8">
+    <section v-else class="py-8">
       <div class="max-w-4xl mx-auto">
 
         <!-- Main Info Card -->
-        <div class="bg-white rounded-lg border-2 border-slate-100 p-8 mb-8">
-
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-            <!-- Tool Card -->
-            <div class="lg:col-span-2">
-              <ToolCard
-                :id="tool['@id']"
-                :name="tool.name"
-                :description="tool.description"
-                :link="tool.repo"
-                :repo="tool.repo"
-                :doi="tool.doi"
-                :documentation="tool.documentation"
-                :type="tool.type"
-                :latest_release="tool.latest_release"
-                :curated_release="tool.curated_release"
-                :citations_count="tool.citations_count"
-                :strain_level="tool.strain_level"
-                :functional_profiling="tool.functional_profiling"
-                :supports_long_reads="tool.supports_longreads"
-                :supports_short_reads="tool.supports_shortreads"
-                :uses_databases="tool.uses_databases"
-              />
-            </div>
-
-            <!-- Stats + More Information -->
-            <div class="lg:col-span-1">
-              <ToolStats :tool-id="toolId" />
-
-              <MoreInformation
-                :repo="tool.repo"
-                :doi="tool.doi"
-                :documentation="tool.documentation"
-                :id="tool['@id']"
-              />
-            </div>
-
-          </div>
+        <div class="mb-8">
+          <ToolCard
+            :id="tool['@id']"
+            :name="tool.name"
+            :description="tool.description"
+            :link="tool.repo"
+            :repo="tool.repo"
+            :doi="tool.doi"
+            :documentation="tool.documentation"
+            :type="tool.type"
+            :latest_release="tool.latest_release"
+            :curated_release="tool.curated_release"
+            :citations_count="tool.citations_count"
+            :strain_level="tool.strain_level"
+            :functional_profiling="tool.functional_profiling"
+            :supports_long_reads="tool.supports_longreads"
+            :supports_short_reads="tool.supports_shortreads"
+            :uses_databases="tool.uses_databases"
+          />
         </div>
 
         <!-- Additional Details -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 
           <!-- Features -->
-          <div class="bg-white rounded-lg border-2 border-slate-100 p-6">
+          <div>
             <h2 class="text-xl font-bold text-slate-900 mb-4">
               Features
             </h2>
@@ -159,7 +139,7 @@ const loading = ref(false)
           </div>
 
           <!-- Metadata -->
-          <div class="bg-white rounded-lg border-2 border-slate-100 p-6">
+          <div>
             <h2 class="text-xl font-bold text-slate-900 mb-4">
               Information
             </h2>
@@ -208,7 +188,7 @@ const loading = ref(false)
         </div>
 
         <!-- External Links -->
-        <div class="bg-white rounded-lg border-2 border-slate-100 p-6 mb-8">
+        <div class="mb-8">
 
           <h2 class="text-xl font-bold text-slate-900 mb-4">
             Links
@@ -250,7 +230,7 @@ const loading = ref(false)
         </div>
 
         <!-- Associated Databases -->
-        <div class="bg-white rounded-lg border-2 border-slate-100 p-6">
+        <div>
 
           <h2 class="text-xl font-bold text-slate-900 mb-4">
             Compatible Databases ({{ associatedDatabases.length }})
