@@ -1,10 +1,27 @@
 <script setup>
-
+    { useTaxProfiling } from '~/composables/useTaxProfiling'
     import Sidebar from "../components/Sidebar.vue"
     import Navbar from "../components/Navbar.vue"
     import ToolStats from "../components/ToolStats.vue"
     import QuickToolLaunch from "../components/QuickToolLaunch.vue"
     import MoreInformation from "../components/MoreInformation.vue"
+    import { useRoute } from 'vue-router'
+    
+    const route = useRoute()
+
+    const { getToolById, getDatabasesByTool } = useTaxProfiling()
+
+    // Get tool synchronously (data is already cached)
+    const toolId = route.params.id as string
+
+    const tool = computed(() => getToolById(toolId))
+
+    const associatedDatabases = computed(() =>
+        tool.value ? getDatabasesByTool(toolId) : []
+    )
+
+    // Loading is immediate since data is cached
+    const loading = ref(false)
 
 </script>
 
