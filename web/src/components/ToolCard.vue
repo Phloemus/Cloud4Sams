@@ -22,22 +22,23 @@
 
 </script>
 <template>
-    <div class="flex justify-between items-start">
-        <div>
-            <h1 class="mb-1 text-2xl text-slate-900 font-bold">{{ name }}</h1>
+    <div class="p-6 bg-white rounded-lg border-2 border-slate-100">
+        <div class="flex justify-between items-start">
+            <div>
+                <h1 class="mb-1 text-2xl text-slate-900 font-bold">{{ name }}</h1>
 
-            <div class="mt-4 flex gap-2">
-                <span class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm">
-                    {{ type }}
-                </span>
+                <div class="mt-4 flex gap-2">
+                    <span class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm">
+                        {{ type }}
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div>
-        <p class="my-4 text-lg text-slate-700 line-clamp-6">
-            {{ description }}
-        </p>
+        <div>
+            <p class="my-4 text-lg text-slate-700 line-clamp-6">
+                {{ description }}
+            </p>
+        </div>
     </div>
 </template>
-
