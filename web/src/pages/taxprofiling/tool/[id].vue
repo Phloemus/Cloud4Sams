@@ -1,24 +1,31 @@
 <script setup lang="ts">
-import { useTaxProfiling } from '~/composables/useTaxProfiling'
-import ToolCard from '~/components/ToolCard.vue'
-import ToolStats from '~/components/ToolStats.vue'
-import MoreInformation from '~/components/MoreInformation.vue'
+  import { useTaxProfiling } from '~/composables/useTaxProfiling'
+  import ToolCard from '~/components/ToolCard.vue'
+  import ToolStats from '~/components/ToolStats.vue'
+  import MoreInformation from '~/components/MoreInformation.vue'
+  import { useRoute } from 'vue-router'
+  import SearchInput from '~/components/SearchInput.vue'
+  import exampleTools from "../../static/example-tools.json"
 
-const route = useRoute()
+  definePageMeta({
+      layout: 'example-tool'
+  })
 
-const { getToolById, getDatabasesByTool } = useTaxProfiling()
+  const route = useRoute()
 
-// Get tool synchronously (data is already cached)
-const toolId = route.params.id as string
+  const { getToolById, getDatabasesByTool } = useTaxProfiling()
 
-const tool = computed(() => getToolById(toolId))
+  // Get tool synchronously (data is already cached)
+  const toolId = route.params.id as string
 
-const associatedDatabases = computed(() =>
-  tool.value ? getDatabasesByTool(toolId) : []
-)
+  const tool = computed(() => getToolById(toolId))
 
-// Loading is immediate since data is cached
-const loading = ref(false)
+  const associatedDatabases = computed(() =>
+    tool.value ? getDatabasesByTool(toolId) : []
+  )
+
+  // Loading is immediate since data is cached
+  const loading = ref(false)
 </script>
 
 <template>

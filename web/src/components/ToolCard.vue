@@ -35,7 +35,7 @@
     </div>
 
     <div>
-        <p class="my-8 text-lg text-slate-700 line-clamp-6">
+        <p class="my-4 text-lg text-slate-700 line-clamp-6">
             {{ description }}
         </p>
     </div>
