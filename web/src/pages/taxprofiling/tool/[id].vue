@@ -201,47 +201,7 @@
 
         </div>
 
-        <!-- External Links -->
-        <div class="bg-white rounded-lg border-2 border-slate-100 p-6 mb-8">
 
-          <h2 class="text-xl font-bold text-slate-900 mb-4">
-            Links
-          </h2>
-
-          <div class="flex gap-4 flex-wrap">
-
-            <a
-              v-if="tool.repo"
-              :href="tool.repo"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-md transition"
-            >
-              🔗 Repository
-            </a>
-
-            <a
-              v-if="tool.doi"
-              :href="tool.doi"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-md transition"
-            >
-              📄 Publication
-            </a>
-
-            <a
-              v-if="tool.documentation"
-              :href="tool.documentation"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-md transition"
-            >
-              📚 Documentation
-            </a>
-
-          </div>
-        </div>
 
         <!-- Associated Databases -->
         <div class="bg-white rounded-lg border-2 border-slate-100 p-6">
