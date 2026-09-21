@@ -1,5 +1,5 @@
 <script setup>
-    { useTaxProfiling } from '~/composables/useTaxProfiling'
+    import { useTaxProfiling } from '~/composables/useTaxProfiling'
     import Sidebar from "../components/Sidebar.vue"
     import Navbar from "../components/Navbar.vue"
     import ToolStats from "../components/ToolStats.vue"
