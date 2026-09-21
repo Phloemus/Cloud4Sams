@@ -5,7 +5,6 @@
   import MoreInformation from '~/components/MoreInformation.vue'
   import { useRoute } from 'vue-router'
   import SearchInput from '~/components/SearchInput.vue'
-  import exampleTools from "../../static/example-tools.json"
 
   definePageMeta({
       layout: 'example-tool'
