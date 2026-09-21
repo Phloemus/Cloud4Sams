@@ -23,7 +23,7 @@
 <template>
   <div class="w-full">
     <h2 class="text-xl text-slate-900 font-bold">More Information</h2>
-    <ul class="space-y-2">
+    <ul class="space-y-2 my-4">
       <li><NuxtLink :to="repo" v-if="repo" target="_blank" class="text-black-600 hover:underline">GitHub Repository</NuxtLink></li>
       <li><NuxtLink :to="doi" v-if="doi" target="_blank" class="text-black-600 hover:underline">Publication</NuxtLink></li>
       <li><NuxtLink :to="documentation" v-if="documentation" target="_blank" class="text-black-600 hover:underline">Documentation</NuxtLink></li>
