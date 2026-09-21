@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
     import { useTaxProfiling } from '~/composables/useTaxProfiling'
     import Sidebar from "../components/Sidebar.vue"
     import Navbar from "../components/Navbar.vue"
