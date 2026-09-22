@@ -74,7 +74,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
             <!-- Tool Card -->
-            <!-- <div class="lg:col-span-2"> -->
+            <div class="lg:col-span-2">
               <ToolCard
                 :id="tool['@id']"
                 :name="tool.name"
@@ -93,7 +93,7 @@
                 :supports_short_reads="tool.supports_shortreads"
                 :uses_databases="tool.uses_databases"
               />
-            <!-- </div> -->
+            </div>
 
           </div>
         </div>
