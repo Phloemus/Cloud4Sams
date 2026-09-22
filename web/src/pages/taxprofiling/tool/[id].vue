@@ -28,7 +28,7 @@
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+  <div class="min-h-screen bg-white">
 
     <!-- Header -->
     <section class="py-8 px-4 md:px-8 border-b border-slate-200 bg-white">
