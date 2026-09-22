@@ -25,22 +25,57 @@
 
 <template>
     <nav class="px-6 py-3 w-full sticky top-0 flex justify-between items-center bg-white border-b border-slate-200 z-10">
-        <div class="flex items-center gap-4">
+
+        <!-- Partie gauche : Search + navigation -->
+        <div class="flex items-center gap-6">
+
+            <!-- Search bar -->
             <SearchInput 
                 :searchTerm="searchTerm"
                 @input="filterOntologyList"
                 placeholder="Search for a dataset.."
                 :results="ontologyClasses"
             />
-        </div>
-        <div class="flex items-center gap-4">
-            <NuxtLink to="/taxprofiling" class="text-slate-900 font-semibold hover:text-slate-700 transition">
-                Taxonomic Profiling
-            </NuxtLink>
-            <div class="flex flex-row-reverse gap-4">
-                <ActionButton @click="displayLoginPanel" v-show="!isUserLoggedIn" content="Login"/>
-                <SecondaryButton @click="logout" v-show="isUserLoggedIn" content="Log out"/>
+
+            <!-- Navigation -->
+            <div class="flex items-center gap-4">
+                <NuxtLink
+                    to="/taxprofiling/tool"
+                    class="text-slate-900 font-semibold hover:text-slate-700 transition"
+                >
+                    Tools
+                </NuxtLink>
+
+                <NuxtLink
+                    to="/taxprofiling/dataset"
+                    class="text-slate-900 font-semibold hover:text-slate-700 transition"
+                >
+                    Datasets
+                </NuxtLink>
+
+                <NuxtLink
+                    to="/taxprofiling"
+                    class="text-slate-900 font-semibold hover:text-slate-700 transition"
+                >
+                    Taxonomic Profiling
+                </NuxtLink>
             </div>
         </div>
+
+        <!-- Partie droite : authentification -->
+        <div class="flex items-center gap-4">
+            <ActionButton
+                @click="displayLoginPanel"
+                v-show="!isUserLoggedIn"
+                content="Login"
+            />
+
+            <SecondaryButton
+                @click="logout"
+                v-show="isUserLoggedIn"
+                content="Log out"
+            />
+        </div>
+
     </nav>
 </template>
