@@ -40,14 +40,14 @@
             <!-- Navigation -->
             <div class="flex items-center gap-4">
                 <NuxtLink
-                    to="/taxprofiling/tool"
+                    to="/tool"
                     class="text-slate-900 font-semibold hover:text-slate-700 transition"
                 >
                     Tools
                 </NuxtLink>
 
                 <NuxtLink
-                    to="/taxprofiling/dataset"
+                    to="/dataset"
                     class="text-slate-900 font-semibold hover:text-slate-700 transition"
                 >
                     Datasets
