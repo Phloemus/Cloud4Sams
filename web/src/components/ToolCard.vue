@@ -22,7 +22,7 @@
 
 </script>
 <template>
-    <div class="p-6 bg-white rounded-lg border-2 border-slate-100">
+    <div class="p-6 bg-white rounded-lg border-2 border-white">
         <div class="flex justify-between items-start">
             <div>
                 <h1 class="mb-1 text-2xl text-slate-900 font-bold">{{ name }}</h1>
