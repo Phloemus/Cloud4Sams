@@ -69,7 +69,7 @@
       <div class="max-w-4xl mx-auto">
 
         <!-- Main Info Card -->
-        <div class="bg-white rounded-lg border-2 border-slate-100 p-8 mb-8">
+        <div class="bg-white rounded-lg p-8 mb-8">
 
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
