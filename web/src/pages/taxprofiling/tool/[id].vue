@@ -102,7 +102,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 
           <!-- Features -->
-          <div class="bg-white rounded-lg border-2 border-slate-100 p-6">
+          <div class="bg-white rounded-lg p-6">
             <h2 class="text-xl font-bold text-slate-900 mb-4">
               Features
             </h2>
@@ -153,7 +153,7 @@
           </div>
 
           <!-- Metadata -->
-          <div class="bg-white rounded-lg border-2 border-slate-100 p-6">
+          <div class="bg-white rounded-lg p-6">
             <h2 class="text-xl font-bold text-slate-900 mb-4">
               Information
             </h2>
@@ -204,7 +204,7 @@
 
 
         <!-- Associated Databases -->
-        <div class="bg-white rounded-lg border-2 border-slate-100 p-6">
+        <div class="bg-white rounded-lg p-6">
 
           <h2 class="text-xl font-bold text-slate-900 mb-4">
             Compatible Databases ({{ associatedDatabases.length }})
