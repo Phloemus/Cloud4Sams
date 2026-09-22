@@ -7,7 +7,7 @@ definePageMeta({
 <template>
   <div class="flex flex-col items-center justify-center py-32">
     <h1 class="text-3xl font-bold text-slate-900">
-      Tools
+      Datasets
     </h1>
 
     <p class="mt-4 text-lg text-slate-600">
