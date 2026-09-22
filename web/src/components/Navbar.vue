@@ -41,21 +41,21 @@
             <div class="flex items-center gap-4">
                 <NuxtLink
                     to="/tool"
-                    class="text-slate-900 font-semibold hover:text-slate-700 transition"
+                    class="text-slate-900 hover:text-slate-700 transition"
                 >
                     Tools
                 </NuxtLink>
 
                 <NuxtLink
                     to="/dataset"
-                    class="text-slate-900 font-semibold hover:text-slate-700 transition"
+                    class="text-slate-900 hover:text-slate-700 transition"
                 >
                     Datasets
                 </NuxtLink>
 
                 <NuxtLink
                     to="/taxprofiling"
-                    class="text-slate-900 font-semibold hover:text-slate-700 transition"
+                    class="text-slate-900 hover:text-slate-700 transition"
                 >
                     Taxonomic Profiling
                 </NuxtLink>
