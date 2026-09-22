@@ -74,7 +74,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
             <!-- Tool Card -->
-            <div class="lg:col-span-2">
+            <div class="lg:col-span-3">
               <ToolCard
                 :id="tool['@id']"
                 :name="tool.name"
