@@ -207,7 +207,7 @@
         <div class="bg-white rounded-lg p-6">
 
           <h2 class="text-xl font-bold text-slate-900 mb-4">
-            Compatible Databases ({{ associatedDatabases.length }})
+            Reference Databases for {{ tool.name }} ({{ associatedDatabases.length }})
           </h2>
 
           <div
