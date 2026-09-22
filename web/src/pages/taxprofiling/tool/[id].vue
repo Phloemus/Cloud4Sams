@@ -99,7 +99,7 @@
         </div> -->
 
         <!-- Additional Details -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto">
 
           <!-- Features -->
           <div class="bg-white rounded-lg p-6">
