@@ -68,13 +68,13 @@
     <section v-else class="py-8 px-4 md:px-8">
       <div class="max-w-6xl mx-auto">
 
-        <!-- Main Info Card -->
+        <!-- Main Info Card
         <div class="bg-white rounded-lg p-8 mb-8">
 
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6"> -->
 
             <!-- Tool Card -->
-            <div class="lg:col-span-3">
+            <div class="bg-white rounded-lg p-8 mb-8">
               <ToolCard
                 :id="tool['@id']"
                 :name="tool.name"
@@ -94,9 +94,9 @@
                 :uses_databases="tool.uses_databases"
               />
             </div>
-
+<!-- 
           </div>
-        </div>
+        </div> -->
 
         <!-- Additional Details -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
