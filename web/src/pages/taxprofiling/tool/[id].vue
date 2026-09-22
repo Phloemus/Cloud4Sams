@@ -66,7 +66,7 @@
 
     <!-- Tool Details -->
     <section v-else class="py-8 px-4 md:px-8">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-6xl mx-auto">
 
         <!-- Main Info Card -->
         <div class="bg-white rounded-lg p-8 mb-8">
