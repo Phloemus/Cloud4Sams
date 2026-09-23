@@ -18,7 +18,6 @@
   "supports_longreads": false,
   "supports_shortreads": true,
   "repo": "https://github.com/jenniferlu717/Bracken",
-  "bio_tools": "https://bio.tools/bracken",
   "additional_functionality": "Post-processing abundance estimator that refines Kraken/Kraken2 classifications",
   "uses_databases": [
     { "name": "GTDB", "@id": "gtdb", "release": "226", "taxonomy_system": "gtdb" },

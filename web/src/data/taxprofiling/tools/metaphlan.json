@@ -21,7 +21,6 @@
   "repo": "https://github.com/biobakery/MetaPhlAn",
   "documentation": "http://segatalab.cibio.unitn.it/tools/metaphlan/index.html",
   "doi": "https://doi.org/10.1038/s41587-023-01688-w",
-  "bio_tools": "https://bio.tools/metaphlan",
   "uses_databases": [
     { "name": "ChocoPhlan", "@id": "chocophlan", "taxonomy_system": [ "ncbi", "gtdb" ] }
   ]
