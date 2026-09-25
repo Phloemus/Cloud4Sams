@@ -1,4 +1,4 @@
-code metaphlan{
+{
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "Metabuli",
   "@id": "metabuli",
