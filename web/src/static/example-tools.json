@@ -20,7 +20,6 @@
                 "description": "The study of genetic material recovered from environmental samples, and associated environmental data.",
                 "url": "http://edamontology.org/topic_3176"
             }
-
         ],
         "tools": [
             {
@@ -88,5 +87,27 @@
                 "description": "Human Microbiome Project dataset to run the Magneto workflow. A samples.yaml file is also provided. This file should be placed in the config directory of your Magneto working directory. It is used to specify the name of the sample, the run, and its location with its absolute path (that you need to change with the location of your data). This file is currently commented out, so it is up to you to uncomment it according to the files you want to test, one or more of course."
             }
         ]
+    },
+    {
+        "name": "meteor",
+        "description": "Meteor is a platform for quantitative metagenomics profiling of complex ecosystems. Meteor relies on genes catalogs to perform species-level taxonomic profiling (Bacteria, Archaea and Eukaryotes), functional analysis and strain-level population structure inference.",
+        "homepage": "https://github.com/metagenopolis/meteor",
+        "version": "2.0.22",
+        "topics": [
+            {
+                "name": "Microbial ecology",
+                "description": "The ecology of microorganisms including their relationship with one another and their environment.",
+                "url": "http://edamontology.org/topic_3697"
+            },
+            {
+                "name": "Metagenomics",
+                "description": "The study of genetic material recovered from environmental samples, and associated environmental data.",
+                "url": "http://edamontology.org/topic_3174"
+            }
+        ],
+        "tools": [],
+        "contacts": [],
+        "developpers": [],
+        "datasets": []
     }
 ]
