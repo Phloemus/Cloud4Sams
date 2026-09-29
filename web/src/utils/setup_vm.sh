@@ -6,7 +6,6 @@ set -e
 # Configuration
 # ============================================================
 
-BRANCH="dev-vivek"
 REPO_URL="git@github.com:Phloemus/Cloud4Sams.git"
 
 # Nom de la clé SSH
@@ -42,14 +41,52 @@ if ! command -v git >/dev/null 2>&1; then
 fi
 
 # ============================================================
+# Demande de la branche
+# ============================================================
+
+echo "Repository configuré :"
+echo "$REPO_URL"
+echo ""
+
+read -r -p "Quelle branche veux-tu cloner ? : " BRANCH
+
+if [ -z "$BRANCH" ]; then
+    echo -e "${RED}Erreur : aucune branche n'a été spécifiée.${NC}"
+    exit 1
+fi
+
+# ============================================================
+# Confirmation du clone
+# ============================================================
+
+echo ""
+echo "=========================================="
+echo "          CONFIRMATION DU CLONAGE"
+echo "=========================================="
+echo ""
+echo "Repository : $REPO_URL"
+echo "Branche    : $BRANCH"
+echo ""
+
+read -r -p "Veux-tu bien cloner ce repository et cette branche ? (oui/non) : " CONFIRM_CLONE
+
+if [[ "$CONFIRM_CLONE" != "oui" ]]; then
+    echo ""
+    echo "Clonage annulé."
+    exit 0
+fi
+
+# ============================================================
 # Génération de la clé SSH
 # ============================================================
 
+echo ""
 echo "Génération de la clé SSH Ed25519..."
 
 if [ -f "$SSH_KEY" ]; then
     echo -e "${YELLOW}Une clé existe déjà : $SSH_KEY${NC}"
     echo ""
+
     read -r -p "Veux-tu utiliser cette clé existante ? (oui/non) : " USE_EXISTING
 
     if [[ "$USE_EXISTING" != "oui" ]]; then
@@ -93,7 +130,7 @@ read -r -p "La clé publique est-elle bien collée dans GitHub ? (oui/non) : " K
 if [[ "$KEY_ADDED" != "oui" ]]; then
     echo ""
     echo "Le script est arrêté."
-    echo "Tu peux relancer le script lorsque la clé sera ajoutée."
+    echo "Tu peux le relancer lorsque la clé sera ajoutée."
     exit 0
 fi
 
@@ -190,7 +227,10 @@ else
     echo "NVM est déjà installé."
 fi
 
-# Charger NVM dans le shell courant
+# ============================================================
+# Chargement de NVM dans le shell courant
+# ============================================================
+
 export NVM_DIR="$HOME/.nvm"
 
 if [ -s "$NVM_DIR/nvm.sh" ]; then
@@ -199,6 +239,9 @@ else
     echo -e "${RED}Erreur : impossible de charger NVM.${NC}"
     exit 1
 fi
+
+echo ""
+echo -e "${GREEN}NVM est disponible dans ce shell.${NC}"
 
 # ============================================================
 # Installation de Node.js 22
@@ -237,6 +280,10 @@ echo "=========================================="
 echo ""
 
 npm install
+
+# ============================================================
+# Fin
+# ============================================================
 
 echo ""
 echo "=========================================="
