@@ -2,7 +2,7 @@
 
     import datasets from "../static/datasets.json"
     import biotools from "../static/biotools.json"
-    import exampleTools from "../static/example-tools.json"
+    import exampleTools from "../static/metagenomics_appliances.json"
     import biosphereTools from "../static/biosphere-tools.json"
 
     const filteredDatasetList = datasets.data.items.filter(
@@ -72,7 +72,7 @@
                     </p>
                     <div class="absolute bottom-4 flex gap-2">
                         <NuxtLink
-                            :to="`/example-tool/${index + 1}`"
+                            :to="`/appliances/${index + 1}`"
                             class="px-4 py-2 bg-white hover:bg-slate-50 text-slate-900 text-sm border-2 border-slate-900 rounded-md"
                         >
                             More info
