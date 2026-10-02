@@ -39,7 +39,7 @@
 <template>
     <div>
         <section class="mb-16">
-            <h2 class="my-6 font-semibold text-slate-900 text-xl">Example tools</h2>
+            <h2 class="my-6 font-semibold text-slate-900 text-xl">Metagenomics Appliances</h2>
             <div class="grid grid-cols-3 gap-4">
                 <div
                     v-for="(tool, index) in exampleTools"
