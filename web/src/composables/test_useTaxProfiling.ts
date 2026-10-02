@@ -111,8 +111,8 @@ export class Tool {
   quality_control: string | null
   curated_release: string
   latest_release: string
-  citations_count: number | null
-  issues_count: number | null
+  // citations_count: number | null
+  // issues_count: number | null
   to_update: boolean
   github_last_fetched: string
 
@@ -135,8 +135,8 @@ export class Tool {
     this.quality_control = data.quality_control || null
     this.curated_release = data.curated_release || ""
     this.latest_release = data.latest_release || ""
-    this.citations_count = data.citations_count ?? null
-    this.issues_count = data.issues_count || null
+    // this.citations_count = data.citations_count ?? null
+    // this.issues_count = data.issues_count || null
     this.to_update = data.to_update || false
     this.github_last_fetched = data.github_last_fetched || ""
   }
