@@ -2,7 +2,7 @@
     import { useRoute } from 'vue-router'
 
     import SearchInput from '~/components/SearchInput.vue'
-    import exampleTools from "../../static/example-tools.json"
+    import exampleTools from "../../static/appliances.json"
 
     definePageMeta({
         layout: 'example-tool'
