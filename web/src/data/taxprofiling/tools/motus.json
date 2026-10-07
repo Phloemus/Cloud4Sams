@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "mOTUs",
-  "@id": "motus",
+  "biotoolsID": "motus",
   "type": "Taxonomic Profiler",
   "description": "The mOTUs profiler is a computational tool that estimates taxonomic abundance of microbial community members from known and currently unknown (uncultured) species using metagenomic shotgun sequencing data.",
   "latest_release": "4.1.0",

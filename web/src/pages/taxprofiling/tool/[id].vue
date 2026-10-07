@@ -7,7 +7,7 @@
   import SearchInput from '~/components/SearchInput.vue'
 
       definePageMeta({
-        layout: 'example-tool'
+        layout: 'example-tool-profiling',
     })
 
   const route = useRoute()

@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "sylph",
-  "@id": "sylph",
+  "biotoolsID": "sylph",
   "type": "Taxonomic Profiler",
   "description": "ultrafast taxonomic profiling and genome querying for metagenomic samples by abundance-corrected minhash.",
   "latest_release": "latest",

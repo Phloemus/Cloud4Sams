@@ -9,16 +9,16 @@
     
     const route = useRoute()
 
-    const { getToolById, getDatabasesByTool } = useTaxProfiling()
+    // const { getToolById, getDatabasesByTool } = useTaxProfiling()
 
     // Get tool synchronously (data is already cached)
     const toolId = route.params.id as string
 
-    const tool = computed(() => getToolById(toolId))
+    // const tool = computed(() => getToolById(toolId))
 
-    const associatedDatabases = computed(() =>
-        tool.value ? getDatabasesByTool(toolId) : []
-    )
+    // const associatedDatabases = computed(() =>
+    //     tool.value ? getDatabasesByTool(toolId) : []
+    // )
 
     // Loading is immediate since data is cached
     const loading = ref(false)

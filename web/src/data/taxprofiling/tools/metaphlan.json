@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "MetaPhlAn",
-  "@id": "metaphlan",
+  "biotoolsID": "metaphlan",
   "type": "Taxonomic Profiler",
   "description": "MetaPhlAn is a computational tool for profiling the composition of microbial communities from metagenomic shotgun sequencing data. It uses marker-gene-based profiling; species and strain-level resolution",
   "latest_release": "v4.2.4",

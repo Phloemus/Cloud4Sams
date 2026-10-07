@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "Centrifuger",
-  "@id": "centrifuger",
+  "biotoolsID": "centrifuger",
   "type": "Taxonomic Profiler",
   "description": "Taxonomic classifier for sequencing reads (bulk and single-cell data, short and long read) using FM-index with run-block compressed BWT.",
   "latest_release": "v1.1.0",

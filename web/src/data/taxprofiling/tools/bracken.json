@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "Bracken",
-  "@id": "bracken",
+  "biotoolsID": "bracken",
   "type": "Abundance Estimator",
   "description": "Bracken is a companion program to Kraken 1, KrakenUniq, or Kraken 2. While Kraken classifies reads to multiple levels in the taxonomic tree, Bracken allows estimation of abundance at a single level using those classifications (e.g. Bracken can estimate abundance of species within a sample).",
   "latest_release": "v3.1",

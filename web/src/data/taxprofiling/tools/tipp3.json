@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "TIPP3",
-  "@id": "tipp3",
+  "biotoolsID": "tipp3",
   "type": "Taxonomic Profiler",
   "description": "TIPP3 and TIPP3-fast: new phylogeny-based metagenomic profiling and taxonomic identification tool.",
   "latest_release": "v0.3",

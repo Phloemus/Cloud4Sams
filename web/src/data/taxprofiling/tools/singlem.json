@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "singleM",
-  "@id": "singlem",
+  "biotoolsID": "singlem",
   "type": "Taxonomic Profiler",
   "latest_release": "0.20.3",
   "curated_release": "",

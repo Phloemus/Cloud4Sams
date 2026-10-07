@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "Metabuli",
-  "@id": "metabuli",
+  "biotoolsID": "metabuli",
   "type": "Taxonomic Profiler",
   "description": "novel k-mer structure (metamer) allowing combined DNA+AA analysis for sensitive detection and strain discrimination",
   "latest_release": "v1.1.1",

@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "Kraken",
-  "@id": "kraken2",
+  "biotoolsID": "kraken2",
   "type": "Taxonomic profiler",
   "description": "The second version of the Kraken taxonomic sequence classification system",
   "latest_release": "v2.17.1",
@@ -23,7 +23,7 @@
   "additional_functionality": "k-mer based exact alignment classifier; very fast classification",
   "sub_module": {
     "name": "Bracken",
-    "@id": "bracken"
+    "biotoolsID": "bracken"
   },
   "uses_databases": [
     {

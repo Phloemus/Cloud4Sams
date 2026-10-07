@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "meteor",
-  "@id": "meteor",
+  "biotoolsID": "meteor",
   "type": "Taxonomic Profiler",
   "description": "Meteor is a plateform for quantitative metagenomics profiling of complex ecosystems. Meteor relies on genes catalogue to perform species-level taxonomic profiling (Bacteria, Archaea and Eukaryotes), functional analysis and strain-level population structure inference.",
   "latest_release": "2.0.22",

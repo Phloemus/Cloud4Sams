@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/vivekbibs/TaxProfiling_catalogue/main/schemas/tool_schema.json",
   "name": "Ganon",
-  "@id": "ganon",
+  "biotoolsID": "ganon",
   "type": "Taxonomic Profiler",
   "description": "ganon2 classifies genomic sequences against large sets of references efficiently, with integrated download and update of databases (refseq/genbank), taxonomic profiling (ncbi/gtdb), binning and hierarchical classification, customized reporting and more.",
   "latest_release": "v2.3.0",
