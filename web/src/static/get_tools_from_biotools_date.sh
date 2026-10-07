@@ -1,11 +1,14 @@
 #!/bin/bash
-# C:\Users\vashokan\taxprofilingcatalogue_2\web\src\static\get_tools_from_biotools.sh
+
+set -e
 
 echo "Récupération des outils bio.tools avec topic=metagenomics..."
-curl -s "https://bio.tools/api/tools?topic=metagenomics&format=json" > ../static/biotools.json
 
-# Ajout de la date de mise à jour
+curl --fail --silent --show-error \
+  "https://bio.tools/api/tools?topic=metagenomics&format=json" \
+  > ../static/biotools.json
+
 DATE=$(date +"%Y-%m-%d %H:%M:%S")
-echo "Dernière mise à jour: $DATE" >> ../static/biotools_update.txt
+echo "Dernière mise à jour: $DATE" > ../static/biotools_update.txt
 
 echo "Mise à jour terminée"
