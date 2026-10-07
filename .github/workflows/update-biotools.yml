@@ -1,0 +1,38 @@
+name: Update bio.tools snapshot
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+      timezone: "Europe/Paris"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-biotools:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout dev-vivek branch
+        uses: actions/checkout@v4
+        with:
+          ref: dev-vivek
+
+      - name: Run bio.tools metadata update script
+        run: |
+          chmod +x web/src/static/get_tools_from_biotools_date.sh
+          ./web/src/static/get_tools_from_biotools_date.sh
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add web/src/static/biotools.json web/src/static/biotools_update.txt
+
+          git diff --cached --quiet || git commit -m "Update bio.tools snapshot"
+
+      - name: Push changes
+        run: git push origin dev-vivek
