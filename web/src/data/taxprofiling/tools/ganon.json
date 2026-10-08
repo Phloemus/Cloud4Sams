@@ -4,7 +4,6 @@
   "biotoolsID": "ganon",
   "type": "Taxonomic Profiler",
   "homepage": "https://github.com/pirovc/ganon",
-  "issues_count": null,
   "host_reads_removal": null,
   "quality_control": null,
   "functional_profiling": false,
