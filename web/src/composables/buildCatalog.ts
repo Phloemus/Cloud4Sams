@@ -227,18 +227,18 @@ const getRawToolRecords = (module: unknown): JsonRecord[] => {
 
 // ───────────────────────────── Outils bio.tools ──────────────────────────────
 
-const isMetagenomicsTopic = (topic: unknown): boolean => {
-  if (isRecord(topic)) {
-    return getString(topic.uri) === METAGENOMICS_TOPIC_URI
-      || normalizeId(topic.term) === 'metagenomics'
-  }
-  return normalizeId(topic) === 'metagenomics'
-}
+// const isMetagenomicsTopic = (topic: unknown): boolean => {
+//   if (isRecord(topic)) {
+//     return getString(topic.uri) === METAGENOMICS_TOPIC_URI
+//       || normalizeId(topic.term) === 'metagenomics'
+//   }
+//   return normalizeId(topic) === 'metagenomics'
+// }
 
 const getBioToolsRecords = (): JsonRecord[] =>
   Object.values(bioToolsModules)
     .flatMap((module) => getRawToolRecords(module))
-    .filter((entry) => Array.isArray(entry.topic) && entry.topic.some(isMetagenomicsTopic))
+    .filter((entry) => Array.isArray(entry.topic)
 
 /** Renvoie null (au lieu de planter) si l'entrée n'a pas d'identifiant. */
 const buildBioToolsToolData = (entry: JsonRecord): BioToolsToolData | null => {
