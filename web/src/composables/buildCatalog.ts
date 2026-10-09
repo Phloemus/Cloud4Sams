@@ -238,7 +238,7 @@ const getRawToolRecords = (module: unknown): JsonRecord[] => {
 const getBioToolsRecords = (): JsonRecord[] =>
   Object.values(bioToolsModules)
     .flatMap((module) => getRawToolRecords(module))
-    .filter((entry) => Array.isArray(entry.topic)
+    .filter((entry) => Array.isArray(entry.topic))
 
 /** Renvoie null (au lieu de planter) si l'entrée n'a pas d'identifiant. */
 const buildBioToolsToolData = (entry: JsonRecord): BioToolsToolData | null => {
