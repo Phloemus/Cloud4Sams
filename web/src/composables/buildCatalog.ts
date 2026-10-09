@@ -11,8 +11,6 @@
 
 type JsonRecord = Record<string, unknown>
 
-/** Topic EDAM « Metagenomics » */
-const METAGENOMICS_TOPIC_URI = 'http://edamontology.org/topic_3174'
 const DEFAULT_TOOL_TYPE = 'Taxonomic profiler'
 
 // ───────────────────────────── Types des données ─────────────────────────────
@@ -208,37 +206,28 @@ const getFirstDoi = (publication: unknown): string | null => {
   return null
 }
 
-/** Un fichier JSON peut contenir un objet ou un tableau d'objets : on renvoie toujours une liste. */
+/** Un fichier JSON peut contenir des objets dans des tableaux imbriqués. */
 const getRawToolRecords = (module: unknown): JsonRecord[] => {
   const raw = isRecord(module) && 'default' in module
     ? module.default
     : module
 
-  if (Array.isArray(raw)) {
-    return raw.filter(isRecord)
+  const collectRecords = (value: unknown): JsonRecord[] => {
+    if (Array.isArray(value)) {
+      return value.flatMap(collectRecords)
+    }
+
+    return isRecord(value) ? [value] : []
   }
 
-  if (isRecord(raw)) {
-    return [raw]
-  }
-
-  return []
+  return collectRecords(raw)
 }
 
 // ───────────────────────────── Outils bio.tools ──────────────────────────────
 
-// const isMetagenomicsTopic = (topic: unknown): boolean => {
-//   if (isRecord(topic)) {
-//     return getString(topic.uri) === METAGENOMICS_TOPIC_URI
-//       || normalizeId(topic.term) === 'metagenomics'
-//   }
-//   return normalizeId(topic) === 'metagenomics'
-// }
-
 const getBioToolsRecords = (): JsonRecord[] =>
   Object.values(bioToolsModules)
     .flatMap((module) => getRawToolRecords(module))
-    .filter((entry) => Array.isArray(entry.topic))
 
 /** Renvoie null (au lieu de planter) si l'entrée n'a pas d'identifiant. */
 const buildBioToolsToolData = (entry: JsonRecord): BioToolsToolData | null => {
