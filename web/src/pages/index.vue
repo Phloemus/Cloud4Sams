@@ -10,7 +10,7 @@
     )
 
     const filteredToolList = biotools.flat().filter(
-        item => item.name && item.description.trim() !== ""
+        item => item.biotoolsID && item.name && item.description.trim() !== ""
     )
 
     const filteredExampleToolList = exampleTools.flat().filter(
@@ -135,8 +135,8 @@
             <h2 class="my-6 font-semibold text-slate-900 text-xl">Analysis tools</h2>
             <div class="grid grid-cols-3 gap-4">
                 <NuxtLink
-                    :to="`/tool/${index + 1}`"
-                    v-for="(tool, index) in filteredToolList"
+                    :to="`/tool/${encodeURIComponent(tool.biotoolsID)}`"
+                    v-for="tool in filteredToolList"
                     class="p-4 relative bg-slate-100 rounded-md border-2 border-slate-100 hover:border-sky-500 hover:cursor-pointer"
                 >
                     <h3 class="font-semibold text-md text-slate-800 truncate">{{ tool.name }}</h3>

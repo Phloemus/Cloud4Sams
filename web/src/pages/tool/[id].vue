@@ -3,17 +3,19 @@
 
     import biotools from "../../static/biotools.json"
 
-    //! Here
-    const filteredToolList = biotools.flat().filter(
-        item => item.name && item.description.trim() !== ""
-    )
+    definePageMeta({
+        layout: 'example-tool'
+    })
 
     const route = useRoute()
-    const toolId = route.params.id - 1
-    const tool = filteredToolList[toolId]
+    const biotoolsId = String(route.params.id ?? '').toLowerCase()
+    const tool = biotools.flat().find(
+        item => item.biotoolsID?.toLowerCase() === biotoolsId
+    )
 
 </script>
 <template>
+    <div v-if="tool">
     <div class="flex justify-between items-start">
         <div>
             <h1 class="mb-1 text-2xl text-slate-900 font-bold">{{ tool.name }}</h1>
@@ -50,4 +52,6 @@
             />
         </div>
     </div>
+    </div>
+    <p v-else class="text-slate-600">Tool not found.</p>
 </template>

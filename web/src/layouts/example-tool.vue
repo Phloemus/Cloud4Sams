@@ -1,5 +1,6 @@
 <script setup lang="ts">
-    import { useTaxProfiling } from '~/composables/useTaxProfiling'
+    import { computed } from 'vue'
+    import { getCatalogToolById, getTaxProfilingCatalog } from '~/composables/buildCatalog'
     import Sidebar from "../components/Sidebar.vue"
     import Navbar from "../components/Navbar.vue"
     import ToolStats from "../components/ToolStats.vue"
@@ -9,16 +10,14 @@
     
     const route = useRoute()
 
-    // const { getToolById, getDatabasesByTool } = useTaxProfiling()
-
-    // Get tool synchronously (data is already cached)
-    const toolId = route.params.id as string
-
-    // const tool = computed(() => getToolById(toolId))
-
-    // const associatedDatabases = computed(() =>
-    //     tool.value ? getDatabasesByTool(toolId) : []
-    // )
+    const catalog = getTaxProfilingCatalog()
+    const tool = computed(() =>
+        getCatalogToolById(catalog, String(route.params.id ?? ''))
+    )
+    const publicationUrl = computed(() => {
+        const doi = tool.value?.publication.doi
+        return doi ? `https://doi.org/${doi}` : ''
+    })
 
     // Loading is immediate since data is cached
     const loading = ref(false)
@@ -49,10 +48,9 @@
                         <div class="mt-6 p-8 bg-white border border-slate-200 rounded-md">
                             <MoreInformation
                                 v-if="tool"
-                                :repo="tool.repo"
-                                :doi="tool.doi"
-                                :documentation="tool.documentation"
-                                :id="tool['@id']"
+                                :biotools_id="tool.biotoolsID"
+                                :homepage="tool.homepage"
+                                :publication="publicationUrl"
                             />
                         </div>
 
