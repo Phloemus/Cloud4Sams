@@ -1,12 +1,12 @@
 <script setup>
-import { useTaxProfiling } from '~/composables/useTaxProfiling'
+import { getTaxProfilingCatalog } from '~/composables/buildCatalog'
 
-const router = useRouter()
-const { getAllTools } = useTaxProfiling()
+definePageMeta({ alias: ['/taxprofiling/tools'] })
+
+const catalog = getTaxProfilingCatalog()
 const searchQuery = ref('')
 
-// Data is immediately available (no loading wait!)
-const tools = computed(() => getAllTools())
+const tools = computed(() => catalog.tools)
 const filteredTools = computed(() => {
   if (!searchQuery.value) return tools.value
   const query = searchQuery.value.toLowerCase()
@@ -16,8 +16,6 @@ const filteredTools = computed(() => {
   )
 })
 
-// No need for loading state - data is cached
-const loading = ref(false)
 </script>
 
 <template>
@@ -45,59 +43,32 @@ const loading = ref(false)
       </div>
     </section>
 
-    <!-- Loading State -->
-    <div v-if="loading" class="py-12 text-center">
-      <div class="inline-block animate-spin">⏳</div>
-      <p class="text-slate-600 mt-2">Loading tools...</p>
-    </div>
-
     <!-- Tools Grid -->
-    <section v-else class="py-8 px-4 md:px-8">
+    <section class="py-8 px-4 md:px-8">
       <div class="max-w-6xl mx-auto">
         <div v-if="filteredTools.length === 0" class="text-center py-12">
           <p class="text-slate-600">No tools found matching your search.</p>
         </div>
         
-        <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div
+        <div v-else class="grid grid-cols-3 gap-4">
+          <NuxtLink
             v-for="tool in filteredTools"
-            :key="tool['@id']"
-            @click="router.push(`/taxprofiling/tool/${tool['@id']}`)"
-            class="p-4 bg-white rounded-lg border-2 border-slate-100 hover:border-sky-500 hover:shadow-md transition-all group hover:cursor-pointer"
+            :key="tool.biotoolsID"
+            :to="`/tool/${encodeURIComponent(tool.biotoolsID)}`"
+            class="p-4 relative bg-slate-100 rounded-md border-2 border-slate-100 hover:border-sky-500 hover:cursor-pointer"
           >
-            <div class="flex justify-between items-start mb-2">
-              <h3 class="font-semibold text-lg text-slate-900 group-hover:text-sky-600 transition">
-                {{ tool.name }}
-              </h3>
-              <span class="px-2 py-1 bg-sky-200 text-sky-600 text-xs rounded-sm">
-                {{ tool.type }}
-              </span>
+            <h3 class="font-semibold text-md text-slate-800 truncate">{{ tool.name }}</h3>
+            <div class="mt-2 flex gap-2">
+              <span class="px-2 py-1 bg-sky-200 text-sky-500 text-sm rounded-sm">Tool</span>
             </div>
-            
-            <p class="text-slate-600 text-sm line-clamp-3 mb-3">
+            <p class="mt-6 mb-16 text-slate-600 text-md line-clamp-4">
               {{ tool.description }}
             </p>
-
-            <div class="flex gap-2 flex-wrap mb-3">
-              <span v-if="tool.supports_shortreads" class="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded">
-                Short Reads
-              </span>
-              <span v-if="tool.supports_longreads" class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">
-                Long Reads
-              </span>
-              <span v-if="tool.strain_level" class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded">
-                Strain Level
-              </span>
-              <span v-if="tool.functional_profiling" class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">
-                Functional
-              </span>
+            <div class="absolute bottom-4 flex gap-2">
+              <span class="px-4 py-2 bg-white hover:bg-slate-50 text-slate-900 text-sm border-2 border-slate-900 rounded-md">More info</span>
+              <span class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md">Use the data</span>
             </div>
-
-            <div class="text-xs text-slate-500">
-              <span v-if="tool.latest_release" class="mr-3">v{{ tool.latest_release }}</span>
-              <span v-if="tool.citations_count">📚 {{ tool.citations_count }} citations</span>
-            </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </section>

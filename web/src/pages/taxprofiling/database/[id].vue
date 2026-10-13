@@ -3,6 +3,7 @@ import { useTaxProfiling } from '~/composables/useTaxProfiling'
 import DatabaseCard from '~/components/DatabaseCard.vue'
 
 const route = useRoute()
+definePageMeta({ alias: ['/taxprofiling/databases/:id'] })
 const { getDatabaseById, getToolsByDatabase } = useTaxProfiling()
 
 // Get database synchronously (data is already cached)
@@ -21,7 +22,7 @@ const loading = ref(false)
     <!-- Header -->
     <section class="py-8 px-4 md:px-8 border-b border-slate-200 bg-white">
       <div class="max-w-4xl mx-auto">
-        <NuxtLink to="/taxprofiling/database" class="text-emerald-600 hover:underline text-sm mb-4 inline-block">
+        <NuxtLink to="/taxprofiling/databases" class="text-emerald-600 hover:underline text-sm mb-4 inline-block">
           ← Back to Databases
         </NuxtLink>
       </div>
@@ -36,7 +37,7 @@ const loading = ref(false)
     <!-- Database Not Found -->
     <div v-else-if="!database" class="py-12 text-center">
       <p class="text-red-600 text-lg">Database not found</p>
-      <NuxtLink to="/taxprofiling/database" class="text-emerald-600 hover:underline mt-4 inline-block">
+      <NuxtLink to="/taxprofiling/databases" class="text-emerald-600 hover:underline mt-4 inline-block">
         Back to Databases
       </NuxtLink>
     </div>
@@ -134,7 +135,7 @@ const loading = ref(false)
             <NuxtLink
               v-for="tool in compatibleToolList"
               :key="tool['@id']"
-              :to="`/taxprofiling/tool/${tool['@id']}`"
+              :to="`/tool/${encodeURIComponent(tool['@id'])}`"
               class="p-4 border-2 border-sky-100 rounded-lg hover:border-sky-500 hover:bg-sky-50 transition"
             >
               <h3 class="font-semibold text-slate-900 mb-1">{{ tool.name }}</h3>
@@ -161,7 +162,7 @@ const loading = ref(false)
             <NuxtLink
               v-for="parent in database.isPartOf"
               :key="parent['@id']"
-              :to="`/taxprofiling/database/${parent['@id']}`"
+              :to="`/taxprofiling/databases/${encodeURIComponent(parent['@id'])}`"
               class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 hover:cursor-pointer transition font-semibold"
             >
               📦 {{ parent['@id'] }}
@@ -176,7 +177,7 @@ const loading = ref(false)
             <NuxtLink
               v-for="child in database.hasPart"
               :key="child['@id']"
-              :to="`/taxprofiling/database/${child['@id']}`"
+              :to="`/taxprofiling/databases/${encodeURIComponent(child['@id'])}`"
               class="px-4 py-2 bg-pink-100 text-pink-700 rounded-lg hover:bg-pink-200 hover:cursor-pointer transition font-semibold"
             >
               📂 {{ child['@id'] }}

@@ -34,7 +34,7 @@
     <section class="py-8 px-4 md:px-8 border-b border-slate-200 bg-white">
       <div class="max-w-4xl mx-auto">
         <NuxtLink
-          to="/taxprofiling/tool"
+          to="/taxprofiling/tools"
           class="text-sky-600 hover:underline text-sm mb-4 inline-block"
         >
           ← Back to Tools
@@ -57,7 +57,7 @@
       </p>
 
       <NuxtLink
-        to="/taxprofiling/tool"
+        to="/taxprofiling/tools"
         class="text-sky-600 hover:underline mt-4 inline-block"
       >
         Back to Tools
@@ -225,7 +225,7 @@
             <NuxtLink
               v-for="database in associatedDatabases"
               :key="database['@id']"
-              :to="`/taxprofiling/database/${database['@id']}`"
+              :to="`/taxprofiling/databases/${encodeURIComponent(database['@id'])}`"
               class="p-4 border-2 border-emerald-100 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition"
             >
 

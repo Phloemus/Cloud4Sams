@@ -26,7 +26,7 @@ const databases = computed(() => getAllDatabases())
       <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <!-- Tools Button -->
         <NuxtLink
-          to="/taxprofiling/tool"
+          to="/taxprofiling/tools"
           class="p-8 bg-white rounded-lg border-2 border-sky-200 hover:border-sky-500 hover:shadow-lg transition-all group"
         >
           <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🔍</div>
@@ -41,7 +41,7 @@ const databases = computed(() => getAllDatabases())
 
         <!-- Databases Button -->
         <NuxtLink
-          to="/taxprofiling/database"
+          to="/taxprofiling/databases"
           class="p-8 bg-white rounded-lg border-2 border-emerald-200 hover:border-emerald-500 hover:shadow-lg transition-all group"
         >
           <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">💾</div>

@@ -47,6 +47,9 @@ export interface SubModule {
 
 export interface TaxProfilingToolData extends BioToolsToolData {
   type: string
+  repository: string | null
+  curated_doi: string | null
+  documentation: string | null
   host_reads_removal: boolean | string | null
   quality_control: boolean | string | null
   functional_profiling: boolean
@@ -100,6 +103,9 @@ export class BioToolsTool {
 /** Un outil de profilage taxonomique : un BioToolsTool + tes features curées. */
 export class TaxProfilingTool extends BioToolsTool {
   type: string
+  repository: string | null
+  curated_doi: string | null
+  documentation: string | null
   host_reads_removal: boolean | string | null
   quality_control: boolean | string | null
   functional_profiling: boolean
@@ -123,6 +129,9 @@ export class TaxProfilingTool extends BioToolsTool {
     super(data) // la classe parente range name, biotoolsID, publication, homepage, description
 
     this.type = data.type || DEFAULT_TOOL_TYPE
+    this.repository = data.repository
+    this.curated_doi = data.curated_doi
+    this.documentation = data.documentation
     this.host_reads_removal = data.host_reads_removal ?? null
     this.quality_control = data.quality_control ?? null
     this.functional_profiling = data.functional_profiling ?? false
@@ -316,6 +325,9 @@ const buildTaxProfilingTools = (
       tools.push(new TaxProfilingTool({
         ...bioTools,
         type: getString(localEntry.type) || DEFAULT_TOOL_TYPE,
+        repository: getString(localEntry.repo),
+        curated_doi: getString(localEntry.doi),
+        documentation: getString(localEntry.documentation),
         host_reads_removal: getBooleanOrString(localEntry.host_reads_removal),
         quality_control: getBooleanOrString(localEntry.quality_control),
         functional_profiling: localEntry.functional_profiling === true,

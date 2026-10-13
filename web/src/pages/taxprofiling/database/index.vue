@@ -1,7 +1,8 @@
 <script setup>
 import { useTaxProfiling } from '~/composables/useTaxProfiling'
 
-const router = useRouter()
+definePageMeta({ alias: ['/taxprofiling/databases'] })
+
 const { getAllDatabases } = useTaxProfiling()
 const searchQuery = ref('')
 
@@ -19,8 +20,6 @@ const filteredDatabases = computed(() => {
   })
 })
 
-// No need for loading state - data is cached
-const loading = ref(false)
 </script>
 
 <template>
@@ -48,67 +47,32 @@ const loading = ref(false)
       </div>
     </section>
 
-    <!-- Loading State -->
-    <div v-if="loading" class="py-12 text-center">
-      <div class="inline-block animate-spin">⏳</div>
-      <p class="text-slate-600 mt-2">Loading databases...</p>
-    </div>
-
     <!-- Databases Grid -->
-    <section v-else class="py-8 px-4 md:px-8">
+    <section class="py-8 px-4 md:px-8">
       <div class="max-w-6xl mx-auto">
         <div v-if="filteredDatabases.length === 0" class="text-center py-12">
           <p class="text-slate-600">No databases found matching your search.</p>
         </div>
         
-        <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div
+        <div v-else class="grid grid-cols-3 gap-4">
+          <NuxtLink
             v-for="database in filteredDatabases"
             :key="database['@id']"
-            @click="router.push(`/taxprofiling/database/${database['@id']}`)"
-            class="p-4 bg-white rounded-lg border-2 border-slate-100 hover:border-emerald-500 hover:shadow-md transition-all group hover:cursor-pointer"
+            :to="`/taxprofiling/databases/${encodeURIComponent(database['@id'])}`"
+            class="p-4 relative bg-slate-100 rounded-md border-2 border-slate-100 hover:border-sky-500 hover:cursor-pointer"
           >
-            <div class="flex justify-between items-start mb-2">
-              <h3 class="font-semibold text-lg text-slate-900 group-hover:text-emerald-600 transition">
-                {{ database.name }}
-              </h3>
-              <span class="px-2 py-1 bg-emerald-200 text-emerald-600 text-xs rounded-sm">
-                Database
-              </span>
+            <h3 class="font-semibold text-md text-slate-800 truncate">{{ database.name }}</h3>
+            <div class="mt-2 flex gap-2">
+              <span class="px-2 py-1 bg-sky-200 text-sky-500 text-sm rounded-sm">Database</span>
             </div>
-            
-            <p class="text-slate-600 text-sm line-clamp-3 mb-3">
+            <p class="mt-6 mb-16 text-slate-600 text-md line-clamp-4">
               {{ database.description }}
             </p>
-
-            <div v-if="database.sample || database.origin" class="flex gap-3 mb-3 text-xs">
-              <div v-if="database.sample" class="flex items-center gap-1">
-                <span>🧫</span>
-                <span class="font-semibold text-slate-700">{{ database.sample.label }}</span>
-              </div>
-              <div v-if="database.origin" class="flex items-center gap-1">
-                <span>🌍</span>
-                <span class="font-semibold text-slate-700">{{ database.origin.label }}</span>
-              </div>
+            <div class="absolute bottom-4 flex gap-2">
+              <span class="px-4 py-2 bg-white hover:bg-slate-50 text-slate-900 text-sm border-2 border-slate-900 rounded-md">More info</span>
+              <span class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md">Use the data</span>
             </div>
-
-            <div class="flex gap-2 flex-wrap mb-3">
-              <span 
-                v-for="scope in database.taxonomic_scope"
-                :key="scope['@id']"
-                class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded"
-              >
-                {{ scope.label }}
-              </span>
-            </div>
-
-            <div class="text-xs text-slate-500 flex justify-between">
-              <span v-if="database.latest_release">v{{ database.latest_release }}</span>
-              <span v-if="database.compatible_tools" class="text-emerald-600">
-                🔗 {{ database.compatible_tools.length }} tools
-              </span>
-            </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </section>

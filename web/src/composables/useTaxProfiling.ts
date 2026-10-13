@@ -57,7 +57,7 @@ export class Database {
   constructor(data: any) {
     this["@context"] = data["@context"] || ""
     this.name = data.name || ""
-    this["@id"] = data["@id"] || ""
+    this["@id"] = data["@id"] || data.biotoolsID || ""
     this.type = data.type || "Database"
     this.release = data.release || null
     this.latest_release = data.latest_release || null
