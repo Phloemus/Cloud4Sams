@@ -460,6 +460,13 @@ export const getTaxProfilingCatalog = (): TaxProfilingCatalogResult => {
 
 // ───────────────────────────────── Recherches ────────────────────────────────
 
+/** Une base, identifiée par son @id. */
+export const getTaxProfilingDatabaseById = (
+  catalog: TaxProfilingCatalogResult,
+  databaseId: string
+): DatabaseData | undefined =>
+  catalog.databasesById.get(normalizeId(databaseId))
+
 /** N'importe quel outil du catalogue (curé ou non). */
 export const getCatalogToolById = (
   catalog: TaxProfilingCatalogResult,

@@ -1,11 +1,11 @@
 <script setup>
-import { useTaxProfiling } from '~/composables/useTaxProfiling'
+import { getTaxProfilingCatalog } from '~/composables/buildCatalog'
 
-const { getAllTools, getAllDatabases } = useTaxProfiling()
+const catalog = getTaxProfilingCatalog()
 
 // Data is immediately available (no loading wait!)
-const tools = computed(() => getAllTools())
-const databases = computed(() => getAllDatabases())
+const tools = computed(() => catalog.tools)
+const databases = computed(() => catalog.databases)
 </script>
 
 <template>

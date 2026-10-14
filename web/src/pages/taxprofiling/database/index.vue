@@ -1,13 +1,13 @@
 <script setup>
-import { useTaxProfiling } from '~/composables/useTaxProfiling'
+import { getTaxProfilingCatalog } from '~/composables/buildCatalog'
 
 definePageMeta({ alias: ['/taxprofiling/databases'] })
 
-const { getAllDatabases } = useTaxProfiling()
+const catalog = getTaxProfilingCatalog()
 const searchQuery = ref('')
 
 // Data is immediately available (no loading wait!)
-const databases = computed(() => getAllDatabases())
+const databases = computed(() => catalog.databases)
 const filteredDatabases = computed(() => {
   if (!searchQuery.value) return databases.value
   const query = searchQuery.value.toLowerCase()

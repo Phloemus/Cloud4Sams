@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { useTaxProfiling } from '~/composables/useTaxProfiling'
+import {
+  getTaxProfilingCatalog,
+  getTaxProfilingDatabaseById,
+  getTaxProfilingToolsByDatabase
+} from '~/composables/buildCatalog'
 import DatabaseCard from '~/components/DatabaseCard.vue'
 
 const route = useRoute()
@@ -7,13 +11,13 @@ definePageMeta({
   alias: ['/taxprofiling/databases/:id'],
   layout: 'example-tool'
 })
-const { getDatabaseById, getToolsByDatabase } = useTaxProfiling()
+const catalog = getTaxProfilingCatalog()
 
 // Get database synchronously (data is already cached)
-const databaseId = route.params.id as string
-const database = computed(() => getDatabaseById(databaseId))
+const databaseId = String(route.params.id ?? '')
+const database = computed(() => getTaxProfilingDatabaseById(catalog, databaseId))
 const compatibleToolList = computed(() =>
-  database.value ? getToolsByDatabase(databaseId) : []
+  database.value ? getTaxProfilingToolsByDatabase(catalog, databaseId) : []
 )
 
 // Loading is immediate since data is cached
@@ -69,8 +73,8 @@ const loading = ref(false)
           <div v-else class="grid grid-cols-1 gap-4">
             <NuxtLink
               v-for="tool in compatibleToolList"
-              :key="tool['@id']"
-              :to="`/tool/${encodeURIComponent(tool['@id'])}`"
+              :key="tool.biotoolsID"
+              :to="`/tool/${encodeURIComponent(tool.biotoolsID)}`"
               class="p-4 border-2 border-sky-100 rounded-lg hover:border-sky-500 hover:bg-sky-50 transition"
             >
               <h3 class="font-semibold text-slate-900 mb-1">{{ tool.name }}</h3>

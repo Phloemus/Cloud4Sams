@@ -1,5 +1,9 @@
 <script setup lang="ts">
-  import { useTaxProfiling } from '~/composables/useTaxProfiling'
+  import {
+    getTaxProfilingCatalog,
+    getTaxProfilingDatabasesByTool,
+    getTaxProfilingToolById
+  } from '~/composables/buildCatalog'
   import ToolCard from '~/components/ToolCard.vue'
   import ToolStats from '~/components/ToolStats.vue'
   import MoreInformation from '~/components/MoreInformation.vue'
@@ -12,15 +16,15 @@
 
   const route = useRoute()
 
-  const { getToolById, getDatabasesByTool } = useTaxProfiling()
+  const catalog = getTaxProfilingCatalog()
 
   // Get tool synchronously (data is already cached)
   const toolId = route.params.id as string
 
-  const tool = computed(() => getToolById(toolId))
+  const tool = computed(() => getTaxProfilingToolById(catalog, toolId))
 
   const associatedDatabases = computed(() =>
-    tool.value ? getDatabasesByTool(toolId) : []
+    tool.value ? getTaxProfilingDatabasesByTool(catalog, toolId) : []
   )
 
   // Loading is immediate since data is cached
@@ -76,11 +80,11 @@
             <!-- Tool Card -->
             <div class="bg-white rounded-lg p-8 mb-8">
               <ToolCard
-                :id="tool['@id']"
+                :id="tool.biotoolsID"
                 :name="tool.name"
                 :description="tool.description"
-                :link="tool.repo"
-                :repo="tool.repo"
+                :link="tool.repository"
+                :repo="tool.repository"
                 :doi="tool.doi"
                 :documentation="tool.documentation"
                 :type="tool.type"
