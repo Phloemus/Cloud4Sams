@@ -1,6 +1,10 @@
 <script setup lang="ts">
     import { computed } from 'vue'
-    import { getCatalogToolById, getTaxProfilingCatalog } from '~/composables/buildCatalog'
+    import {
+        getCatalogToolById,
+        getTaxProfilingCatalog,
+        getTaxProfilingDatabaseById
+    } from '~/composables/buildCatalog'
     import Sidebar from "../components/Sidebar.vue"
     import Navbar from "../components/Navbar.vue"
     import ToolStats from "../components/ToolStats.vue"
@@ -14,9 +18,22 @@
     const tool = computed(() =>
         getCatalogToolById(catalog, String(route.params.id ?? ''))
     )
+    const database = computed(() =>
+        getTaxProfilingDatabaseById(catalog, String(route.params.id ?? ''))
+    )
+    const databaseHomepage = computed(() =>
+        typeof database.value?.homepage === 'string' ? database.value.homepage : null
+    )
     const publicationUrl = computed(() => {
-        const doi = tool.value?.publication.doi
-        return doi ? `https://doi.org/${doi}` : ''
+        const toolDoi = tool.value?.publication.doi
+        if (toolDoi) return `https://doi.org/${toolDoi}`
+
+        const databaseDoi = database.value?.doi
+        if (typeof databaseDoi !== 'string' || !databaseDoi.trim()) return ''
+
+        return /^https?:\/\//i.test(databaseDoi)
+            ? databaseDoi
+            : `https://doi.org/${databaseDoi}`
     })
 
     // Loading is immediate since data is cached
@@ -47,9 +64,9 @@
                         </div>
                         <div class="mt-6 p-8 bg-white border border-slate-200 rounded-md">
                             <MoreInformation
-                                v-if="tool"
-                                :biotools_id="tool.biotoolsID"
-                                :homepage="tool.homepage"
+                                v-if="tool || database"
+                                :biotools_id="tool?.biotoolsID"
+                                :homepage="tool?.homepage || databaseHomepage"
                                 :publication="publicationUrl"
                             />
                         </div>
