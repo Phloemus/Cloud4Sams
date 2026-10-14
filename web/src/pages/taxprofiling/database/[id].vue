@@ -3,7 +3,10 @@ import { useTaxProfiling } from '~/composables/useTaxProfiling'
 import DatabaseCard from '~/components/DatabaseCard.vue'
 
 const route = useRoute()
-definePageMeta({ alias: ['/taxprofiling/databases/:id'] })
+definePageMeta({ 
+  alias: ['/taxprofiling/databases/:id'],
+  layout: 'example-tool'
+})
 const { getDatabaseById, getToolsByDatabase } = useTaxProfiling()
 
 // Get database synchronously (data is already cached)
