@@ -53,7 +53,6 @@ const loading = ref(false)
             :doi="database.doi"
             :latest_release="database.latest_release"
             :taxonomic_scope="database.taxonomic_scope"
-            :compatible_tools="database.compatible_tools"
             :sample="database.sample"
             :origin="database.origin"
           />

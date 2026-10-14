@@ -8,7 +8,6 @@ defineProps({
     doi: String,
     latest_release: String,
     taxonomic_scope: Array,
-    compatible_tools: Array,
 
     // sample et origin peuvent être soit :
     // - null
@@ -155,27 +154,6 @@ defineProps({
             >
                 {{ scope.label }}
             </span>
-        </div>
-    </div>
-
-    <!-- Compatible tools -->
-    <div
-        v-if="compatible_tools && compatible_tools.length > 0"
-        class="my-6"
-    >
-        <h3 class="text-md text-slate-800 font-semibold mb-3">
-            Compatible Tools ({{ compatible_tools.length }})
-        </h3>
-
-        <div class="flex gap-2 flex-wrap">
-            <NuxtLink
-                v-for="tool in compatible_tools"
-                :key="tool['@id']"
-                :to="`/taxprofiling/tool/${tool['@id']}`"
-                class="px-3 py-1 bg-teal-200 text-teal-600 text-sm rounded-sm hover:underline hover:cursor-pointer"
-            >
-                {{ tool.name || tool['@id'] }}
-            </NuxtLink>
         </div>
     </div>
 
