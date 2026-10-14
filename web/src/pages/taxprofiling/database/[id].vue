@@ -18,16 +18,6 @@ const loading = ref(false)
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-    <!-- Header -->
-    <section class="py-8 px-4 md:px-8 border-b border-slate-200 bg-white">
-      <div class="max-w-6xl mx-auto">
-        <NuxtLink to="/taxprofiling/databases" class="text-emerald-600 hover:underline text-sm mb-4 inline-block">
-          ← Back to Databases
-        </NuxtLink>
-      </div>
-    </section>
-
     <!-- Loading State -->
     <div v-if="loading" class="py-12 text-center">
       <div class="inline-block animate-spin">⏳</div>
