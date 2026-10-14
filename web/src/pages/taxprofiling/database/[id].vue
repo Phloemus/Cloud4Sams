@@ -18,6 +18,7 @@ const loading = ref(false)
 </script>
 
 <template>
+  <div>
     <!-- Loading State -->
     <div v-if="loading" class="py-12 text-center">
       <div class="inline-block animate-spin">⏳</div>
