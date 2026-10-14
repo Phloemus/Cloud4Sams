@@ -57,66 +57,6 @@ const loading = ref(false)
 
         <!-- Additional Details -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <!-- Taxonomic Coverage -->
-          <div v-if="database.taxonomic_scope && database.taxonomic_scope.length > 0" class="bg-white rounded-lg border-2 border-slate-100 p-6">
-            <h2 class="text-xl font-bold text-slate-900 mb-4">Taxonomic Coverage</h2>
-            <div class="flex gap-2 flex-wrap">
-              <span 
-                v-for="scope in database.taxonomic_scope"
-                :key="scope['@id']"
-                class="px-3 py-2 bg-purple-100 text-purple-700 rounded-md text-sm"
-              >
-                {{ scope.label }}
-              </span>
-            </div>
-          </div>
-
-          <!-- Metadata -->
-          <div class="bg-white rounded-lg border-2 border-slate-100 p-6">
-            <h2 class="text-xl font-bold text-slate-900 mb-4">Information</h2>
-            <div class="space-y-3">
-              <div v-if="database.latest_release">
-                <span class="text-slate-600 text-sm">Latest Release</span>
-                <p class="text-slate-900 font-semibold">{{ database.latest_release }}</p>
-              </div>
-              <div v-if="database.release">
-                <span class="text-slate-600 text-sm">Release</span>
-                <p class="text-slate-900 font-semibold">{{ database.release }}</p>
-              </div>
-              <div v-if="database.to_update" class="mt-2">
-                <span class="px-3 py-1 bg-yellow-200 text-yellow-700 text-sm rounded">
-                  ⚠ Needs Update
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- External Links -->
-        <div v-if="database.homepage || database.doi" class="bg-white rounded-lg border-2 border-slate-100 p-6 mb-8">
-          <h2 class="text-xl font-bold text-slate-900 mb-4">Links</h2>
-          <div class="flex gap-4 flex-wrap">
-            <a
-              v-if="database.homepage"
-              :href="database.homepage"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-md transition"
-            >
-              🌐 Homepage
-            </a>
-            <a
-              v-if="database.doi"
-              :href="database.doi"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-md transition"
-            >
-              📄 DOI
-            </a>
-          </div>
-        </div>
-
         <!-- Compatible Tools -->
         <div class="bg-white rounded-lg border-2 border-slate-100 p-6">
           <h2 class="text-xl font-bold text-slate-900 mb-4">
