@@ -37,10 +37,10 @@ const loading = ref(false)
     </div>
 
     <!-- Database Details -->
-    <section v-else class="flex justify-between items-start">
-      <div class="max-w-6xl mx-auto">
+    <section v-else>
+      <div class="w-full max-w-6xl mx-auto">
         <!-- Main Info Card -->
-        <div class="bg-white rounded-lg bg-white rounded-lg p-8 mb-8 p-8 mb-8">
+        <div class="bg-white rounded-lg bg-white p-8 mb-8">
           <DatabaseCard
             :id="database['@id']"
             :name="database.name"
