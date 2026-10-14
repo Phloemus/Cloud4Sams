@@ -21,7 +21,7 @@ const loading = ref(false)
   <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
     <!-- Header -->
     <section class="py-8 px-4 md:px-8 border-b border-slate-200 bg-white">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <NuxtLink to="/taxprofiling/databases" class="text-emerald-600 hover:underline text-sm mb-4 inline-block">
           ← Back to Databases
         </NuxtLink>
@@ -44,9 +44,9 @@ const loading = ref(false)
 
     <!-- Database Details -->
     <section v-else class="py-8 px-4 md:px-8">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <!-- Main Info Card -->
-        <div class="bg-white rounded-lg border-2 border-slate-100 p-8 mb-8">
+        <div class="bg-white rounded-lg bg-white rounded-lg p-8 mb-8 p-8 mb-8">
           <DatabaseCard
             :id="database['@id']"
             :name="database.name"
