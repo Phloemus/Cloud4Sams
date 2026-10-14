@@ -83,12 +83,6 @@
             </div>
         </div>
 
-        <div v-if="taxProfilingTool.repository || taxProfilingTool.curated_doi || taxProfilingTool.documentation" class="mt-6 flex gap-3 flex-wrap">
-            <a v-if="taxProfilingTool.repository" :href="taxProfilingTool.repository" target="_blank" rel="noopener noreferrer" class="px-3 py-2 bg-slate-900 text-white rounded-md">Repository</a>
-            <a v-if="taxProfilingTool.curated_doi" :href="taxProfilingTool.curated_doi" target="_blank" rel="noopener noreferrer" class="px-3 py-2 bg-slate-900 text-white rounded-md">Curated DOI</a>
-            <a v-if="taxProfilingTool.documentation" :href="taxProfilingTool.documentation" target="_blank" rel="noopener noreferrer" class="px-3 py-2 bg-slate-900 text-white rounded-md">Documentation</a>
-        </div>
-
         <div class="mt-8">
             <h3 class="text-lg text-slate-900 font-bold">Associated reference databases ({{ taxProfilingTool.uses_databases.length }})</h3>
             <p v-if="taxProfilingTool.uses_databases.length === 0" class="mt-3 text-slate-600">No associated reference database is listed.</p>
@@ -105,15 +99,6 @@
             </div>
         </div>
     </section>
-    <div class="my-10">
-        <h2 class="text-xl text-slate-900 font-bold">Ontology annotations</h2>
-        <div class="my-6 flex gap-4">
-            <TagCard
-                v-for="keyword in tool.keywords"
-                :name="keyword"
-            />
-        </div>
-    </div>
     </div>
     <p v-else class="text-slate-600">Tool not found.</p>
 </template>
