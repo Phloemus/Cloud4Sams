@@ -32,13 +32,13 @@
         <div class="w-full">
             <Navbar />
             <div class="relative w-full h-screen">
-                <div class="mx-auto w-max flex gap-6">
-                    <div class="my-10 max-w-screen-xl">
+                <div class="mx-auto flex w-full max-w-screen-2xl gap-6 px-6">
+                    <div class="my-10 min-w-0 max-w-screen-xl flex-1">
                         <main class="p-8 bg-white border border-slate-200 rounded-md">
                             <slot />
                         </main>
                     </div>
-                    <div class="my-10 w-96">
+                    <div class="my-10 w-96 shrink-0">
                         <div class="p-8 bg-white border border-slate-200 rounded-md">
                             <ToolStats />
                         </div>
