@@ -37,7 +37,7 @@ const loading = ref(false)
     </div>
 
     <!-- Database Details -->
-    <section v-else class="py-8 px-4 md:px-8">
+    <section v-else class="flex justify-between items-start">
       <div class="max-w-6xl mx-auto">
         <!-- Main Info Card -->
         <div class="bg-white rounded-lg bg-white rounded-lg p-8 mb-8 p-8 mb-8">
