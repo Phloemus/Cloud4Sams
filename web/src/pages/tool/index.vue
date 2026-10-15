@@ -19,10 +19,10 @@
 </template> -->
 <script setup>
 
-    import datasets from "../static/datasets.json"
-    import biotools from "../static/biotools.json"
-    import exampleTools from "../static/metagenomics_appliances.json"
-    import biosphereTools from "../static/biosphere-tools.json"
+    import datasets from "../../static/datasets.json"
+    import biotools from "../../static/biotools.json"
+    import exampleTools from "../../static/metagenomics_appliances.json"
+    import biosphereTools from "../../static/biosphere-tools.json"
 
     const filteredToolList = biotools.flat().filter(
         item => item.biotoolsID && item.name && item.description.trim() !== ""
