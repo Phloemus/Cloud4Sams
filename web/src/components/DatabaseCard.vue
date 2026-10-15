@@ -47,15 +47,6 @@ defineProps({
                 </span>
             </div>
         </div>
-
-        <NuxtLink
-            v-if="homepage"
-            :to="homepage"
-            target="_blank"
-            class="px-4 py-1 bg-sky-200 text-sky-500 hover:underline rounded-sm"
-        >
-            {{ name }}
-        </NuxtLink>
     </div>
 
     <!-- Description -->
@@ -155,18 +146,6 @@ defineProps({
                 {{ scope.label }}
             </span>
         </div>
-    </div>
-
-    <!-- DOI -->
-    <div v-if="doi" class="my-6">
-        <a
-            :href="doi"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sky-600 hover:underline"
-        >
-            Publication / DOI
-        </a>
     </div>
 </template>
 ```
