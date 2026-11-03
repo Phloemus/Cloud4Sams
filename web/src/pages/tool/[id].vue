@@ -1,24 +1,24 @@
 <script setup>
     import { useRoute } from 'vue-router'
     import { getTaxProfilingCatalog, getTaxProfilingToolById } from '~/composables/buildCatalog'
-
-    import biotools from "../../static/biotools.json"
+    import { useBioToolsTool } from '~/composables/useBioToolsTool'
 
     definePageMeta({
         layout: 'example-tool'
     })
 
     const route = useRoute()
-    const biotoolsId = String(route.params.id ?? '').toLowerCase()
-    const tool = biotools.flat().find(
-        item => item.biotoolsID?.toLowerCase() === biotoolsId
-    )
+    const biotoolsId = computed(() => String(route.params.id ?? ''))
+    const { data: tool, pending, error } = await useBioToolsTool(biotoolsId)
     const catalog = getTaxProfilingCatalog()
-    const taxProfilingTool = computed(() => getTaxProfilingToolById(catalog, biotoolsId))
+    const taxProfilingTool = computed(() =>
+        getTaxProfilingToolById(catalog, biotoolsId.value)
+    )
 
 </script>
 <template>
-    <div v-if="tool">
+    <p v-if="pending" class="text-slate-600">Loading tool details...</p>
+    <div v-else-if="tool">
     <div class="flex justify-between items-start">
         <div>
             <h1 class="mb-1 text-2xl text-slate-900 font-bold">{{ tool.name }}</h1>
@@ -100,5 +100,6 @@
         </div>
     </section>
     </div>
+    <p v-else-if="error" class="text-slate-600">Could not load this tool from bio.tools, and no static record is available.</p>
     <p v-else class="text-slate-600">Tool not found.</p>
 </template>

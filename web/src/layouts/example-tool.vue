@@ -1,10 +1,11 @@
 <script setup lang="ts">
     import { computed } from 'vue'
     import {
-        getCatalogToolById,
         getTaxProfilingCatalog,
-        getTaxProfilingDatabaseById
+        getTaxProfilingDatabaseById,
+        getTaxProfilingToolById
     } from '~/composables/buildCatalog'
+        import { useBioToolsTool } from '~/composables/useBioToolsTool'
     import Sidebar from "../components/Sidebar.vue"
     import Navbar from "../components/Navbar.vue"
     import ToolStats from "../components/ToolStats.vue"
@@ -15,9 +16,14 @@
     const route = useRoute()
 
     const catalog = getTaxProfilingCatalog()
-    const tool = computed(() =>
-        getCatalogToolById(catalog, String(route.params.id ?? ''))
-    )
+    const taxProfilingLaunchUrl = 'https://biosphere.france-bioinformatique.fr/catalogue/appliance/239/'
+        const toolId = computed(() =>
+            route.path.startsWith('/tool/') ? String(route.params.id ?? '') : ''
+        )
+        const taxProfilingTool = computed(() =>
+            getTaxProfilingToolById(catalog, toolId.value)
+        )
+        const { data: tool } = await useBioToolsTool(toolId)
     const database = computed(() =>
         getTaxProfilingDatabaseById(catalog, String(route.params.id ?? ''))
     )
@@ -26,7 +32,11 @@
     )
     const publicationUrl = computed(() => {
         const toolDoi = tool.value?.publication.doi
-        if (toolDoi) return `https://doi.org/${toolDoi}`
+            if (toolDoi) {
+                return /^https?:\/\//i.test(toolDoi)
+                    ? toolDoi
+                    : `https://doi.org/${toolDoi}`
+            }
 
         const databaseDoi = database.value?.doi
         if (typeof databaseDoi !== 'string' || !databaseDoi.trim()) return ''
@@ -60,7 +70,9 @@
                             <ToolStats />
                         </div>
                         <div class="mt-6 p-8 bg-white border border-slate-200 rounded-md">
-                            <QuickToolLaunch />
+                            <QuickToolLaunch
+                                :launch-url="taxProfilingTool ? taxProfilingLaunchUrl : undefined"
+                            />
                         </div>
                         <div class="mt-6 p-8 bg-white border border-slate-200 rounded-md">
                             <MoreInformation

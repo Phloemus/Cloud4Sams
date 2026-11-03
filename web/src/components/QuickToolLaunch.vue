@@ -1,4 +1,8 @@
-<script setup>
+<script setup lang="ts">
+
+    defineProps<{
+        launchUrl?: string
+    }>()
 
     const isToolLaunchPanelOpened = useState("isToolLaunchPanelOpened")
     const quickLauncherDatasetsList = useState("quickLauncherDatasetsList", () => [])
@@ -45,7 +49,15 @@
                 <input @click="changeQuickLauncherDatasetsList(dataset)" type="checkbox" class="accent-blue-500" checked />
             </div>
         </div>
-        <button 
+        <a
+            v-if="launchUrl"
+            :href="launchUrl"
+            class="px-4 py-2 w-full block text-center bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md"
+        >
+            Launch the tool
+        </a>
+        <button
+            v-else
             @click="displayToolLaunchPanel"
             class="px-4 py-2 w-full bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md"
         >
