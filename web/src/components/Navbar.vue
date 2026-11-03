@@ -59,6 +59,12 @@
                 >
                     Taxonomic Profiling
                 </NuxtLink>
+                <NuxtLink
+                    to="/"
+                    class="text-slate-900 hover:text-slate-700 transition"
+                >
+                    Home
+                </NuxtLink>
             </div>
         </div>
 
