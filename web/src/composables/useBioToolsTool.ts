@@ -4,6 +4,7 @@ import staticBioTools from '~/static/biotools.json'
 
 const BIOTOOLS_API_BASE_URL = 'https://bio.tools/api/tool'
 const BIOTOOLS_TOOL_LIST_URL = 'https://bio.tools/api/t/?topic=Metagenomics&per_page=100'
+const BIOTOOLS_REQUEST_HEADERS = { Accept: 'application/json' }
 const CACHE_DURATION_MS = 24 * 60 * 60 * 1000
 
 type JsonRecord = Record<string, unknown>
@@ -111,7 +112,9 @@ const fetchBioToolsList = async (): Promise<BioToolsToolRecord[]> => {
     }
     visitedPages.add(pageUrl)
 
-    const response: unknown = await $fetch(pageUrl)
+    const response: unknown = await $fetch(pageUrl, {
+      headers: BIOTOOLS_REQUEST_HEADERS
+    })
     if (!isRecord(response) || !Array.isArray(response.list)) {
       throw new Error('Invalid tool list response from bio.tools')
     }
@@ -174,7 +177,8 @@ export const useBioToolsTool = async (biotoolsId: MaybeRefOrGetter<string>) => {
 
       try {
         const response = await $fetch<unknown>(
-          `${BIOTOOLS_API_BASE_URL}/${encodeURIComponent(id)}`
+          `${BIOTOOLS_API_BASE_URL}/${encodeURIComponent(id)}`,
+          { headers: BIOTOOLS_REQUEST_HEADERS }
         )
         const tool = normalizeBioToolsTool(response)
 
@@ -193,7 +197,10 @@ export const useBioToolsTool = async (biotoolsId: MaybeRefOrGetter<string>) => {
         return tool
       } catch (error) {
         if (fallback) {
-          console.warn(`[bio.tools] API unavailable for ${id}; using static data.`, error)
+          const errorMessage = error instanceof Error ? error.message : String(error)
+          console.warn(
+            `[bio.tools] Could not load a valid API record for ${id}; using static data. ${errorMessage}`
+          )
           return fallback
         }
 
