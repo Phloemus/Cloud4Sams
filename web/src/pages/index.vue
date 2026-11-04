@@ -1,17 +1,17 @@
-<script setup>
+<script setup lang="ts">
 
     import datasets from "../static/datasets.json"
-    import biotools from "../static/biotools.json"
     import exampleTools from "../static/metagenomics_appliances.json"
     import biosphereTools from "../static/biosphere-tools.json"
+    import { useBioToolsTools } from '~/composables/useBioToolsTool'
+
+    const { data: bioTools, pending: toolsPending, error: toolsError } = await useBioToolsTools()
 
     const filteredDatasetList = datasets.data.items.filter(
         item => item.description && item.description.trim() !== "" && item.global_id && item.global_id.trim() !== ""
     )
 
-    const filteredToolList = biotools.flat().filter(
-        item => item.biotoolsID && item.name && item.description.trim() !== ""
-    )
+    const filteredToolList = computed(() => bioTools.value ?? [])
 
     const filteredExampleToolList = exampleTools.flat().filter(
         item => item.name && item.description.trim() !== ""
@@ -133,7 +133,9 @@
     <div>
         <section>
             <h2 class="my-6 font-semibold text-slate-900 text-xl">Analysis tools</h2>
-            <div class="grid grid-cols-3 gap-4">
+            <p v-if="toolsPending" class="py-8 text-center text-slate-600">Loading tools...</p>
+            <p v-else-if="toolsError" class="py-8 text-center text-red-600">Could not load tools.</p>
+            <div v-else-if="filteredToolList.length > 0" class="grid grid-cols-3 gap-4">
                 <NuxtLink
                     :to="`/tool/${encodeURIComponent(tool.biotoolsID)}`"
                     v-for="tool in filteredToolList"
@@ -153,6 +155,7 @@
                 </NuxtLink>
 
             </div>
+            <p v-else class="py-8 text-center text-slate-600">No tools are available.</p>
         </section>
         <section class="mt-16">
             <h2 class="my-6 font-semibold text-slate-900 text-xl">Available metagenomics data</h2>

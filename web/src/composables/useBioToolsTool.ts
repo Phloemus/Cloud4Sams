@@ -3,6 +3,7 @@ import type { MaybeRefOrGetter } from 'vue'
 import staticBioTools from '~/static/biotools.json'
 
 const BIOTOOLS_API_BASE_URL = 'https://bio.tools/api/tool'
+const BIOTOOLS_TOOL_LIST_URL = 'https://bio.tools/api/t/?topic=Metagenomics&per_page=100'
 const CACHE_DURATION_MS = 24 * 60 * 60 * 1000
 
 type JsonRecord = Record<string, unknown>
@@ -77,12 +78,81 @@ const normalizeBioToolsTool = (value: unknown): BioToolsToolRecord | null => {
   }
 }
 
+const getUsableBioToolsList = (records: unknown[]): BioToolsToolRecord[] =>
+  records
+    .map(normalizeBioToolsTool)
+    .filter(
+      (tool): tool is BioToolsToolRecord =>
+        tool !== null && tool.name.trim() !== '' && tool.description.trim() !== ''
+    )
+
+const getStaticBioToolsList = (): BioToolsToolRecord[] =>
+  getUsableBioToolsList(staticBioTools.flat(Infinity))
+
+const getNextBioToolsPageUrl = (next: string, currentUrl: string): string => {
+  const url = new URL(next, currentUrl)
+
+  if (url.hostname !== 'bio.tools' || !/^\/api\/t\/?$/.test(url.pathname)) {
+    throw new Error('Invalid pagination URL from bio.tools')
+  }
+
+  url.protocol = 'https:'
+  return url.toString()
+}
+
+const fetchBioToolsList = async (): Promise<BioToolsToolRecord[]> => {
+  const toolsById = new Map<string, BioToolsToolRecord>()
+  const visitedPages = new Set<string>()
+  let pageUrl: string | null = BIOTOOLS_TOOL_LIST_URL
+
+  while (pageUrl) {
+    if (visitedPages.has(pageUrl)) {
+      throw new Error('Repeated pagination URL from bio.tools')
+    }
+    visitedPages.add(pageUrl)
+
+    const response: unknown = await $fetch(pageUrl)
+    if (!isRecord(response) || !Array.isArray(response.list)) {
+      throw new Error('Invalid tool list response from bio.tools')
+    }
+
+    for (const tool of getUsableBioToolsList(response.list)) {
+      toolsById.set(tool.biotoolsID.toLowerCase(), tool)
+    }
+
+    const nextPage = getString(response.next)
+    pageUrl = nextPage ? getNextBioToolsPageUrl(nextPage, pageUrl) : null
+  }
+
+  return [...toolsById.values()]
+}
+
 const staticToolsById = new Map<string, BioToolsToolRecord>()
 
 for (const entry of staticBioTools.flat(Infinity)) {
   const tool = normalizeBioToolsTool(entry)
   if (tool) staticToolsById.set(tool.biotoolsID.toLowerCase(), tool)
 }
+
+/** Récupère la liste live; le snapshot local sert de repli si l'API échoue. */
+export const useBioToolsTools = async () =>
+  await useAsyncData<BioToolsToolRecord[]>(
+    'biotools-metagenomics-tools',
+    async () => {
+      try {
+        return await fetchBioToolsList()
+      } catch (error) {
+        const fallbackTools = getStaticBioToolsList()
+        if (fallbackTools.length > 0) {
+          console.warn('[bio.tools] API unavailable; using static tool data.', error)
+          return fallbackTools
+        }
+
+        throw error
+      }
+    },
+    { dedupe: 'defer' }
+  )
 
 /** Récupère la fiche bio.tools en direct, avec repli sur le snapshot statique. */
 export const useBioToolsTool = async (biotoolsId: MaybeRefOrGetter<string>) => {

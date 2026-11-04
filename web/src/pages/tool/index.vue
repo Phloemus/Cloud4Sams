@@ -20,15 +20,15 @@
 <script setup lang="ts">
 
     import datasets from "../../static/datasets.json"
-    import biotools from "../../static/biotools.json"
     import exampleTools from "../../static/metagenomics_appliances.json"
     import biosphereTools from "../../static/biosphere-tools.json"
+    import { useBioToolsTools } from '~/composables/useBioToolsTool'
 
+    const { data: bioTools, pending, error } = await useBioToolsTools()
     const searchQuery = ref('')
     const filteredToolList = computed(() => {
       const query = searchQuery.value.trim().toLowerCase()
-      return biotools.flat().filter(item => {
-        if (!item.biotoolsID || !item.name || item.description.trim() === '') return false
+      return (bioTools.value ?? []).filter(item => {
         if (!query) return true
 
         return item.name.toLowerCase().includes(query) ||
@@ -44,14 +44,17 @@
     <div>
         <section>
             <h2 class="my-6 font-semibold text-slate-900 text-xl">Metagenomics Tools</h2>
+          <p v-if="pending" class="py-8 text-center text-slate-600">Loading tools...</p>
+          <p v-else-if="error" class="py-8 text-center text-red-600">Could not load tools.</p>
           <input
+            v-else
             v-model="searchQuery"
             type="search"
             placeholder="Search tools by name or description..."
             aria-label="Search tools by name or description"
             class="mb-6 w-full px-4 py-3 border-2 border-slate-200 rounded-md focus:border-sky-500 focus:outline-none"
           />
-          <p v-if="filteredToolList.length === 0" class="py-8 text-center text-slate-600">
+          <p v-if="!pending && !error && filteredToolList.length === 0" class="py-8 text-center text-slate-600">
             No tools found matching your search.
           </p>
           <div v-else class="grid grid-cols-3 gap-4">
