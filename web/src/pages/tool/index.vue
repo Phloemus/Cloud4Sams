@@ -27,13 +27,11 @@
     const searchQuery = ref('')
     const filteredToolList = computed(() => {
       const query = searchQuery.value.trim().toLowerCase()
-      return biotools.flat().filter(item => {
-        if (!item.biotoolsID || !item.name || item.description.trim() === '') return false
-        if (!query) return true
-
-        return item.name.toLowerCase().includes(query) ||
-          item.description.toLowerCase().includes(query)
-      })
+      return biotools.flat().filter(item =>
+        item.biotoolsID && item.name && item.description.trim() !== '' &&
+        (!query || item.name.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query))
+      )
     })
 
 

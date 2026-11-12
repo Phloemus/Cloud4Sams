@@ -3,6 +3,7 @@ import type { MaybeRefOrGetter } from 'vue'
 import staticBioTools from '~/static/biotools.json'
 
 const BIOTOOLS_API_BASE_URL = 'https://bio.tools/api/tool'
+const BIOTOOLS_REQUEST_HEADERS = { Accept: 'application/json' }
 const CACHE_DURATION_MS = 24 * 60 * 60 * 1000
 
 type JsonRecord = Record<string, unknown>
@@ -104,7 +105,8 @@ export const useBioToolsTool = async (biotoolsId: MaybeRefOrGetter<string>) => {
 
       try {
         const response = await $fetch<unknown>(
-          `${BIOTOOLS_API_BASE_URL}/${encodeURIComponent(id)}`
+          `${BIOTOOLS_API_BASE_URL}/${encodeURIComponent(id)}`,
+          { headers: BIOTOOLS_REQUEST_HEADERS }
         )
         const tool = normalizeBioToolsTool(response)
 
@@ -123,7 +125,10 @@ export const useBioToolsTool = async (biotoolsId: MaybeRefOrGetter<string>) => {
         return tool
       } catch (error) {
         if (fallback) {
-          console.warn(`[bio.tools] API unavailable for ${id}; using static data.`, error)
+          const errorMessage = error instanceof Error ? error.message : String(error)
+          console.warn(
+            `[bio.tools] Could not load a valid API record for ${id}; using static data. ${errorMessage}`
+          )
           return fallback
         }
 

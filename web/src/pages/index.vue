@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 
     import datasets from "../static/datasets.json"
     import biotools from "../static/biotools.json"
