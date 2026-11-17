@@ -1,7 +1,7 @@
 node_modules
 .nuxt
-
 .venv
+venv/
 .ipynb_checkpoints
 should package lock json be 
 .continue
