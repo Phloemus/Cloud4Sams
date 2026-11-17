@@ -12,12 +12,22 @@ REPO_URL = "https://github.com/research-software-ecosystem/content.git"
 REPO_DIR = Path.home() / ".rsec-content"
 
 
+
 def prepare_repository():
-    """Clone le dépôt (ou le met à jour) une seule fois."""
+    """Clone le dépôt dans HOME (ou le met à jour) avec suivi des étapes."""
+
+    print("\n========== PRÉPARATION DU DÉPÔT RSEC ==========", flush=True)
+    print(f"[INFO] Répertoire HOME : {Path.home()}", flush=True)
+    print(f"[INFO] Répertoire du dépôt : {REPO_DIR}", flush=True)
+
     if not REPO_DIR.exists():
+        print("\n[1/3] Le dépôt n'existe pas localement.", flush=True)
+        print("[INFO] Clonage de rsec/content en cours...", flush=True)
+
         subprocess.run(
             [
                 "git", "clone",
+                "--progress",
                 "--depth", "1",
                 "--filter=blob:none",
                 "--sparse",
@@ -26,17 +36,41 @@ def prepare_repository():
             ],
             check=True,
         )
+
+        print("[OK] Clonage terminé.", flush=True)
+
+        print("\n[2/3] Configuration du sparse checkout...", flush=True)
         subprocess.run(
             ["git", "-C", str(REPO_DIR), "sparse-checkout", "set", "data"],
             check=True,
         )
+
+        print("[OK] Seul le répertoire 'data' sera récupéré.", flush=True)
+
     else:
+        print("\n[1/2] Dépôt déjà présent localement.", flush=True)
+        print("[INFO] Mise à jour du dépôt en cours...", flush=True)
+
         subprocess.run(
-            ["git", "-C", str(REPO_DIR), "pull", "--ff-only"],
+            ["git", "-C", str(REPO_DIR), "pull", "--ff-only", "--progress"],
             check=True,
         )
 
-    return REPO_DIR / "data"
+        print("[OK] Dépôt mis à jour.", flush=True)
+
+    print("\n[3/3] Accès au répertoire data...", flush=True)
+
+    data_dir = REPO_DIR / "data"
+
+    if not data_dir.exists():
+        print("[ERREUR] Le répertoire data est introuvable !", flush=True)
+        raise FileNotFoundError(data_dir)
+
+    print(f"[OK] Répertoire de données prêt : {data_dir}", flush=True)
+    print("========== PRÉPARATION TERMINÉE ==========\n", flush=True)
+
+    return data_dir
+
 
 
 def collect_biotools_ids(obj):
