@@ -31,10 +31,19 @@ def get_tools(data):
     else:
         raise ValueError("Unexpected JSON structure: expected a dictionary or a list")
 
-    if not all(isinstance(tool, dict) for tool in tools):
-        raise ValueError("Unexpected JSON structure: expected a list of dictionaries")
+    normalized_tools = []
+    for index, tool in enumerate(tools):
+        if isinstance(tool, dict):
+            normalized_tools.append(tool)
+        elif isinstance(tool, list):
+            normalized_tools.extend(get_tools(tool))
+        else:
+            raise ValueError(
+                f"Unexpected JSON entry at index {index}: "
+                f"expected a dictionary, got {type(tool).__name__}"
+            )
 
-    return tools
+    return normalized_tools
 
 
 def main():
