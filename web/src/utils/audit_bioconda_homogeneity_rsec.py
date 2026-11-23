@@ -23,6 +23,20 @@ def run_git(command_args):
     return result.stdout
 
 
+def get_tools(data):
+    if isinstance(data, dict):
+        tools = data.get("list") if isinstance(data.get("list"), list) else [data]
+    elif isinstance(data, list):
+        tools = data
+    else:
+        raise ValueError("Unexpected JSON structure: expected a dictionary or a list")
+
+    if not all(isinstance(tool, dict) for tool in tools):
+        raise ValueError("Unexpected JSON structure: expected a list of dictionaries")
+
+    return tools
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Compare bio.tools IDs with Bioconda recipe names."
@@ -77,20 +91,11 @@ def main():
     # 3. Read bio.tools JSON
     data = json.loads(biotools_json.read_text(encoding="utf-8"))
 
-    if isinstance(data, dict) and isinstance(data.get("list"), list):
-        tools = data["list"]
-    elif isinstance(data, list):
-        tools = data
-    elif isinstance(data, dict):
-        tools = [data]
-    else:
-        raise ValueError("Unexpected JSON structure")
+    tools = get_tools(data)
 
     # 4. Compare bio.tools IDs with Bioconda package names
     results = []
     for tool in tools:
-        print("Type de tool :", type(tool))
-        print("Contenu de tool :", tool)
         biotools_id = tool.get("biotoolsID", "")
         if not biotools_id:
             continue
