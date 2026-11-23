@@ -89,6 +89,8 @@ def main():
     # 4. Compare bio.tools IDs with Bioconda package names
     results = []
     for tool in tools:
+        print("Type de tool :", type(tool))
+        print("Contenu de tool :", tool)
         biotools_id = tool.get("biotoolsID", "")
         if not biotools_id:
             continue
