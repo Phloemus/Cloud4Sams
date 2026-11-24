@@ -94,7 +94,10 @@ def main():
         "--name-only",
         "origin/master:recipes"
     ])
-    bioconda_packages = set(output.splitlines())
+    bioconda_packages = {
+        package.casefold(): package
+        for package in output.splitlines()
+    }
     print(f"Bioconda packages found: {len(bioconda_packages)}")
 
     # 3. Read bio.tools JSON
@@ -104,15 +107,28 @@ def main():
 
     # 4. Compare bio.tools IDs with Bioconda package names
     results = []
+    seen_ids = set()
+
     for tool in tools:
         biotools_id = tool.get("biotoolsID", "")
+
+        if not isinstance(biotools_id, str):
+            continue
+
+        biotools_id = biotools_id.strip()
         if not biotools_id:
             continue
 
-        status = "FOUND" if biotools_id in bioconda_packages else "NOT_FOUND"
+        normalized_id = biotools_id.casefold()
+        if normalized_id in seen_ids:
+            continue
+
+        seen_ids.add(normalized_id)
+        matched_package = bioconda_packages.get(normalized_id)
+        status = "FOUND" if matched_package else "NOT_FOUND"
         results.append({
             "biotoolsID": biotools_id,
-            "bioconda_package": biotools_id if status == "FOUND" else "",
+            "bioconda_package": matched_package or "",
             "status": status
         })
 
