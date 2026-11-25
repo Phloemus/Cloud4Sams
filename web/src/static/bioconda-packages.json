@@ -1,0 +1,718 @@
+﻿[
+    {
+        "biotoolsID":  "tipp",
+        "biocondaPackage":  "tipp"
+    },
+    {
+        "biotoolsID":  "ganon",
+        "biocondaPackage":  "ganon"
+    },
+    {
+        "biotoolsID":  "motus",
+        "biocondaPackage":  "motus"
+    },
+    {
+        "biotoolsID":  "metaphlan",
+        "biocondaPackage":  "metaphlan"
+    },
+    {
+        "biotoolsID":  "kraken2",
+        "biocondaPackage":  "kraken2"
+    },
+    {
+        "biotoolsID":  "singlem",
+        "biocondaPackage":  "singlem"
+    },
+    {
+        "biotoolsID":  "meteor",
+        "biocondaPackage":  "meteor"
+    },
+    {
+        "biotoolsID":  "sylph",
+        "biocondaPackage":  "sylph"
+    },
+    {
+        "biotoolsID":  "centrifuger",
+        "biocondaPackage":  "centrifuger"
+    },
+    {
+        "biotoolsID":  "crocodeel",
+        "biocondaPackage":  "crocodeel"
+    },
+    {
+        "biotoolsID":  "adapt",
+        "biocondaPackage":  "adapt"
+    },
+    {
+        "biotoolsID":  "eefinder",
+        "biocondaPackage":  "eefinder"
+    },
+    {
+        "biotoolsID":  "fmh-funprofiler",
+        "biocondaPackage":  "fmh-funprofiler"
+    },
+    {
+        "biotoolsID":  "gmwi2",
+        "biocondaPackage":  "gmwi2"
+    },
+    {
+        "biotoolsID":  "comparem2",
+        "biocondaPackage":  "comparem2"
+    },
+    {
+        "biotoolsID":  "adtoolbox",
+        "biocondaPackage":  "adtoolbox"
+    },
+    {
+        "biotoolsID":  "taxor",
+        "biocondaPackage":  "taxor"
+    },
+    {
+        "biotoolsID":  "condiga",
+        "biocondaPackage":  "condiga"
+    },
+    {
+        "biotoolsID":  "cayman",
+        "biocondaPackage":  "cayman"
+    },
+    {
+        "biotoolsID":  "metamobilepicker",
+        "biocondaPackage":  "metamobilepicker"
+    },
+    {
+        "biotoolsID":  "yacht",
+        "biocondaPackage":  "yacht"
+    },
+    {
+        "biotoolsID":  "bmtagger",
+        "biocondaPackage":  "bmtagger"
+    },
+    {
+        "biotoolsID":  "krona",
+        "biocondaPackage":  "krona"
+    },
+    {
+        "biotoolsID":  "metasbt",
+        "biocondaPackage":  "metasbt"
+    },
+    {
+        "biotoolsID":  "eukrep",
+        "biocondaPackage":  "eukrep"
+    },
+    {
+        "biotoolsID":  "eukcc",
+        "biocondaPackage":  "eukcc"
+    },
+    {
+        "biotoolsID":  "bracken",
+        "biocondaPackage":  "bracken"
+    },
+    {
+        "biotoolsID":  "fastspar",
+        "biocondaPackage":  "fastspar"
+    },
+    {
+        "biotoolsID":  "phylophlan",
+        "biocondaPackage":  "phylophlan"
+    },
+    {
+        "biotoolsID":  "metagem",
+        "biocondaPackage":  "metagem"
+    },
+    {
+        "biotoolsID":  "checkm2",
+        "biocondaPackage":  "checkm2"
+    },
+    {
+        "biotoolsID":  "chewbbaca",
+        "biocondaPackage":  "chewbbaca"
+    },
+    {
+        "biotoolsID":  "magneto",
+        "biocondaPackage":  "magneto"
+    },
+    {
+        "biotoolsID":  "binette",
+        "biocondaPackage":  "binette"
+    },
+    {
+        "biotoolsID":  "fairy",
+        "biocondaPackage":  "fairy"
+    },
+    {
+        "biotoolsID":  "cami-amber",
+        "biocondaPackage":  "cami-amber"
+    },
+    {
+        "biotoolsID":  "metamdbg",
+        "biocondaPackage":  "metamdbg"
+    },
+    {
+        "biotoolsID":  "metacluster",
+        "biocondaPackage":  "metacluster"
+    },
+    {
+        "biotoolsID":  "super-focus",
+        "biocondaPackage":  "super-focus"
+    },
+    {
+        "biotoolsID":  "tag",
+        "biocondaPackage":  "tag"
+    },
+    {
+        "biotoolsID":  "manta",
+        "biocondaPackage":  "manta"
+    },
+    {
+        "biotoolsID":  "metaphyler",
+        "biocondaPackage":  "metaphyler"
+    },
+    {
+        "biotoolsID":  "intemap",
+        "biocondaPackage":  "intemap"
+    },
+    {
+        "biotoolsID":  "metaxa",
+        "biocondaPackage":  "metaxa"
+    },
+    {
+        "biotoolsID":  "rapsearch",
+        "biocondaPackage":  "rapsearch"
+    },
+    {
+        "biotoolsID":  "ditasic",
+        "biocondaPackage":  "ditasic"
+    },
+    {
+        "biotoolsID":  "paladin",
+        "biocondaPackage":  "paladin"
+    },
+    {
+        "biotoolsID":  "groot",
+        "biocondaPackage":  "groot"
+    },
+    {
+        "biotoolsID":  "prinseq",
+        "biocondaPackage":  "prinseq"
+    },
+    {
+        "biotoolsID":  "kraken",
+        "biocondaPackage":  "kraken"
+    },
+    {
+        "biotoolsID":  "centrifuge",
+        "biocondaPackage":  "centrifuge"
+    },
+    {
+        "biotoolsID":  "shorah",
+        "biocondaPackage":  "shorah"
+    },
+    {
+        "biotoolsID":  "express",
+        "biocondaPackage":  "express"
+    },
+    {
+        "biotoolsID":  "binsanity",
+        "biocondaPackage":  "binsanity"
+    },
+    {
+        "biotoolsID":  "graphlan",
+        "biocondaPackage":  "graphlan"
+    },
+    {
+        "biotoolsID":  "pandaseq",
+        "biocondaPackage":  "pandaseq"
+    },
+    {
+        "biotoolsID":  "picrust",
+        "biocondaPackage":  "picrust"
+    },
+    {
+        "biotoolsID":  "jorg",
+        "biocondaPackage":  "jorg"
+    },
+    {
+        "biotoolsID":  "seqan",
+        "biocondaPackage":  "seqan"
+    },
+    {
+        "biotoolsID":  "phist",
+        "biocondaPackage":  "phist"
+    },
+    {
+        "biotoolsID":  "metaplatanus",
+        "biocondaPackage":  "metaplatanus"
+    },
+    {
+        "biotoolsID":  "abawaca",
+        "biocondaPackage":  "abawaca"
+    },
+    {
+        "biotoolsID":  "frogs",
+        "biocondaPackage":  "frogs"
+    },
+    {
+        "biotoolsID":  "anvio",
+        "biocondaPackage":  "anvio"
+    },
+    {
+        "biotoolsID":  "strainge",
+        "biocondaPackage":  "strainge"
+    },
+    {
+        "biotoolsID":  "plasticdb",
+        "biocondaPackage":  "plasticdb"
+    },
+    {
+        "biotoolsID":  "eggnog-mapper",
+        "biocondaPackage":  "eggnog-mapper"
+    },
+    {
+        "biotoolsID":  "strainscan",
+        "biocondaPackage":  "strainscan"
+    },
+    {
+        "biotoolsID":  "opfi",
+        "biocondaPackage":  "opfi"
+    },
+    {
+        "biotoolsID":  "vrhyme",
+        "biocondaPackage":  "vrhyme"
+    },
+    {
+        "biotoolsID":  "snikt",
+        "biocondaPackage":  "snikt"
+    },
+    {
+        "biotoolsID":  "markermag",
+        "biocondaPackage":  "markermag"
+    },
+    {
+        "biotoolsID":  "contignet",
+        "biocondaPackage":  "contignet"
+    },
+    {
+        "biotoolsID":  "hamroaster",
+        "biocondaPackage":  "hamroaster"
+    },
+    {
+        "biotoolsID":  "scnic",
+        "biocondaPackage":  "scnic"
+    },
+    {
+        "biotoolsID":  "motulizer",
+        "biocondaPackage":  "motulizer"
+    },
+    {
+        "biotoolsID":  "expam",
+        "biocondaPackage":  "expam"
+    },
+    {
+        "biotoolsID":  "mtsv",
+        "biocondaPackage":  "mtsv"
+    },
+    {
+        "biotoolsID":  "lmas",
+        "biocondaPackage":  "lmas"
+    },
+    {
+        "biotoolsID":  "metacortex",
+        "biocondaPackage":  "metacortex"
+    },
+    {
+        "biotoolsID":  "humann",
+        "biocondaPackage":  "humann"
+    },
+    {
+        "biotoolsID":  "matam",
+        "biocondaPackage":  "matam"
+    },
+    {
+        "biotoolsID":  "colabfold",
+        "biocondaPackage":  "colabfold"
+    },
+    {
+        "biotoolsID":  "vamb",
+        "biocondaPackage":  "vamb"
+    },
+    {
+        "biotoolsID":  "megahit",
+        "biocondaPackage":  "megahit"
+    },
+    {
+        "biotoolsID":  "reago",
+        "biocondaPackage":  "reago"
+    },
+    {
+        "biotoolsID":  "vsearch",
+        "biocondaPackage":  "vsearch"
+    },
+    {
+        "biotoolsID":  "drep",
+        "biocondaPackage":  "drep"
+    },
+    {
+        "biotoolsID":  "mash",
+        "biocondaPackage":  "mash"
+    },
+    {
+        "biotoolsID":  "picrust2",
+        "biocondaPackage":  "picrust2"
+    },
+    {
+        "biotoolsID":  "mgcod",
+        "biocondaPackage":  "mgcod"
+    },
+    {
+        "biotoolsID":  "resmico",
+        "biocondaPackage":  "resmico"
+    },
+    {
+        "biotoolsID":  "plassembler",
+        "biocondaPackage":  "plassembler"
+    },
+    {
+        "biotoolsID":  "kaiju",
+        "biocondaPackage":  "kaiju"
+    },
+    {
+        "biotoolsID":  "phabox",
+        "biocondaPackage":  "phabox"
+    },
+    {
+        "biotoolsID":  "maast",
+        "biocondaPackage":  "maast"
+    },
+    {
+        "biotoolsID":  "hocort",
+        "biocondaPackage":  "hocort"
+    },
+    {
+        "biotoolsID":  "metanovo",
+        "biocondaPackage":  "metanovo"
+    },
+    {
+        "biotoolsID":  "semibin",
+        "biocondaPackage":  "semibin"
+    },
+    {
+        "biotoolsID":  "hostile",
+        "biocondaPackage":  "hostile"
+    },
+    {
+        "biotoolsID":  "virsorter",
+        "biocondaPackage":  "virsorter"
+    },
+    {
+        "biotoolsID":  "hybracter",
+        "biocondaPackage":  "hybracter"
+    },
+    {
+        "biotoolsID":  "fargene",
+        "biocondaPackage":  "fargene"
+    },
+    {
+        "biotoolsID":  "mob_suite",
+        "biocondaPackage":  "mob_suite"
+    },
+    {
+        "biotoolsID":  "kraken-biom",
+        "biocondaPackage":  "kraken-biom"
+    },
+    {
+        "biotoolsID":  "instrain",
+        "biocondaPackage":  "instrain"
+    },
+    {
+        "biotoolsID":  "kleborate",
+        "biocondaPackage":  "kleborate"
+    },
+    {
+        "biotoolsID":  "valet",
+        "biocondaPackage":  "valet"
+    },
+    {
+        "biotoolsID":  "plasflow",
+        "biocondaPackage":  "plasflow"
+    },
+    {
+        "biotoolsID":  "dram",
+        "biocondaPackage":  "dram"
+    },
+    {
+        "biotoolsID":  "coverm",
+        "biocondaPackage":  "coverm"
+    },
+    {
+        "biotoolsID":  "concoct",
+        "biocondaPackage":  "concoct"
+    },
+    {
+        "biotoolsID":  "sonneityping",
+        "biocondaPackage":  "sonneityping"
+    },
+    {
+        "biotoolsID":  "mess",
+        "biocondaPackage":  "mess"
+    },
+    {
+        "biotoolsID":  "freyja",
+        "biocondaPackage":  "freyja"
+    },
+    {
+        "biotoolsID":  "mg-toolkit",
+        "biocondaPackage":  "mg-toolkit"
+    },
+    {
+        "biotoolsID":  "taxpasta",
+        "biocondaPackage":  "taxpasta"
+    },
+    {
+        "biotoolsID":  "binning_refiner",
+        "biocondaPackage":  "binning_refiner"
+    },
+    {
+        "biotoolsID":  "lotus2",
+        "biocondaPackage":  "lotus2"
+    },
+    {
+        "biotoolsID":  "pharokka",
+        "biocondaPackage":  "pharokka"
+    },
+    {
+        "biotoolsID":  "krakentools",
+        "biocondaPackage":  "krakentools"
+    },
+    {
+        "biotoolsID":  "stecfinder",
+        "biocondaPackage":  "stecfinder"
+    },
+    {
+        "biotoolsID":  "orfm",
+        "biocondaPackage":  "orfm"
+    },
+    {
+        "biotoolsID":  "minced",
+        "biocondaPackage":  "minced"
+    },
+    {
+        "biotoolsID":  "whokaryote",
+        "biocondaPackage":  "whokaryote"
+    },
+    {
+        "biotoolsID":  "flextaxd",
+        "biocondaPackage":  "flextaxd"
+    },
+    {
+        "biotoolsID":  "metacoag",
+        "biocondaPackage":  "metacoag"
+    },
+    {
+        "biotoolsID":  "proovframe",
+        "biocondaPackage":  "proovframe"
+    },
+    {
+        "biotoolsID":  "bakdrive",
+        "biocondaPackage":  "bakdrive"
+    },
+    {
+        "biotoolsID":  "diting",
+        "biocondaPackage":  "diting"
+    },
+    {
+        "biotoolsID":  "squeegee",
+        "biocondaPackage":  "squeegee"
+    },
+    {
+        "biotoolsID":  "metabinner",
+        "biocondaPackage":  "metabinner"
+    },
+    {
+        "biotoolsID":  "seqscreen",
+        "biocondaPackage":  "seqscreen"
+    },
+    {
+        "biotoolsID":  "renano",
+        "biocondaPackage":  "renano"
+    },
+    {
+        "biotoolsID":  "metagraph",
+        "biocondaPackage":  "metagraph"
+    },
+    {
+        "biotoolsID":  "nanospring",
+        "biocondaPackage":  "nanospring"
+    },
+    {
+        "biotoolsID":  "orforise",
+        "biocondaPackage":  "orforise"
+    },
+    {
+        "biotoolsID":  "homopolish",
+        "biocondaPackage":  "homopolish"
+    },
+    {
+        "biotoolsID":  "soapdenovo2",
+        "biocondaPackage":  "soapdenovo2"
+    },
+    {
+        "biotoolsID":  "metamaps",
+        "biocondaPackage":  "metamaps"
+    },
+    {
+        "biotoolsID":  "hclust2",
+        "biocondaPackage":  "hclust2"
+    },
+    {
+        "biotoolsID":  "groopm",
+        "biocondaPackage":  "groopm"
+    },
+    {
+        "biotoolsID":  "focus",
+        "biocondaPackage":  "focus"
+    },
+    {
+        "biotoolsID":  "mosca",
+        "biocondaPackage":  "mosca"
+    },
+    {
+        "biotoolsID":  "coptr",
+        "biocondaPackage":  "coptr"
+    },
+    {
+        "biotoolsID":  "bbmap",
+        "biocondaPackage":  "bbmap"
+    },
+    {
+        "biotoolsID":  "macrel",
+        "biocondaPackage":  "macrel"
+    },
+    {
+        "biotoolsID":  "kmtricks",
+        "biocondaPackage":  "kmtricks"
+    },
+    {
+        "biotoolsID":  "phirbo",
+        "biocondaPackage":  "phirbo"
+    },
+    {
+        "biotoolsID":  "pgcgap",
+        "biocondaPackage":  "pgcgap"
+    },
+    {
+        "biotoolsID":  "virstrain",
+        "biocondaPackage":  "virstrain"
+    },
+    {
+        "biotoolsID":  "viralrecall",
+        "biocondaPackage":  "viralrecall"
+    },
+    {
+        "biotoolsID":  "fastv",
+        "biocondaPackage":  "fastv"
+    },
+    {
+        "biotoolsID":  "treesapp",
+        "biocondaPackage":  "treesapp"
+    },
+    {
+        "biotoolsID":  "datma",
+        "biocondaPackage":  "datma"
+    },
+    {
+        "biotoolsID":  "microbeannotator",
+        "biocondaPackage":  "microbeannotator"
+    },
+    {
+        "biotoolsID":  "metalign",
+        "biocondaPackage":  "metalign"
+    },
+    {
+        "biotoolsID":  "megapath",
+        "biocondaPackage":  "megapath"
+    },
+    {
+        "biotoolsID":  "seeker",
+        "biocondaPackage":  "seeker"
+    },
+    {
+        "biotoolsID":  "komb",
+        "biocondaPackage":  "komb"
+    },
+    {
+        "biotoolsID":  "scapp",
+        "biocondaPackage":  "scapp"
+    },
+    {
+        "biotoolsID":  "checkv",
+        "biocondaPackage":  "checkv"
+    },
+    {
+        "biotoolsID":  "bttoxin_digger",
+        "biocondaPackage":  "bttoxin_digger"
+    },
+    {
+        "biotoolsID":  "rfplasmid",
+        "biocondaPackage":  "rfplasmid"
+    },
+    {
+        "biotoolsID":  "balrog",
+        "biocondaPackage":  "balrog"
+    },
+    {
+        "biotoolsID":  "pstrain",
+        "biocondaPackage":  "pstrain"
+    },
+    {
+        "biotoolsID":  "gretel",
+        "biocondaPackage":  "gretel"
+    },
+    {
+        "biotoolsID":  "graphbin",
+        "biocondaPackage":  "graphbin"
+    },
+    {
+        "biotoolsID":  "phyloflash",
+        "biocondaPackage":  "phyloflash"
+    },
+    {
+        "biotoolsID":  "phigaro",
+        "biocondaPackage":  "phigaro"
+    },
+    {
+        "biotoolsID":  "phylogenize",
+        "biocondaPackage":  "phylogenize"
+    },
+    {
+        "biotoolsID":  "kssd",
+        "biocondaPackage":  "kssd"
+    },
+    {
+        "biotoolsID":  "progenomes",
+        "biocondaPackage":  "progenomes"
+    },
+    {
+        "biotoolsID":  "contigtax",
+        "biocondaPackage":  "contigtax"
+    },
+    {
+        "biotoolsID":  "itsxpress",
+        "biocondaPackage":  "itsxpress"
+    },
+    {
+        "biotoolsID":  "simka",
+        "biocondaPackage":  "simka"
+    },
+    {
+        "biotoolsID":  "metasnv",
+        "biocondaPackage":  "metasnv"
+    },
+    {
+        "biotoolsID":  "traitar",
+        "biocondaPackage":  "traitar"
+    },
+    {
+        "biotoolsID":  "graftm",
+        "biocondaPackage":  "graftm"
+    }
+]

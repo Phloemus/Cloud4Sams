@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import { computed } from 'vue'
     import {
+        getCatalogToolById,
         getTaxProfilingCatalog,
         getTaxProfilingDatabaseById,
         getTaxProfilingToolById
@@ -22,6 +23,9 @@
         )
         const taxProfilingTool = computed(() =>
             getTaxProfilingToolById(catalog, toolId.value)
+        )
+        const catalogTool = computed(() =>
+            getCatalogToolById(catalog, toolId.value)
         )
         const { data: tool } = await useBioToolsTool(toolId)
     const database = computed(() =>
@@ -72,6 +76,7 @@
                         <div class="mt-6 p-8 bg-white border border-slate-200 rounded-md">
                             <QuickToolLaunch
                                 :launch-url="taxProfilingTool ? taxProfilingLaunchUrl : undefined"
+                                :bioconda-package="catalogTool?.biocondaPackage"
                             />
                         </div>
                         <div class="mt-6 p-8 bg-white border border-slate-200 rounded-md">

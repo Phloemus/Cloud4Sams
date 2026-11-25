@@ -9,6 +9,8 @@
 // Les JSON locaux ne portent que les informations en plus.
 // ─────────────────────────────────────────────────────────────────────────────
 
+import biocondaPackageMappings from '~/static/bioconda-packages.json'
+
 type JsonRecord = Record<string, unknown>
 
 const DEFAULT_TOOL_TYPE = 'Taxonomic profiler'
@@ -22,6 +24,7 @@ export interface BioToolsPublication {
 export interface BioToolsToolData {
   name: string
   biotoolsID: string
+  biocondaPackage: string | null
   publication: BioToolsPublication
   homepage: string | null
   description: string
@@ -77,6 +80,7 @@ export interface TaxProfilingToolData extends BioToolsToolData {
 export class BioToolsTool {
   name: string
   biotoolsID: string
+  biocondaPackage: string | null
   publication: BioToolsPublication
   homepage: string | null
   description: string
@@ -84,6 +88,7 @@ export class BioToolsTool {
   constructor(data: BioToolsToolData) {
     this.name = data.name
     this.biotoolsID = data.biotoolsID
+    this.biocondaPackage = data.biocondaPackage
     this.publication = data.publication
     this.homepage = data.homepage
     this.description = data.description
@@ -195,6 +200,79 @@ const getStringOrList = (value: unknown): string | string[] | undefined => {
 /** Identifiants comparés sans tenir compte de la casse ni des espaces. */
 const normalizeId = (id: unknown): string => String(id || '').trim().toLowerCase()
 
+const biocondaPackagesById = new Map<string, string>(
+  biocondaPackageMappings.map(
+    ({ biotoolsID, biocondaPackage }): [string, string] => [
+      normalizeId(biotoolsID),
+      biocondaPackage
+    ]
+  )
+)
+
+/** Produit le script Biosphere uniquement pour un nom de paquet Bioconda valide. */
+export const createBiosphereInstallScript = (
+  packageName: string | null
+): string | null => {
+  if (!packageName || !/^[a-zA-Z0-9][a-zA-Z0-9._-]*$/.test(packageName)) {
+    return null
+  }
+
+  return `#!/usr/bin/env bash
+set -euo pipefail
+
+source /etc/os-release
+LOCUSER=$ID
+
+if [[ -r /etc/profile.d/ifb.sh ]]; then
+    source /etc/profile.d/ifb.sh
+fi
+
+# Add MOTD
+MOTD_FNAME=/etc/update-motd.d/99-ifb
+cat << 'MOTD' > "$MOTD_FNAME"
+#!/bin/bash
+echo Welcome to Biosphere Meteor VM!
+echo
+MOTD
+
+chmod +x "$MOTD_FNAME"
+
+CONDA_ROOT_PREFIX=\${CONDA_ROOT_PREFIX:-/var/lib/miniforge}
+
+# Detect package manager
+if command -v micromamba >/dev/null 2>&1; then
+    MAMBA_BIN=$(command -v micromamba)
+    export MAMBA_ROOT_PREFIX="$CONDA_ROOT_PREFIX"
+
+elif command -v mamba >/dev/null 2>&1; then
+    MAMBA_BIN=$(command -v mamba)
+
+elif command -v conda >/dev/null 2>&1; then
+    MAMBA_BIN=$(command -v conda)
+
+else
+    echo "Neither micromamba, mamba nor conda is available."
+    exit 1
+fi
+
+# Install Bioconda package
+PACKAGE_NAME="${packageName}"
+
+echo "Installing $PACKAGE_NAME..."
+
+"$MAMBA_BIN" create -y \\
+    -c conda-forge \\
+    -c bioconda \\
+    -n "$PACKAGE_NAME" \\
+    "$PACKAGE_NAME"
+
+# Check installation
+"$MAMBA_BIN" list -n "$PACKAGE_NAME" "$PACKAGE_NAME"
+
+echo "Installation completed: $PACKAGE_NAME"
+`
+}
+
 const getToolIdFromPath = (path: string): string =>
   path.split(/[\\/]/).pop()?.replace(/\.json$/i, '') || ''
 
@@ -247,6 +325,7 @@ const buildBioToolsToolData = (entry: JsonRecord): BioToolsToolData | null => {
   return {
     name: getString(entry.name) || biotoolsID,
     biotoolsID,
+    biocondaPackage: biocondaPackagesById.get(normalizeId(biotoolsID)) ?? null,
     publication: {
       doi: getFirstDoi(entry.publication)
     },
@@ -316,6 +395,7 @@ const buildTaxProfilingTools = (
       // et l'outil est signalé dans missingBioToolsIds.
       const bioTools: BioToolsToolData = standardEntry ?? {
         biotoolsID: localId,
+        biocondaPackage: biocondaPackagesById.get(normalizeId(localId)) ?? null,
         name: localId,
         description: '',
         homepage: null,

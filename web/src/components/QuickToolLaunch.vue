@@ -1,11 +1,16 @@
 <script setup lang="ts">
+    import { ref } from 'vue'
+    import { createBiosphereInstallScript } from '~/composables/buildCatalog'
 
-    defineProps<{
+    const props = defineProps<{
         launchUrl?: string
+        biocondaPackage?: string | null
     }>()
 
     const isToolLaunchPanelOpened = useState("isToolLaunchPanelOpened")
     const quickLauncherDatasetsList = useState("quickLauncherDatasetsList", () => [])
+    const installScript = ref<string | null>(null)
+    const copyMessage = ref('')
 
     /****** State modifier functions ************************************************************************************** /
      * 
@@ -19,6 +24,22 @@
     function displayToolLaunchPanel(event) {
         if(event.currentTarget === event.target) {
             isToolLaunchPanelOpened.value = true
+        }
+    }
+
+    function generateInstallScript() {
+        installScript.value = createBiosphereInstallScript(props.biocondaPackage ?? null)
+        copyMessage.value = ''
+    }
+
+    async function copyInstallScript() {
+        if (!installScript.value) return
+
+        try {
+            await navigator.clipboard.writeText(installScript.value)
+            copyMessage.value = 'Script copied.'
+        } catch {
+            copyMessage.value = 'Could not copy the script. Select and copy it manually.'
         }
     }
 
@@ -49,8 +70,16 @@
                 <input @click="changeQuickLauncherDatasetsList(dataset)" type="checkbox" class="accent-blue-500" checked />
             </div>
         </div>
+        <button
+            v-if="props.biocondaPackage"
+            type="button"
+            @click="generateInstallScript"
+            class="px-4 py-2 w-full block text-center bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md"
+        >
+            Generate Biosphere install script
+        </button>
         <a
-            v-if="launchUrl"
+            v-else-if="props.launchUrl"
             :href="launchUrl"
             class="px-4 py-2 w-full block text-center bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-md"
         >
@@ -63,5 +92,25 @@
         >
             Launch the tool
         </button>
+        <div v-if="installScript" class="mt-5">
+            <div class="mb-2 flex items-center justify-between gap-3">
+                <h3 class="font-semibold text-slate-900">Biosphere install script</h3>
+                <button
+                    type="button"
+                    @click="copyInstallScript"
+                    class="px-3 py-1 border border-slate-300 text-slate-700 text-sm rounded-md hover:bg-slate-100"
+                >
+                    Copy
+                </button>
+            </div>
+            <p class="mb-2 text-sm text-amber-800">
+                This script is intended for a Biosphere VM and changes system configuration.
+                Review it before running.
+            </p>
+            <pre class="max-h-96 overflow-auto whitespace-pre-wrap break-words rounded-md bg-slate-950 p-4 text-xs text-slate-100"><code>{{ installScript }}</code></pre>
+            <p v-if="copyMessage" role="status" class="mt-2 text-sm text-slate-600">
+                {{ copyMessage }}
+            </p>
+        </div>
     </div>
 </template>
