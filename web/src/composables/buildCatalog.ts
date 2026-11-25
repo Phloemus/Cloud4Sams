@@ -222,6 +222,7 @@ set -euo pipefail
 
 source /etc/os-release
 LOCUSER=$ID
+PACKAGE_NAME="${packageName}"
 
 if [[ -r /etc/profile.d/ifb.sh ]]; then
     source /etc/profile.d/ifb.sh
@@ -231,7 +232,7 @@ fi
 MOTD_FNAME=/etc/update-motd.d/99-ifb
 cat << 'MOTD' > "$MOTD_FNAME"
 #!/bin/bash
-echo Welcome to Biosphere Meteor VM!
+echo Welcome to Biosphere $PACKAGE_NAME VM!
 echo
 MOTD
 
